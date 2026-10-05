@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Manifest With Chandini | Chandini Connects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f7f4;
+  color: #17231d;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   TOP HEADER
+======================================== */
+
+.manifest-header {
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: #e6e6a1;
+
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+
+
+/* CHANDINI */
+
+.manifest-logo {
+  text-align: center;
+}
+
+.manifest-logo h1 {
+  margin: 0;
+
+  font-family: "Italianno", cursive;
+
+  font-size: 60px;
+  padding-top: 46px;
+  padding-left: 450%;
+
+  line-height: .8;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+.manifest-logo span {
+  display: block;
+
+  margin-top: 9px;
+
+  font-size: 7px;
+
+  letter-spacing: 6px;
+
+  color: #17231d;
+}
+
+
+/* BACK */
+
+.manifest-back {
+  position: absolute;
+
+  left: 30px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #17231d;
+
+  text-decoration: none;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+
+/* ========================================
+   BLACK LINE + CENTER IMAGE
+======================================== */
+
+.manifest-line-area {
+  position: relative;
+
+  width: 100%;
+
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f7f4;
+}
+
+
+/* BLACK HORIZONTAL LINE */
+
+.manifest-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  height: 3px;
+
+  background: #111;
+
+  transform: translateY(-50%);
+}
+
+
+/* CENTER IMAGE */
+
+.manifest-person {
+  position: relative;
+
+  z-index: 5;
+
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f7f4;
+
+  border-radius: 50%;
+
+  padding: 10px;
+}
+
+
+.manifest-person img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.manifest-hero {
+  width: 100%;
+
+  padding:
+    55px 25px
+    75px;
+
+  text-align: center;
+
+  background: #f7f7f4;
+}
+
+
+.manifest-small-title {
+  display: block;
+
+  margin-bottom: 22px;
+
+  font-size: 8px;
+
+  letter-spacing: 5px;
+
+  color: #777;
+}
+
+
+.manifest-hero h2 {
+  max-width: 950px;
+
+  margin: auto;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(48px, 6vw, 88px);
+
+  line-height: .95;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+
+.manifest-hero h2 em {
+  font-family: "Italianno", cursive;
+
+  font-size: 1.15em;
+
+  font-weight: 400;
+}
+
+
+.manifest-intro {
+  max-width: 620px;
+
+  margin:
+    35px auto 0;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #626a65;
+}
+
+
+/* ========================================
+   DETAILS STRIP
+======================================== */
+
+.manifest-details {
+  width: calc(100% - 80px);
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid rgba(23,35,29,.22);
+
+  border-bottom:
+    1px solid rgba(23,35,29,.22);
+}
+
+
+.manifest-detail {
+  padding:
+    27px 20px;
+
+  text-align: center;
+
+  border-right:
+    1px solid rgba(23,35,29,.22);
+}
+
+
+.manifest-detail:last-child {
+  border-right: 0;
+}
+
+
+.manifest-detail span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  color: #777;
+}
+
+
+.manifest-detail strong {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+
+/* ========================================
+   WORKSHOP CONTENT
+======================================== */
+
+.manifest-content {
+  max-width: 1050px;
+
+  margin: auto;
+
+  padding:
+    100px 35px;
+}
+
+
+.content-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-size: 8px;
+
+  letter-spacing: 5px;
+
+  color: #777;
+}
+
+
+.manifest-content h3 {
+  max-width: 750px;
+
+  margin-bottom: 30px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(40px, 5vw, 65px);
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+.manifest-content h3 em {
+  font-family:
+    "Italianno",
+    cursive;
+
+  font-size: 1.15em;
+
+  font-weight: 400;
+}
+
+
+.content-description {
+  max-width: 680px;
+
+  margin-bottom: 65px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #626a65;
+}
+
+
+/* ========================================
+   DAY CARD
+======================================== */
+
+.workshop-day {
+  display: grid;
+
+  grid-template-columns:
+    180px 1fr;
+
+  gap: 55px;
+
+  padding:
+    55px 0;
+
+  border-top:
+    1px solid rgba(23,35,29,.22);
+}
+
+
+.day-number span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+
+  color: #777;
+}
+
+
+.day-number strong {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 52px;
+
+  font-weight: 400;
+}
+
+
+.day-content h4 {
+  margin-bottom: 10px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+
+.day-time {
+  margin-bottom: 28px;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #777;
+}
+
+
+.day-content ul {
+  list-style: none;
+
+  padding: 0;
+}
+
+
+.day-content li {
+  position: relative;
+
+  padding:
+    13px 0
+    13px 25px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  border-bottom:
+    1px solid rgba(23,35,29,.12);
+}
+
+
+.day-content li::before {
+  content: "✦";
+
+  position: absolute;
+
+  left: 0;
+
+  color: #979704;
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.manifest-cta {
+  padding:
+    95px 25px;
+
+  text-align: center;
+
+  background: #e6e6a1;
+}
+
+
+.manifest-cta > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-size: 8px;
+
+  letter-spacing: 5px;
+}
+
+
+.manifest-cta h3 {
+  max-width: 750px;
+
+  margin:
+    0 auto 35px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(42px, 5vw, 70px);
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+.manifest-cta h3 em {
+  font-family:
+    "Italianno",
+    cursive;
+
+  font-size: 1.15em;
+
+  font-weight: 400;
+}
+
+
+.manifest-price {
+  margin-bottom: 28px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 32px;
+}
+
+
+.manifest-buy {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding:
+    17px 27px;
+
+  background: #17231d;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.manifest-buy:hover {
+  transform:
+    translateY(-3px);
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.manifest-contact {
+  padding:
+    45px 20px;
+
+  text-align: center;
+
+  background: #17231d;
+
+  color: #f7f7f4;
+}
+
+
+.manifest-contact span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 7px;
+
+  letter-spacing: 4px;
+
+  opacity: .6;
+}
+
+
+.manifest-contact a {
+  color: #f7f7f4;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px) {
+
+  .manifest-header {
+    height: 82px;
+  }
+
+
+  .manifest-logo h1 {
+    font-size: 42px;
+  }
+
+
+  .manifest-back {
+    left: 15px;
+
+    font-size: 0;
+  }
+
+
+  .manifest-back::before {
+    content: "←";
+
+    font-size: 20px;
+  }
+
+
+  .manifest-line-area {
+    height: 140px;
+  }
+
+
+  .manifest-person {
+    width: 115px;
+    height: 115px;
+  }
+
+
+  .manifest-hero {
+    padding:
+      40px 18px
+      55px;
+  }
+
+
+  .manifest-hero h2 {
+    font-size: 48px;
+  }
+
+
+  .manifest-intro {
+    font-size: 14px;
+  }
+
+
+  .manifest-details {
+    width:
+      calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .manifest-detail {
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(23,35,29,.18);
+  }
+
+
+  .manifest-detail:last-child {
+    border-bottom: 0;
+  }
+
+
+  .manifest-content {
+    padding:
+      70px 20px;
+  }
+
+
+  .manifest-content h3 {
+    font-size: 43px;
+  }
+
+
+  .workshop-day {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding:
+      40px 0;
+  }
+
+
+  .day-number strong {
+    font-size: 42px;
+  }
+
+
+  .day-content h4 {
+    font-size: 26px;
+  }
+
+
+  .manifest-cta {
+    padding:
+      70px 20px;
+  }
+
+
+  .manifest-cta h3 {
+    font-size: 43px;
+  }
+
+}
+.below-nav-text {
+  width: 100%;
+
+  height: 25px;
+
+  background: transparent;
+
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #220123;
+
+  font-family: emoji;
+
+  margin-top: -25px;
+
+  padding-top: 90px;
+ padding-right:110px;
+
+  position: relative;
+
+  z-index: 2;
+
+  box-sizing: border-box;
+}
+
+
+</style>
+
+</head>
+
+
+<body id="top">
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header class="manifest-header">
+
+  <a href="index.html"
+     class="manifest-back">
+    ← BACK
+  </a>
+
+
+  <div class="manifest-logo">
+
+    <h1>Chandini</h1>
+
+
+  </div>
+  <div class="below-nav-text">
+  Connects
+</div>
+
+</header>
+
+
+
+<!-- ========================================
+     BLACK LINE + CHANDINI IMAGE
+======================================== -->
+
+<section class="manifest-line-area">
+
+  <div class="manifest-line"></div>
+
+
+  <div class="manifest-person">
+
+    <!--
+      NEE CHANDINI IMAGE IKKADA PETTU
+
+      example:
+      images/chandini.png
+    -->
+
+    <img src="chandini.jpeg"
+         alt="Chandini">
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="manifest-hero">
+
+  <span class="manifest-small-title">
+    CHANDINI CONNECTS • WORKSHOP
+  </span>
+
+
+  <h2>
+    Manifest with
+    <em>Chandini.</em>
+  </h2>
+
+
+  <p class="manifest-intro">
+
+    Learn manifestation in a simple,
+    practical and structured way—and
+    understand how to apply manifestation
+    techniques in your everyday life.
+
+  </p>
+
+</section>
+
+
+
+<!-- ========================================
+     DETAILS
+======================================== -->
+
+<section class="manifest-details">
+
+  <div class="manifest-detail">
+
+    <span>FORMAT</span>
+
+    <strong>
+      2-Day Workshop
+    </strong>
+
+  </div>
+
+
+  <div class="manifest-detail">
+
+    <span>SESSION</span>
+
+    <strong>
+      Recorded
+    </strong>
+
+  </div>
+
+
+  <div class="manifest-detail">
+
+    <span>ACCESS</span>
+
+    <strong>
+      Online
+    </strong>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     WORKSHOP
+======================================== -->
+
+<section class="manifest-content">
+
+  <span class="content-label">
+    THE WORKSHOP
+  </span>
+
+
+  <h3>
+    Build the foundation
+    to <em>manifest intentionally.</em>
+  </h3>
+
+
+  <p class="content-description">
+
+    This workshop is designed to help you
+    understand manifestation clearly and
+    learn practical techniques that can be
+    applied to everyday life.
+
+  </p>
+
+
+
+  <!-- DAY 1 -->
+
+  <div class="workshop-day">
+
+    <div class="day-number">
+
+      <span>WORKSHOP</span>
+
+      <strong>01</strong>
+
+    </div>
+
+
+    <div class="day-content">
+
+      <h4>
+        Manifestation Foundations
+      </h4>
+
+
+      <div class="day-time">
+        DAY 1 • 2-HOUR RECORDED SESSION
+      </div>
+
+
+      <ul>
+
+        <li>
+          What is Manifestation?
+        </li>
+
+        <li>
+          What is the Law of Attraction?
+        </li>
+
+        <li>
+          Understanding the foundations
+          of manifestation
+        </li>
+
+        <li>
+          Applying manifestation techniques
+          in everyday life
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- DAY 2 -->
+
+  <div class="workshop-day">
+
+    <div class="day-number">
+
+      <span>WORKSHOP</span>
+
+      <strong>02</strong>
+
+    </div>
+
+
+    <div class="day-content">
+
+      <h4>
+        Practical Manifestation
+      </h4>
+
+
+      <div class="day-time">
+        DAY 2 • PRACTICAL SESSION
+      </div>
+
+
+      <ul>
+
+        <li>
+          Turn your intentions into clear goals
+        </li>
+
+        <li>
+          Build practical manifestation habits
+        </li>
+
+        <li>
+          Create a consistent daily practice
+        </li>
+
+        <li>
+          Move from intention to action
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     JOIN
+======================================== -->
+
+<section class="manifest-cta">
+
+  <span>
+    READY TO BEGIN?
+  </span>
+
+
+  <h3>
+    Start your manifestation
+    <em>journey.</em>
+  </h3>
+
+
+  <div class="manifest-price">
+    ₹199
+  </div>
+
+
+  <!--
+    RAZORPAY PAYMENT LINK
+    IKKADA PASTE CHEY
+  -->
+
+  <a href="#"
+     class="manifest-buy">
+
+    JOIN THE WORKSHOP
+
+    <b>↗</b>
+
+  </a>
+
+</section>
+
+
+
+<!-- ========================================
+     CONTACT
+======================================== -->
+
+<div class="manifest-contact">
+
+  <span>
+    QUESTIONS? CONNECT WITH US
+  </span>
+
+  <a href="mailto:chandiniconnects@gmail.com">
+    chandiniconnects@gmail.com
+  </a>
+
+  &nbsp; • &nbsp;
+
+  <a href="tel:+919019053580">
+    +91 90190 53580
+  </a>
+
+</div>
+
+
+</body>
+</html>

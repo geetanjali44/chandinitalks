@@ -1,0 +1,4483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #f7f7f4;
+    font-family: Arial, sans-serif;
+  }
+  
+
+
+  /* ========================================
+     TOP PURPLE BAR
+  ======================================== */
+
+  .top-line {
+    width: 100%;
+    height: 30px;
+
+    background: #979704;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top-line h2 {
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+
+  /* ========================================
+     MAIN NAVBAR
+  ======================================== */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+
+  background: #e6e6a1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  padding: 0 35px;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* FOG ONLY INSIDE NAVBAR */
+.navbar::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  left: 0;
+  top: 0;
+
+  background: transparent;
+
+  filter: blur(5px);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+  /* ========================================
+     CENTER LOGO
+  ======================================== */
+
+  .logo {
+    position: absolute;
+
+    left: 50%;
+    top: 55%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Italianno", cursive;
+
+    font-size: 60px;
+    font-weight: 300;
+
+    color: #220123;
+
+    padding-top: 40px;
+
+    line-height: 1;
+  }
+
+
+  /* ========================================
+     CONNECTS TEXT
+  ======================================== */
+
+  .below-nav-text {
+    width: 100%;
+
+    height: 25px;
+
+    background: transparent;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #220123;
+
+    font-family: emoji;
+
+    margin-top: -25px;
+
+    padding-top: 23px;
+    padding-left: 80px;
+
+    position: relative;
+    z-index: 2;
+  }
+
+
+  /* ========================================
+     RIGHT SIDE NAVIGATION
+  ======================================== */
+
+  .nav-right {
+    position: absolute;
+
+    right: 35px;
+    top: 20px;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 100;
+  }
+
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+  }
+
+
+  /* ========================================
+     NAV ITEM
+  ======================================== */
+
+  .nav-item {
+    position: relative;
+
+    white-space: nowrap;
+  }
+
+
+  .nav-title,
+  .nav-item > a {
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #2b172b;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    padding-bottom: 6px;
+  }
+
+
+  /* ========================================
+     LINE UNDER NAV TEXT
+  ======================================== */
+
+  .nav-title::after,
+  .nav-item > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #410144;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+  }
+
+
+  .nav-item:hover .nav-title::after,
+  .nav-item:hover > a::after,
+  .nav-item.active .nav-title::after {
+    width: 100%;
+  }
+
+
+  /* ========================================
+     WITH CHANDHINI
+  ======================================== */
+
+  .with-chandhini {
+    display: inline-block;
+
+    max-width: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    white-space: nowrap;
+
+    vertical-align: bottom;
+
+    margin-left: 0;
+
+    transition:
+      max-width 0.4s ease,
+      opacity 0.3s ease,
+      margin-left 0.3s ease;
+  }
+
+
+  .dropdown-item:hover .with-chandhini,
+  .dropdown-item.active .with-chandhini {
+    max-width: 130px;
+
+    opacity: 1;
+
+    margin-left: 4px;
+  }
+
+
+  /* ========================================
+     DROPDOWN MENU
+  ======================================== */
+
+  .sub-menu {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(8px);
+
+    min-width: 170px;
+
+    background: #ffffff;
+
+    padding: 7px 0;
+
+    border: 1px solid rgba(65, 1, 68, 0.10);
+
+    border-radius: 6px;
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 1000;
+  }
+
+
+  .sub-menu a {
+    display: block;
+
+    width: 100%;
+
+    padding: 10px 16px;
+
+    color: #2b172b;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+
+  .sub-menu a:hover {
+    background: rgb(252, 240, 253);
+
+    color: #410144;
+  }
+
+
+  /* PC HOVER */
+
+  .dropdown-item:hover .sub-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+  }
+
+
+  /* ========================================
+     MOBILE MENU BUTTON
+  ======================================== */
+
+  .menu-toggle {
+    display: none;
+
+    width: 30px;
+    height: 24px;
+
+    padding: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+
+  .menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 1.5px;
+
+    background: #2b172b;
+
+    margin: 6px 0;
+
+    transition: 0.3s ease;
+  }
+  body {
+  padding-top: 125px;
+}
+
+/* =========================
+   PC SEARCH + WHATSAPP
+========================= */
+
+.nav-icons {
+  position: absolute;
+
+  left: calc(15% - 190px);
+  top: 70%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  z-index: 200;
+}
+
+.search-icon,
+.whatsapp-icon {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: #2b172b;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.search-icon svg,
+.whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* SEARCH ICON */
+.search-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+/* WHATSAPP ICON */
+.whatsapp-icon svg {
+  fill: currentColor;
+}
+
+.search-icon:hover,
+.whatsapp-icon:hover {
+  opacity: 0.6;
+}
+
+
+  /* ========================================
+     MOBILE
+  ======================================== */
+
+  @media (max-width: 768px) {
+
+
+    .nav-icons {
+  position: absolute;
+
+  left: auto;
+  right: 15px;
+
+  top: 80%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  z-index: 200;
+}
+
+.search-icon,
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+    body {
+    padding-top: 100px;
+  }
+
+   /* TOP BAR */
+
+.top-line {
+  height: 30px;
+}
+
+.top-line h2 {
+  font-size: 14px;
+}
+
+
+/* NAVBAR - MOBILE ONLY */
+
+.navbar {
+  height: 52px;
+  padding: 0 15px;
+}
+
+
+/* LOGO */
+
+.logo {
+  font-size: 48px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding-top: 17px;
+}
+
+
+/* CONNECTS */
+
+.below-nav-text {
+  height: 25px;
+
+  margin-top: -18px;
+  padding: 0;
+
+  position: relative;
+  top: 8px;
+  left: 30px;
+
+  text-align: center;
+
+  font-size: 16px !important;
+  line-height: 25px;
+  font-family: emoji;
+}
+
+
+/* MENU LEFT SIDE */
+
+.nav-right {
+  position: absolute;
+
+  left: 15px;
+  right: auto;
+
+  top: 0;
+
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* SHOW HAMBURGER */
+
+.menu-toggle {
+  display: block;
+
+  width: 20px;
+  height: 22px;
+}
+
+    /* ========================================
+       MOBILE NAVIGATION
+    ======================================== */
+
+      .nav-links {
+    display: none;
+
+    position: fixed;
+
+    top: 82px;
+    left: 0;
+    right: auto;
+
+    width: 80%;
+    max-width: 80%;
+
+    height: calc(100vh - 82px);
+
+    background: #ffffff;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 20px 22px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-shadow: 8px 10px 30px rgba(0, 0, 0, 0.08);
+
+    z-index: 9999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+
+    /* NAV ITEMS */
+
+    .nav-item {
+      width: 100%;
+
+      padding: 15px 0;
+
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .nav-item:last-child {
+      border-bottom: none;
+    }
+
+
+    .nav-title,
+    .nav-item > a {
+      font-size: 15px;
+
+      padding-bottom: 5px;
+    }
+
+
+    /* ========================================
+       REMOVE DESKTOP HOVER ON MOBILE
+    ======================================== */
+
+    .dropdown-item:hover .with-chandhini {
+      max-width: 0;
+
+      opacity: 0;
+
+      margin-left: 0;
+    }
+
+
+    .dropdown-item:hover .sub-menu {
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+    }
+
+
+    /* ========================================
+       MOBILE TOUCH ACTIVE
+    ======================================== */
+
+    .dropdown-item.active .with-chandhini {
+      max-width: 130px;
+
+      opacity: 1;
+
+      margin-left: 4px;
+    }
+
+
+    .dropdown-item.active .nav-title::after {
+      width: 100%;
+    }
+
+
+    .dropdown-item.active .sub-menu {
+      position: relative;
+
+      top: auto;
+      left: auto;
+
+      transform: none;
+
+      min-width: 100%;
+
+      margin-top: 8px;
+
+      padding: 5px 0 0 14px;
+
+      background: transparent;
+
+      border: none;
+
+      border-radius: 0;
+
+      box-shadow: none;
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+
+    .dropdown-item.active .sub-menu a {
+      padding: 8px 0;
+
+      color: #6b5a6b;
+
+      font-size: 13px;
+    }
+
+  }
+
+  
+
+
+  /* ========================================
+     SMALL MOBILE
+  ======================================== */
+
+@media (max-width: 420px) {
+
+  .navbar {
+    height: 45px;
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+
+  .nav-right {
+    left: 15px;
+    right: auto;
+    height: 65px;
+  }
+
+  .menu-toggle {
+    width: 20px;
+  }
+
+  .below-nav-text {
+    font-size: 16px !important;
+  }
+
+  .nav-links {
+    top: 95px;
+  }
+}
+  .fixed-header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
+  z-index: 9999;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+  position: fixed;
+  top: 105px;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-10px);
+
+  width: min(500px, calc(100% - 30px));
+
+  background: #ffffff;
+  padding: 10px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.12);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: .25s ease;
+
+  z-index: 10001;
+}
+
+.search-box.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+.search-box input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 15px;
+
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+
+  outline: none;
+
+  font-size: 15px;
+}
+
+.search-box input:focus {
+  border-color: #410144;
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    top: 90px;
+    width: calc(100% - 30px);
+  }
+}
+
+
+/* ========================================
+   EDUCATION PORTFOLIO
+======================================== */
+
+.edu-portfolio {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+
+  background: #f7f7f4;
+
+  padding: 10px;
+  gap: 12px;
+}
+
+
+/* ========================================
+   LEFT SIDEBAR - PC
+======================================== */
+
+/* ========================================
+   PC FIXED LEFT SIDEBAR
+======================================== */
+
+.edu-sidebar {
+  position: fixed;
+
+  left: 10px;
+  top: 125px;
+
+  width: 180px;
+  height: calc(100vh - 135px);
+
+  padding: 28px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #e6e6a1;
+
+  z-index: 100;
+}
+
+
+.edu-brand h1 {
+  font-family: "Italianno", cursive;
+
+  font-size: 42px;
+  font-weight: 400;
+
+  color: #220123;
+
+  line-height: .9;
+}
+
+
+.edu-brand span {
+  display: block;
+
+  margin-top: 18px;
+
+  font-size: 9px;
+  letter-spacing: 4px;
+  line-height: 1.7;
+
+  color: #333;
+}
+
+
+.edu-side-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+
+  margin-top: 70px;
+}
+
+
+.edu-side-links a {
+  color: #222;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 4px;
+
+  transition: .25s ease;
+}
+
+
+.edu-side-links a:hover {
+  color: #9c4ba5;
+  transform: translateX(4px);
+}
+
+
+.edu-social {
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+
+/* ========================================
+   PORTFOLIO GRID
+======================================== */
+
+.edu-portfolio {
+  width: 100%;
+  min-height: 100vh;
+
+  display: block;
+
+  background: #f7f7f4;
+
+  padding: 10px;
+}
+
+.edu-gallery {
+  margin-left: 192px;
+
+  width: calc(100% - 192px);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 310px;
+
+  gap: 10px;
+}
+
+
+.edu-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #e9e9e9;
+
+  min-width: 0;
+}
+
+
+.edu-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .7s ease;
+}
+
+
+.edu-card:hover img {
+  transform: scale(1.035);
+}
+
+
+/* FIRST BIG IMAGE */
+
+.edu-feature {
+  grid-column: span 2;
+}
+
+
+.edu-card:nth-child(2) {
+  grid-column: span 1;
+}
+
+
+.edu-card:nth-child(3) {
+  grid-column: span 1;
+}
+
+
+.edu-card:nth-child(4) {
+  grid-column: span 1;
+}
+
+
+.edu-card:nth-child(5) {
+  grid-column: span 2;
+}
+
+
+.edu-card:nth-child(6) {
+  grid-column: span 1;
+}
+
+
+/* ========================================
+   IMAGE TEXT
+======================================== */
+
+.edu-card-overlay {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+
+  color: #fff;
+
+  z-index: 2;
+}
+
+
+.edu-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.48),
+    transparent 45%
+  );
+
+  pointer-events: none;
+}
+
+
+.edu-card-overlay h2 {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  margin-bottom: 7px;
+}
+
+
+.edu-card-overlay p {
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  font-weight: 500;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .edu-portfolio {
+    display: block;
+
+    padding: 8px;
+
+    background: #ffffff;
+  }
+
+
+  /* SIDEBAR NOT NEEDED ON MOBILE
+     YOUR EXISTING HAMBURGER = NAVIGATION */
+
+  .edu-sidebar {
+    display: none;
+  }
+
+
+  .edu-gallery {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+
+    gap: 8px;
+  }
+
+
+  .edu-card,
+  .edu-feature,
+  .edu-card:nth-child(2),
+  .edu-card:nth-child(3),
+  .edu-card:nth-child(4),
+  .edu-card:nth-child(5),
+  .edu-card:nth-child(6) {
+    grid-column: 1;
+
+    width: 100%;
+    height: 320px;
+  }
+
+
+  /* FIRST IMAGE BIG LIKE REFERENCE */
+
+  .edu-feature {
+    height: 360px;
+  }
+
+
+  .edu-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  .edu-card-overlay {
+    left: 14px;
+    bottom: 15px;
+  }
+
+
+  .edu-card-overlay h2 {
+    font-size: 17px;
+  }
+
+
+  .edu-card-overlay p {
+    font-size: 7px;
+    letter-spacing: 2.5px;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+
+  .edu-feature {
+    height: 360px;
+  }
+
+  .edu-card {
+    height: 250px;
+  }
+
+}
+
+/* ==============================
+   PC SIDEBAR LINKS
+============================== */
+
+.edu-side-links a {
+  color: #222;
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 4px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  width: fit-content;
+}
+
+.edu-side-links a span {
+  opacity: 0;
+  transform: translateX(-5px);
+
+  transition: .25s ease;
+}
+
+.edu-side-links a:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ==============================
+   SOCIAL ICONS
+============================== */
+
+.edu-social {
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 18px;
+}
+
+.edu-social a {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  color: #222;
+}
+
+.edu-social svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.edu-social .edu-whatsapp {
+  fill: currentColor;
+  stroke: none;
+}
+
+.edu-social a:hover {
+  opacity: .55;
+}
+
+/* ========================================
+   MOBILE SCROLL MENU
+======================================== */
+
+/* PC LO HIDE */
+.mobile-scroll-menu {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  /* OLD HAMBURGER ONLY HIDE */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* OLD DROPDOWN MENU MOBILE LO HIDE */
+  .nav-links,
+  .nav-links.open {
+    display: none !important;
+  }
+
+
+  /* NEW HORIZONTAL MENU */
+  .mobile-scroll-menu {
+    width: 100%;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 0 14px;
+
+    background: #f7f7f4;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+
+  .mobile-scroll-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .mobile-scroll-menu a {
+    flex: 0 0 auto;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 2.5px;
+
+    line-height: 39px;
+  }
+
+
+  .mobile-scroll-menu a:active {
+    color: #410144;
+  }
+
+
+  /* HEADER + SCROLL MENU SPACE */
+  body {
+    padding-top: 139px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .edu-sidebar {
+    display: none !important;
+  }
+
+  .edu-gallery {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+}
+/* =========================================
+   MOBILE PORTFOLIO GRID
+========================================= */
+
+@media (max-width: 768px) {
+
+  .edu-portfolio {
+    padding: 6px;
+  }
+
+  .edu-gallery {
+    width: 100% !important;
+    margin-left: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: auto !important;
+
+    gap: 6px;
+  }
+
+
+  /* RESET OLD CARD SETTINGS */
+  .edu-gallery .edu-card,
+  .edu-gallery .edu-feature,
+  .edu-gallery .edu-card:nth-child(2),
+  .edu-gallery .edu-card:nth-child(3),
+  .edu-gallery .edu-card:nth-child(4),
+  .edu-gallery .edu-card:nth-child(5),
+  .edu-gallery .edu-card:nth-child(6) {
+    width: 100%;
+    height: 190px;
+
+    grid-column: auto !important;
+  }
+
+
+  /* 1ST = FULL BIG IMAGE */
+  .edu-gallery .edu-card:nth-child(1) {
+    grid-column: 1 / -1 !important;
+    height: 350px;
+  }
+
+
+  /* 2 + 3 = TWO SMALL IMAGES */
+  .edu-gallery .edu-card:nth-child(2),
+  .edu-gallery .edu-card:nth-child(3) {
+    height: 190px;
+  }
+
+
+  /* 4TH = FULL BIG IMAGE */
+  .edu-gallery .edu-card:nth-child(4) {
+    grid-column: 1 / -1 !important;
+    height: 280px;
+  }
+
+
+  /* 5 + 6 = TWO SMALL IMAGES */
+  .edu-gallery .edu-card:nth-child(5),
+  .edu-gallery .edu-card:nth-child(6) {
+    height: 190px;
+  }
+
+
+  .edu-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  /* SMALL CARDS TEXT */
+  .edu-card-overlay {
+    left: 10px;
+    right: 8px;
+    bottom: 10px;
+  }
+
+  .edu-card-overlay h2 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .edu-card-overlay p {
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+
+
+  /* BIG FIRST IMAGE TEXT */
+  .edu-gallery .edu-card:nth-child(1) .edu-card-overlay h2 {
+    font-size: 19px;
+  }
+
+}
+
+/* ========================================
+   MOBILE IMAGE TOUCH / HOVER EFFECT
+======================================== */
+
+@media (max-width: 768px) {
+
+  .edu-card {
+    cursor: pointer;
+  }
+
+  .edu-card img {
+    transition:
+      transform 0.45s ease,
+      filter 0.45s ease;
+  }
+
+  /* Desktop-style hover where supported */
+  .edu-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.78);
+  }
+
+  /* Mobile finger press */
+  .edu-card:active img {
+    transform: scale(1.06);
+    filter: brightness(0.72);
+  }
+
+  /* Text also moves slightly */
+  .edu-card-overlay {
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
+  }
+
+  .edu-card:hover .edu-card-overlay,
+  .edu-card:active .edu-card-overlay {
+    transform: translateY(-6px);
+  }
+
+}
+
+
+/* ========================================
+   ABOUT CHANDINI
+======================================== */
+
+.about-chandini {
+  width: 100%;
+  background: #f7f7f4;
+
+  padding: 80px 60px 0;
+}
+
+
+/* HEADING */
+
+.about-heading {
+  max-width: 1450px;
+  margin: 0 auto 65px;
+}
+
+.about-heading > span {
+  display: block;
+
+  font-size: 9px;
+  letter-spacing: 5px;
+
+  color: #777;
+
+  margin-bottom: 18px;
+}
+
+.about-heading h2 {
+  max-width: 1100px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 78px);
+  line-height: 1.02;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+.about-heading h2 em {
+  font-weight: 400;
+}
+
+
+/* MAIN LAYOUT */
+
+.about-layout {
+  max-width: 1450px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 460px)
+    minmax(450px, 1fr);
+
+  gap: clamp(60px, 11vw, 180px);
+
+  align-items: end;
+}
+
+
+/* IMAGE */
+
+.about-image {
+  width: 100%;
+  height: 540px;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  transition:
+    transform .8s ease,
+    filter .6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.035);
+  filter: grayscale(0%);
+}
+
+
+/* CONTENT */
+
+.about-content {
+  align-self: stretch;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+
+.about-copy {
+  max-width: 750px;
+
+  margin-bottom: 60px;
+}
+
+.about-copy p {
+  font-size: 19px;
+  line-height: 1.75;
+
+  color: #17231d;
+  font-family: Georgia, serif;
+
+  margin-bottom: 24px;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* STATS */
+
+.about-stats {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #c8ccc9;
+}
+
+.about-stat {
+  min-height: 145px;
+
+  padding: 38px 30px 20px 0;
+}
+
+.about-stat + .about-stat {
+  border-left: 1px solid #c8ccc9;
+
+  padding-left: 30px;
+}
+
+.about-stat span {
+  display: block;
+
+  min-height: 28px;
+
+  font-family: Georgia, serif;
+
+  font-size: 9px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+
+  color: #555;
+}
+
+.about-stat strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .about-chandini {
+    padding: 55px 12px 0;
+  }
+
+
+  .about-heading {
+    margin-bottom: 32px;
+  }
+
+  .about-heading > span {
+    font-size: 8px;
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+  }
+
+  .about-heading h2 {
+    font-size: 34px;
+    line-height: 1.06;
+  }
+
+
+  /* IMAGE FIRST */
+
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+  }
+
+
+  .about-image {
+    width: 100%;
+    height: 430px;
+  }
+
+
+  /* MOBILE TOUCH EFFECT */
+
+  .about-image:active img {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+  }
+
+
+  .about-copy {
+    margin-bottom: 35px;
+  }
+
+  .about-copy p {
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* THREE STATS SAME ROW */
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-stat {
+    min-width: 0;
+    min-height: 105px;
+
+    padding: 22px 8px 18px 0;
+  }
+
+  .about-stat + .about-stat {
+    padding-left: 10px;
+  }
+
+  .about-stat span {
+    min-height: 25px;
+
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+
+  .about-stat strong {
+    font-size: 29px;
+
+    margin-top: 8px;
+  }
+
+}
+.about-chandini {
+  width: calc(100% - 192px);
+  margin-left: 192px;
+
+  background: #f7f7f4;
+
+  padding: 80px 45px 0;
+}
+@media (max-width: 768px) {
+
+  .about-chandini {
+    width: 100%;
+    margin-left: 0;
+
+    padding: 55px 12px 0;
+  }
+
+}
+
+
+/* =====================================================
+   FINAL DESKTOP LAYOUT FIX
+   HEADER + SIDEBAR CONNECTED / NO GAP
+===================================================== */
+
+@media (min-width: 769px) {
+
+  html,
+  body {
+    margin: 0;
+    padding-left: 0;
+  }
+
+
+  /* ==========================
+     FIXED TOP HEADER
+  ========================== */
+
+  .fixed-header {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+  }
+
+
+  /* ==========================
+     FIXED LEFT SIDEBAR
+  ========================== */
+@media (min-width: 769px) {
+
+  .edu-sidebar {
+    position: fixed !important;
+
+    left: 0 !important;
+
+    /* HEADER ENDS AT 83px */
+    top: 83px !important;
+
+    width: 192px !important;
+
+    /* DIRECTLY HEADER TO SCREEN BOTTOM */
+    height: calc(100vh - 83px) !important;
+
+    margin: 0 !important;
+
+    padding: 28px 25px !important;
+
+    background: #e6e6a1 !important;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid rgba(34,34,34,.22);
+
+    box-sizing: border-box;
+
+    z-index: 500;
+  }
+
+}
+
+
+  /* ==========================
+     REMOVE PORTFOLIO GAP
+  ========================== */
+
+  .edu-portfolio {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #f7f7f4;
+  }
+
+
+  /* ==========================
+     CONTENT EXACTLY AFTER LINE
+  ========================== */
+
+  .edu-gallery {
+    margin-left: 192px !important;
+
+    width: calc(100% - 192px) !important;
+
+    padding: 0 !important;
+
+    /* tiny image gap only */
+    gap: 6px !important;
+  }
+
+
+  /* ==========================
+     ABOUT ALSO SAME ALIGNMENT
+  ========================== */
+
+  .about-chandini {
+    width: calc(100% - 192px) !important;
+
+    margin-left: 192px !important;
+
+    box-sizing: border-box;
+  }
+
+}
+
+
+/* =====================================================
+   FIRST SECTION IMAGES
+   START BLACK & WHITE
+===================================================== */
+
+.edu-gallery .edu-card img {
+  filter: grayscale(100%);
+
+  transition:
+    transform .7s ease,
+    filter .65s ease;
+}
+
+
+/* PC HOVER = COLOR */
+
+.edu-gallery .edu-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.045);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* sidebar completely removed */
+  .edu-sidebar {
+    display: none !important;
+  }
+
+
+  .edu-portfolio {
+    margin: 0 !important;
+    padding: 6px !important;
+  }
+
+
+  .edu-gallery {
+    margin-left: 0 !important;
+
+    width: 100% !important;
+  }
+
+
+  .about-chandini {
+    margin-left: 0 !important;
+
+    width: 100% !important;
+  }
+
+
+  /* MOBILE ALSO START B&W */
+
+  .edu-gallery .edu-card img {
+    filter: grayscale(100%);
+  }
+
+
+  /* TOUCH */
+
+  .edu-gallery .edu-card:active img,
+  .edu-gallery .edu-card.mobile-hover img {
+    filter: grayscale(0%);
+    transform: scale(1.06);
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  .edu-sidebar {
+    position: fixed !important;
+
+    left: 0 !important;
+
+    /* HEADER ENDS AT 83px */
+    top: 70px !important;
+
+    width: 182px !important;
+
+    /* DIRECTLY HEADER TO SCREEN BOTTOM */
+    height: calc(100vh - 70px) !important;
+
+    margin: 0 !important;
+
+    padding: 28px 25px !important;
+
+    background: #e6e6a1 !important;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid rgba(34,34,34,.22);
+
+    box-sizing: border-box;
+
+    z-index: 500;
+  }
+
+}
+/* ========================================
+   HEADER BOTTOM HORIZONTAL LINE
+======================================== */
+
+.fixed-header {
+  border-bottom: 1px solid rgba(34, 34, 34, 0.22);
+}
+
+/* ========================================
+   WORK SECTION
+======================================== */
+
+.work-services {
+  width: calc(100% - 192px);
+  margin-left: 192px;
+
+  padding: 65px 35px 80px;
+
+  background: #f7f7f4;
+  box-sizing: border-box;
+}
+
+
+/* TOP SMALL TITLE */
+
+.work-label {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  margin-bottom: 35px;
+
+  color: #33443c;
+}
+
+.work-label span {
+  flex: 0 0 auto;
+
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.work-label div {
+  width: 100%;
+  height: 1px;
+
+  background: #c9cfca;
+}
+
+
+/* MAIN HEADING */
+
+.work-title {
+  margin: 0 0 65px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5vw, 78px);
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+
+/* ROW */
+
+.work-row {
+  position: relative;
+
+  width: 100%;
+  min-height: 170px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    minmax(300px, 1.1fr)
+    minmax(350px, 1.3fr)
+    30px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 30px 20px;
+
+  border-top: 1px solid #c9cfca;
+
+  text-decoration: none;
+
+  color: #17231d;
+
+  transition:
+    background .35s ease,
+    padding-left .35s ease;
+}
+
+
+/* LAST LINE */
+
+.work-row:last-child {
+  border-bottom: 1px solid #c9cfca;
+}
+
+
+/* HOVER */
+
+.work-row:hover {
+  background: #e7eee8;
+  padding-left: 28px;
+}
+
+
+/* NUMBER */
+
+.work-number {
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #44554d;
+}
+
+
+/* TITLE */
+
+.work-row h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(25px, 2.4vw, 38px);
+
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+
+/* DESCRIPTION */
+
+.work-row p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.65;
+
+  color: #536159;
+}
+
+
+/* ARROW */
+
+.work-arrow {
+  justify-self: end;
+
+  font-size: 20px;
+
+  transition: transform .3s ease;
+}
+
+.work-row:hover .work-arrow {
+  transform: translate(4px, -4px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .work-services {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 45px 12px 50px;
+  }
+
+
+  .work-label {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .work-label span {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+
+  .work-title {
+    margin-bottom: 40px;
+
+    font-size: 42px;
+  }
+
+
+  .work-row {
+    min-height: 150px;
+
+    grid-template-columns: 35px 1fr 22px;
+
+    gap: 10px;
+
+    padding: 25px 5px;
+  }
+
+
+  .work-number {
+    align-self: start;
+
+    padding-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+
+  .work-row h3 {
+    font-size: 25px;
+  }
+
+
+  .work-row p {
+    grid-column: 2 / 3;
+
+    margin-top: -5px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+
+  .work-arrow {
+    grid-column: 3;
+    grid-row: 1;
+
+    align-self: start;
+
+    font-size: 17px;
+  }
+
+
+  .work-row:hover {
+    padding-left: 5px;
+  }
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#manifest,
+#career,
+#planners {
+  scroll-margin-top: 110px;
+}
+
+/* WORK ROW SCROLL REVEAL */
+
+.work-row {
+  opacity: 0;
+  transform: translateY(55px);
+
+  transition:
+    opacity .75s ease,
+    transform .75s ease,
+    background .35s ease;
+}
+
+.work-row.work-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   INSTAGRAM REELS SHOWCASE
+======================================== */
+
+.reels-showcase {
+  width: calc(100% - 192px);
+  margin-left: 192px;
+  padding: 80px 35px 100px;
+  background: #f7f7f4;
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.reels-heading {
+  margin-bottom: 45px;
+}
+
+.reels-heading > span {
+  display: block;
+  margin-bottom: 17px;
+
+  font-size: 9px;
+  letter-spacing: 5px;
+
+  color: #777;
+}
+
+.reels-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 5vw, 78px);
+  line-height: 1;
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+.reels-heading h2 em {
+  font-weight: 400;
+}
+
+
+/* ========================================
+   CAROUSEL STAGE
+======================================== */
+
+.reels-stage {
+  position: relative;
+
+  width: 100%;
+  height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: black;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   CAROUSEL TRACK
+======================================== */
+
+.reels-track {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ========================================
+   REEL CARD
+======================================== */
+
+.reel-card {
+  position: absolute;
+
+  width: 290px;
+
+  aspect-ratio: 9 / 16;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, .15);
+
+  transition:
+    transform 1s cubic-bezier(.16, 1, .3, 1),
+    opacity .8s ease,
+    filter .8s ease;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+/* ========================================
+   VIDEO
+======================================== */
+
+.reel-card video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #000;
+
+  transition:
+    transform 5s linear;
+}
+
+
+/* ========================================
+   LEFT CARD
+======================================== */
+
+.reel-card.left {
+  transform:
+    translateX(-330px)
+    scale(.80)
+    rotate(-5deg);
+
+  opacity: .60;
+
+  filter:
+    brightness(.72)
+    saturate(.75);
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   CENTER ACTIVE CARD
+======================================== */
+
+.reel-card.center {
+  transform:
+    translateX(0)
+    scale(1.06)
+    rotate(0deg);
+
+  opacity: 1;
+
+  filter:
+    brightness(1)
+    saturate(1);
+
+  z-index: 10;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, .25);
+}
+
+
+/* ACTIVE VIDEO SLOW ZOOM */
+
+.reel-card.center video {
+  transform: scale(1.06);
+}
+
+
+/* ========================================
+   RIGHT CARD
+======================================== */
+
+.reel-card.right {
+  transform:
+    translateX(330px)
+    scale(.80)
+    rotate(5deg);
+
+  opacity: .60;
+
+  filter:
+    brightness(.72)
+    saturate(.75);
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   HIDDEN LEFT
+======================================== */
+
+.reel-card.hidden-left {
+  transform:
+    translateX(-680px)
+    scale(.55)
+    rotate(-10deg);
+
+  opacity: 0;
+
+  filter:
+    brightness(.5)
+    blur(4px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   HIDDEN RIGHT
+======================================== */
+
+.reel-card.hidden-right {
+  transform:
+    translateX(680px)
+    scale(.55)
+    rotate(10deg);
+
+  opacity: 0;
+
+  filter:
+    brightness(.5)
+    blur(4px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   REEL NUMBER
+======================================== */
+
+.reel-number {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, .25);
+
+  border:
+    1px solid rgba(255, 255, 255, .45);
+
+  color: #fff;
+
+  font-size: 9px;
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(8px);
+
+  z-index: 10;
+}
+
+
+/* ========================================
+   COUNTER
+======================================== */
+
+.reels-counter {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  color: #17231d;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  z-index: 30;
+}
+
+
+/* ========================================
+   PROGRESS LINE
+======================================== */
+
+.reels-line {
+  flex: 1;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background:
+    rgba(23, 35, 29, .25);
+}
+
+
+#reelsProgress {
+  width: 0%;
+  height: 100%;
+
+  background: #17231d;
+
+  transition:
+    width .1s linear;
+}
+
+
+/* ========================================
+   SIDE CARDS CLICK
+======================================== */
+
+.reel-card.left,
+.reel-card.right {
+  cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .reels-showcase {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding:
+      55px 0
+      70px;
+  }
+
+
+  /* HEADING */
+
+  .reels-heading {
+    margin-bottom: 28px;
+
+    padding:
+      0 14px;
+  }
+
+
+  .reels-heading > span {
+    margin-bottom: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .reels-heading h2 {
+    font-size: 38px;
+  }
+
+
+  /* STAGE */
+
+  .reels-stage {
+    height: 590px;
+
+    padding:
+      25px 0;
+  }
+
+
+  /* CARD */
+
+  .reel-card {
+    width: 245px;
+
+    border-radius: 9px;
+  }
+
+
+  /* LEFT */
+
+  .reel-card.left {
+    transform:
+      translateX(-205px)
+      scale(.70)
+      rotate(-5deg);
+
+    opacity: .48;
+  }
+
+
+  /* CENTER */
+
+  .reel-card.center {
+    transform:
+      translateX(0)
+      scale(1)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+
+  /* RIGHT */
+
+  .reel-card.right {
+    transform:
+      translateX(205px)
+      scale(.70)
+      rotate(5deg);
+
+    opacity: .48;
+  }
+
+
+  /* HIDDEN */
+
+  .reel-card.hidden-left {
+    transform:
+      translateX(-440px)
+      scale(.45)
+      rotate(-10deg);
+
+    opacity: 0;
+  }
+
+
+  .reel-card.hidden-right {
+    transform:
+      translateX(440px)
+      scale(.45)
+      rotate(10deg);
+
+    opacity: 0;
+  }
+
+
+  /* COUNTER */
+
+  .reels-counter {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 390px) {
+
+  .reels-stage {
+    height: 550px;
+  }
+
+
+  .reel-card {
+    width: 220px;
+  }
+
+
+  .reel-card.left {
+    transform:
+      translateX(-180px)
+      scale(.68)
+      rotate(-5deg);
+  }
+
+
+  .reel-card.right {
+    transform:
+      translateX(180px)
+      scale(.68)
+      rotate(5deg);
+  }
+
+
+  .reel-card.hidden-left {
+    transform:
+      translateX(-380px)
+      scale(.45);
+  }
+
+
+  .reel-card.hidden-right {
+    transform:
+      translateX(380px)
+      scale(.45);
+  }
+
+}
+/* ========================================
+   QUOTE SECTION
+======================================== */
+
+.chandini-quote-section {
+  width: calc(100% - 192px);
+  margin-left: 192px;
+
+  min-height: 630px;
+
+  padding: 90px 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #f7f7f4;
+
+  border-top: 1px solid rgba(23, 35, 29, .18);
+  border-bottom: 1px solid rgba(23, 35, 29, .18);
+
+  box-sizing: border-box;
+}
+
+
+/* SMALL TOP LINE */
+
+.quote-top-line,
+.quote-bottom-line {
+  width: 80px;
+  height: 1px;
+
+  background: rgba(23, 35, 29, .40);
+}
+
+
+/* QUOTE */
+
+.chandini-quote {
+  max-width: 1050px;
+
+  margin: 45px auto 42px;
+
+  padding: 0;
+
+  border: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(35px, 4vw, 58px);
+
+  line-height: 1.03;
+
+  letter-spacing: -1.5px;
+
+  font-weight: 400;
+
+  color: #17231d;
+}
+
+
+/* ITALIC PART */
+
+.chandini-quote em {
+  font-family: "Italianno", cursive;
+
+  font-size: 1.15em;
+
+  font-weight: 400;
+
+  line-height: .8;
+}
+
+
+/* AUTHOR */
+
+.quote-author {
+  margin-bottom: 50px;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  line-height: 1.7;
+
+  color: #59635d;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .chandini-quote-section {
+    width: 100%;
+
+    margin-left: 0;
+
+    min-height: 520px;
+
+    padding: 70px 22px;
+  }
+
+
+  .quote-top-line,
+  .quote-bottom-line {
+    width: 55px;
+  }
+
+
+  .chandini-quote {
+    margin: 35px auto 35px;
+
+    font-size: 34px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
+  }
+
+
+  .chandini-quote em {
+    font-size: 1.18em;
+  }
+
+
+  .quote-author {
+    margin-bottom: 38px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    line-height: 1.8;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 390px) {
+
+  .chandini-quote-section {
+    min-height: 500px;
+
+    padding:
+      60px 17px;
+  }
+
+
+  .chandini-quote {
+    font-size: 30px;
+  }
+
+}
+
+/* ========================================
+   CHANDINI CONNECTS FOOTER
+======================================== */
+
+.chandini-footer {
+  width: calc(100% - 192px);
+  margin-left: 192px;
+
+  background: #f7f7f4;
+  color: white;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   ART IMAGE
+======================================== */
+
+.footer-art {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  line-height: 0;
+
+  background: #f7f7f4;
+}
+
+
+.footer-art img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: cover;
+}
+
+
+/* ========================================
+   MAIN FOOTER
+======================================== */
+
+.footer-main {
+  position: relative;
+
+  margin-top: -1px;
+
+  padding: 70px 55px 65px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    1fr
+    1.1fr;
+
+  gap: 70px;
+
+  background: black;
+
+  border-top:
+    1px solid rgba(23,35,29,.18);
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.footer-brand h2 {
+  margin: 0;
+
+  font-family: "Italianno", cursive;
+
+  font-size: 68px;
+
+  line-height: .75;
+
+  font-weight: 400;
+
+  color: white;
+}
+
+
+.footer-brand > span {
+  display: block;
+
+  margin-top: 19px;
+
+  font-size: 9px;
+
+  letter-spacing: 8px;
+
+  color: white;
+}
+
+
+.footer-brand p {
+  margin: 32px 0 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: white;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+.footer-links {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 45px;
+}
+
+
+.footer-link-group {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 13px;
+}
+
+
+.footer-link-group > span,
+.footer-connect > span {
+  margin-bottom: 12px;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+
+  color: rgba(232, 244, 161, 0.945)
+}
+
+
+.footer-link-group a {
+  position: relative;
+
+  color: white;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+
+.footer-link-group a:hover {
+  transform: translateX(5px);
+
+  opacity: .55;
+}
+
+
+/* ========================================
+   CONNECT
+======================================== */
+
+.footer-connect h3 {
+  margin: 0 0 30px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(31px, 3vw, 48px);
+
+  line-height: .98;
+
+  font-weight: 400;
+
+  color: white;
+}
+
+
+.footer-connect h3 em {
+  font-family:
+    "Italianno",
+    cursive;
+
+  font-size: 1.25em;
+
+  font-weight: 400;
+}
+
+
+/* BUTTON */
+
+.footer-contact-btn {
+  width: fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid white;
+
+  color: white;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  text-decoration: none;
+
+  transition: gap .3s ease;
+}
+
+
+.footer-contact-btn b {
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+
+.footer-contact-btn:hover {
+  gap: 35px;
+}
+
+
+/* ========================================
+   BOTTOM BAR
+======================================== */
+
+.footer-bottom {
+  min-height: 78px;
+
+  padding: 0 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  background: black;
+
+  border-top:
+    1px solid rgba(23,35,29,.18);
+
+  box-sizing: border-box;
+}
+
+
+.footer-bottom span,
+.footer-bottom a {
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+
+.footer-bottom a {
+  transition: opacity .3s ease;
+}
+
+
+.footer-bottom a:hover {
+  opacity: .5;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .chandini-footer {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+
+  /* IMAGE */
+
+  .footer-art {
+    height: 260px;
+
+    overflow: hidden;
+  }
+
+
+  .footer-art img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /* CENTER CHANDINI NAME */
+    object-position: center;
+  }
+
+
+  /* MAIN */
+
+  .footer-main {
+    padding:
+      55px 22px
+      50px;
+
+    grid-template-columns:
+      1fr;
+
+    gap: 50px;
+  }
+
+
+  /* BRAND */
+
+  .footer-brand h2 {
+    font-size: 60px;
+  }
+
+
+  /* LINKS */
+
+  .footer-links {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 30px;
+  }
+
+
+  /* CONNECT */
+
+  .footer-connect h3 {
+    font-size: 38px;
+  }
+
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    min-height: auto;
+
+    padding:
+      25px 22px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 390px) {
+
+  .footer-art {
+    height: 220px;
+  }
+
+
+  .footer-main {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+
+  .footer-brand h2 {
+    font-size: 54px;
+  }
+
+
+  .footer-connect h3 {
+    font-size: 34px;
+  }
+
+
+  .footer-bottom {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+<div class="fixed-header">
+
+<nav class="navbar">
+
+
+  <!-- CENTER LOGO -->
+  <div class="logo">
+    Chandini
+  </div>
+
+  <!-- RIGHT SIDE MENU -->
+  <div class="nav-right">
+
+    <!-- MOBILE MENU ICON -->
+    <button class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+   
+
+  </div>
+
+</nav>
+
+<!-- SEARCH BOX -->
+<div class="search-box" id="searchBox">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search..."
+    autocomplete="off"
+  >
+</div>
+
+<!-- NAVBAR OUTSIDE -->
+<div class="below-nav-text">
+  Connects
+</div>
+
+<!-- MOBILE HORIZONTAL SCROLL MENU -->
+<div class="mobile-scroll-menu">
+
+  <a href="#manifest">MANIFEST</a>
+
+  <a href="#career">CAREER CONNECT</a>
+
+  <a href="#about">ABOUT</a>
+
+  <a href="#work">WORK</a>
+
+  <a href="#courses">COURSES</a>
+
+  <a href="#workshops">WORKSHOPS</a>
+
+  <a href="#planners">HABIT TRACKERS & PLANNERS</a>
+
+  <a href="#contact">CONTACT</a>
+
+</div>
+
+</div>
+
+<!-- ========================================
+     EDUCATION PORTFOLIO
+======================================== -->
+
+<main class="edu-portfolio">
+
+  <!-- LEFT INTRO / PC SIDEBAR -->
+<aside class="edu-sidebar">
+
+  <div class="edu-brand">
+    <h1>Chandini</h1>
+    <span>EDUCATOR • MENTOR</span>
+  </div>
+
+  <div class="edu-side-links">
+
+    <a href="#about">ABOUT <span>↗</span></a>
+    <a href="#work">WORK <span>↗</span></a>
+    <a href="#courses">COURSES <span>↗</span></a>
+    <a href="#workshops">WORKSHOPS <span>↗</span></a>
+    <a href="#contact">CONTACT <span>↗</span></a>
+  </div>
+
+  <div class="edu-social">
+
+    <!-- INSTAGRAM -->
+    <a
+  href="https://www.instagram.com/chandini_connects/"
+  target="_blank"
+  rel="noopener"
+  aria-label="Instagram"
+>
+  <svg viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+    <circle cx="12" cy="12" r="4"></circle>
+    <circle cx="17.5" cy="6.5" r="1"></circle>
+  </svg>
+</a>
+
+    <!-- WHATSAPP -->
+  <a
+  href="https://wa.me/91XXXXXXXXXX?text=Hi%20Chandini%20Connects"
+  target="_blank"
+  rel="noopener"
+  class="social-whatsapp"
+  aria-label="WhatsApp"
+>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16.04 3C8.84 3 3 8.75 3 15.84c0 2.26.6 4.47 1.73 6.41L3 28.55l6.49-1.69a13.15 13.15 0 0 0 6.54 1.66h.01C23.24 28.52 29 22.77 29 15.68 29 8.6 23.24 3 16.04 3zm0 23.35a10.96 10.96 0 0 1-5.59-1.51l-.4-.23-3.85 1 1.03-3.73-.25-.39a10.62 10.62 0 0 1-1.66-5.65c0-5.87 4.82-10.65 10.74-10.65 5.92 0 10.73 4.78 10.73 10.65 0 5.87-4.82 10.51-10.75 10.51zm5.89-7.86c-.32-.16-1.91-.93-2.21-1.04-.3-.11-.52-.16-.74.16-.22.32-.85 1.04-1.04 1.26-.19.22-.38.24-.71.08-.32-.16-1.36-.49-2.59-1.57-.96-.84-1.6-1.88-1.79-2.2-.19-.32-.02-.49.14-.65.15-.14.32-.38.49-.57.16-.19.22-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.77-1.01-2.42-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.15 1.12-1.15 2.74 0 1.61 1.18 3.17 1.34 3.39.16.22 2.32 3.51 5.62 4.92.79.34 1.4.54 1.88.69.79.25 1.51.21 2.08.13.63-.09 1.91-.77 2.18-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.62-.38z"/>
+  </svg>
+</a>
+
+  </div>
+
+</aside>
+
+
+  <!-- RIGHT CONTENT -->
+  <section class="edu-gallery" id="courses">
+
+  <!-- BIG -->
+  <article class="edu-card edu-feature">
+    <img src="https://picsum.photos/seed/chandini1/1200/900" alt="Manifestation Workshop">
+
+    <div class="edu-card-overlay">
+      <h2>Manifest Your Future</h2>
+      <p>MANIFESTATION • WORKSHOP</p>
+    </div>
+  </article>
+
+
+  <!-- SMALL 1 -->
+  <article class="edu-card">
+    <img src="https://picsum.photos/seed/chandini2/700/700" alt="Career Connect">
+
+    <div class="edu-card-overlay">
+      <h2>Career Connect</h2>
+      <p>CAREER GUIDANCE</p>
+    </div>
+  </article>
+
+
+  <!-- SMALL 2 -->
+  <article class="edu-card">
+    <img src="https://picsum.photos/seed/chandini3/700/700" alt="Courses">
+
+    <div class="edu-card-overlay">
+      <h2>Learn With Purpose</h2>
+      <p>COURSES</p>
+    </div>
+  </article>
+
+
+  <!-- BIG -->
+  <article class="edu-card">
+    <img src="https://picsum.photos/seed/chandini4/1200/800" alt="Habit Planner">
+
+    <div class="edu-card-overlay">
+      <h2>Build Better Habits</h2>
+      <p>TRACKERS & PLANNERS</p>
+    </div>
+  </article>
+
+
+  <!-- SMALL 1 -->
+  <article class="edu-card">
+    <img src="https://picsum.photos/seed/chandini5/700/700" alt="Workshops">
+
+    <div class="edu-card-overlay">
+      <h2>Interactive Workshops</h2>
+      <p>LEARN • GROW • ACHIEVE</p>
+    </div>
+  </article>
+
+
+  <!-- SMALL 2 -->
+  <article class="edu-card">
+    <img src="https://picsum.photos/seed/chandini6/700/700" alt="Personal Growth">
+
+    <div class="edu-card-overlay">
+      <h2>Personal Growth</h2>
+      <p>WITH CHANDINI</p>
+    </div>
+  </article>
+
+</section>
+
+</main>
+
+<!-- ========================================
+     ABOUT CHANDINI
+======================================== -->
+
+<section class="about-chandini" id="about">
+
+  <div class="about-heading">
+    <span>01 — ABOUT</span>
+    
+
+    <h2>
+      Helping students find clarity,<br>
+      build confidence & <em>grow with purpose.</em>
+    </h2>
+  </div>
+
+
+  <div class="about-layout">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-image">
+      <!-- later chandini photo tho replace chey -->
+      <img
+        src="chandini.jpeg"
+        alt="Chandini"
+      >
+    </div>
+
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+
+      <div class="about-copy">
+
+        <p>
+          I'm Chandini — an educator and mentor passionate about helping
+          students understand their potential and move forward with confidence.
+          Through career guidance, learning programs and practical workshops,
+          I make personal and academic growth feel simple and achievable.
+        </p>
+
+        <p>
+          From building better habits to choosing the right career path,
+          my goal is to create a space where students can learn, explore
+          and become the best version of themselves.
+        </p>
+
+      </div>
+
+
+  <!-- STATS -->
+<div class="about-stats">
+
+  <div class="about-stat">
+    <span>FOLLOWERS</span>
+    <strong class="about-counter"
+            data-target="50"
+            data-suffix="K+">0</strong>
+  </div>
+
+  <div class="about-stat">
+    <span>STUDENTS MENTORED</span>
+    <strong class="about-counter"
+            data-target="1"
+            data-suffix="K+">0</strong>
+  </div>
+
+  <div class="about-stat">
+    <span>WORKSHOPS</span>
+    <strong class="about-counter"
+            data-target="25"
+            data-suffix="+">0</strong>
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="work-services" id="work">
+
+  <div class="work-label">
+    <span>02 — WORK</span>
+    
+  </div>
+
+  <h2 class="work-title">What I can help you with</h2>
+
+
+  <!-- MANIFEST -->
+  <a href="manifest.html" class="work-row">
+
+    <span class="work-number">01</span>
+
+    <h3>Manifest</h3>
+
+    <p>
+      Build clarity, create powerful intentions and turn your goals
+      into meaningful action.
+    </p>
+
+    <span class="work-arrow">↗</span>
+
+  </a>
+
+
+  <!-- CAREER CONNECT -->
+  <a href="#career" class="work-row">
+
+    <span class="work-number">02</span>
+
+    <h3>Career Connect</h3>
+
+    <p>
+      Guidance designed to help students understand their strengths,
+      explore career paths and make confident decisions.
+    </p>
+
+    <span class="work-arrow">↗</span>
+
+  </a>
+
+
+  <!-- HABIT TRACKERS -->
+  <a href="#planners" class="work-row">
+
+    <span class="work-number">03</span>
+
+    <h3>Habit Trackers &amp; Planners</h3>
+
+    <p>
+      Simple tools to build consistency, stay organized and turn
+      everyday habits into long-term growth.
+    </p>
+
+    <span class="work-arrow">↗</span>
+
+  </a>
+
+</section>
+
+<!-- ========================================
+     INSTAGRAM REELS SHOWCASE
+======================================== -->
+
+<section class="reels-showcase" id="reelsShowcase">
+
+  <div class="reels-heading">
+    <span>WATCH • EXPERIENCE • CONNECT</span>
+
+    <h2>
+      Stories in <em>motion.</em>
+    </h2>
+  </div>
+
+
+  <div class="reels-stage">
+     <div class="reels-track">
+
+    <!-- REEL 1 -->
+    <div class="reel-card active">
+      <video muted playsinline preload="auto">
+        <source
+          src="video1.mp4"
+          type="video/mp4">
+      </video>
+
+      
+    </div>
+
+
+    <!-- REEL 2 -->
+    <div class="reel-card">
+      <video muted playsinline preload="auto">
+        <source
+          src="video1.mp4"
+          type="video/mp4">
+      </video>
+
+      
+    </div>
+
+
+    <!-- REEL 3 -->
+    <div class="reel-card">
+      <video muted playsinline preload="auto">
+        <source
+          src="video1.mp4"
+          type="video/mp4">
+      </video>
+
+      
+    </div>
+
+
+    <!-- REEL 4 -->
+    <div class="reel-card">
+      <video muted playsinline preload="auto">
+        <source
+          src="video1.mp4"
+          type="video/mp4">
+      </video>
+
+      
+    </div>
+
+
+    <!-- REEL 5 -->
+    <div class="reel-card">
+      <video muted playsinline preload="auto">
+        <source
+          src="video1.mp4"
+          type="video/mp4">
+      </video>
+
+     
+    </div>
+    </div>
+
+
+  
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     QUOTE / TESTIMONIAL SECTION
+======================================== -->
+
+<section class="chandini-quote-section">
+
+  <div class="quote-top-line"></div>
+
+  <blockquote class="chandini-quote">
+
+    “I don’t believe in simply teaching what to do.
+    I believe in helping people understand
+    <em>why it matters</em> — so they can grow with confidence,
+    create with purpose, and build something of their own.”
+
+  </blockquote>
+
+  <div class="quote-author">
+    CHANDINI — FOUNDER, CHANDINI CONNECTS
+  </div>
+
+  <div class="quote-bottom-line"></div>
+
+</section>
+
+<!-- ========================================
+     CHANDINI CONNECTS FINAL FOOTER
+======================================== -->
+
+<footer class="chandini-footer">
+
+  <!-- SILHOUETTE IMAGE -->
+  <div class="footer-art">
+    <img src="footer.webp" alt="Chandini Connects">
+  </div>
+
+
+  <!-- FOOTER CONTENT -->
+  <div class="footer-main">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <h2>Chandini</h2>
+      <span>CONNECTS</span>
+
+      <p>
+        Learn with clarity.<br>
+        Grow with confidence.<br>
+        Create with purpose.
+      </p>
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <div class="footer-links">
+
+      <div class="footer-link-group">
+        <span>EXPLORE</span>
+
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#courses">Courses</a>
+        <a href="#workshops">Workshops</a>
+      </div>
+
+
+      <div class="footer-link-group">
+        <span>CONNECT</span>
+
+        <a href="#contact">Contact</a>
+
+        <a href="https://www.instagram.com/chandini_connects/"
+           target="_blank">
+          Instagram
+        </a>
+
+        <a href="#">
+          WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="footer-connect">
+
+      <span>LET'S CONNECT</span>
+
+      <h3>
+        Let’s learn,<br>
+        grow & <em>create.</em>
+      </h3>
+
+      <a href="#contact" class="footer-contact-btn">
+        START A CONVERSATION
+        <b>↗</b>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 CHANDINI CONNECTS
+    </span>
+
+    <span>
+      EDUCATOR • MENTOR • CREATOR
+    </span>
+
+    <a href="#top">
+      BACK TO TOP ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+  <script>
+
+    /* ========================================
+   ABOUT STATS COUNTER
+======================================== */
+
+const aboutCounters =
+  document.querySelectorAll(".about-counter");
+
+const aboutCounterObserver =
+  new IntersectionObserver(function(entries, observer) {
+
+    entries.forEach(function(entry) {
+
+      if (!entry.isIntersecting) return;
+
+      const counter = entry.target;
+
+      const target =
+        Number(counter.dataset.target);
+
+      const suffix =
+        counter.dataset.suffix || "";
+
+      const duration = 1800;
+
+      const startTime =
+        performance.now();
+
+
+      function animateCounter(currentTime) {
+
+        const elapsed =
+          currentTime - startTime;
+
+        const progress =
+          Math.min(elapsed / duration, 1);
+
+        /* SMOOTH SLOW-DOWN */
+        const eased =
+          1 - Math.pow(1 - progress, 3);
+
+        const value =
+          Math.floor(target * eased);
+
+
+        counter.textContent =
+          value + suffix;
+
+
+        if (progress < 1) {
+
+          requestAnimationFrame(
+            animateCounter
+          );
+
+        } else {
+
+          /* EXACT FINAL VALUE */
+
+          counter.textContent =
+            target + suffix;
+
+        }
+
+      }
+
+
+      requestAnimationFrame(
+        animateCounter
+      );
+
+      /* RUN ONLY ONCE */
+
+      observer.unobserve(counter);
+
+    });
+
+  }, {
+    threshold: 0.4
+  });
+
+
+aboutCounters.forEach(function(counter) {
+
+  aboutCounterObserver.observe(counter);
+
+});
+
+/* ========================================
+   INSTAGRAM REELS ROTATING CAROUSEL
+======================================== */
+
+function initReelsCarousel() {
+
+  const cards = Array.from(
+    document.querySelectorAll(".reel-card")
+  );
+
+  const currentText =
+    document.getElementById("reelCurrent");
+
+  const progress =
+    document.getElementById("reelsProgress");
+
+
+  if (!cards.length) return;
+
+
+  let activeIndex = 0;
+  let timer = null;
+  let progressTimer = null;
+
+  const playTime = 300000;
+
+
+  /* ========================================
+     CARD POSITION
+  ======================================== */
+
+  function getPosition(index) {
+
+    let diff = index - activeIndex;
+
+    const total = cards.length;
+
+
+    if (diff > total / 2) {
+      diff -= total;
+    }
+
+
+    if (diff < -total / 2) {
+      diff += total;
+    }
+
+
+    return diff;
+  }
+
+
+  /* ========================================
+     PROGRESS
+  ======================================== */
+
+  function startProgress() {
+
+    clearInterval(progressTimer);
+
+    if (!progress) return;
+
+
+    progress.style.transition = "none";
+    progress.style.width = "0%";
+
+
+    requestAnimationFrame(function () {
+
+      requestAnimationFrame(function () {
+
+        progress.style.transition =
+          "width 5s linear";
+
+        progress.style.width =
+          "100%";
+
+      });
+
+    });
+
+  }
+
+
+  /* ========================================
+     UPDATE CAROUSEL
+  ======================================== */
+
+  function updateCarousel() {
+
+    clearTimeout(timer);
+
+    startProgress();
+
+
+    cards.forEach(function(card, index) {
+
+      const video =
+        card.querySelector("video");
+
+
+      card.classList.remove(
+        "left",
+        "center",
+        "right",
+        "hidden-left",
+        "hidden-right"
+      );
+
+
+      const position =
+        getPosition(index);
+
+
+      /* LEFT */
+
+      if (position === -1) {
+
+        card.classList.add("left");
+
+      }
+
+
+      /* CENTER */
+
+      else if (position === 0) {
+
+        card.classList.add("center");
+
+      }
+
+
+      /* RIGHT */
+
+      else if (position === 1) {
+
+        card.classList.add("right");
+
+      }
+
+
+      /* HIDDEN LEFT */
+
+      else if (position < -1) {
+
+        card.classList.add(
+          "hidden-left"
+        );
+
+      }
+
+
+      /* HIDDEN RIGHT */
+
+      else {
+
+        card.classList.add(
+          "hidden-right"
+        );
+
+      }
+
+
+      /* STOP NON ACTIVE VIDEOS */
+
+      video.pause();
+
+      try {
+
+        video.currentTime = 0;
+
+      } catch (e) {}
+
+    });
+
+
+
+    /* ========================================
+       PLAY MIDDLE VIDEO
+    ======================================== */
+
+    const activeCard =
+      cards[activeIndex];
+
+
+    const activeVideo =
+      activeCard.querySelector("video");
+
+
+    activeVideo.muted = true;
+
+    activeVideo.defaultMuted = true;
+
+    activeVideo.playsInline = true;
+
+
+    activeVideo
+      .play()
+      .catch(function(error) {
+
+        console.log(
+          "Video autoplay blocked:",
+          error
+        );
+
+      });
+
+
+
+    /* COUNTER */
+
+    if (currentText) {
+
+      currentText.textContent =
+        String(activeIndex + 1)
+        .padStart(2, "0");
+
+    }
+
+
+
+    /* ========================================
+       AUTO ROTATE AFTER 5 SEC
+    ======================================== */
+
+    timer = setTimeout(function () {
+
+      activeIndex =
+        (activeIndex + 1) %
+        cards.length;
+
+
+      updateCarousel();
+
+    }, playTime);
+
+  }
+
+
+
+  /* ========================================
+     CLICK LEFT / RIGHT VIDEO
+  ======================================== */
+
+  cards.forEach(function(card, index) {
+
+    card.addEventListener(
+      "click",
+      function () {
+
+        if (index === activeIndex) {
+          return;
+        }
+
+
+        activeIndex = index;
+
+        updateCarousel();
+
+      }
+    );
+
+  });
+
+
+
+  /* ========================================
+     START
+  ======================================== */
+
+  updateCarousel();
+
+}
+
+
+
+/* ========================================
+   SAFE START
+======================================== */
+
+if (
+  document.readyState === "loading"
+) {
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initReelsCarousel
+  );
+
+} else {
+
+  initReelsCarousel();
+
+}
+/* ========================================
+   WORK ITEMS - ONE BY ONE ON SCROLL
+======================================== */
+
+const workRows = document.querySelectorAll(".work-row");
+
+const workObserver = new IntersectionObserver(
+  function(entries) {
+
+    entries.forEach(function(entry) {
+
+      if (entry.isIntersecting) {
+
+        const index =
+          Array.from(workRows).indexOf(entry.target);
+
+        setTimeout(function() {
+          entry.target.classList.add("work-show");
+        }, index * 250);
+
+        workObserver.unobserve(entry.target);
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.25
+  }
+);
+
+workRows.forEach(function(row) {
+  workObserver.observe(row);
+});
+
+
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+  navLinks.classList.toggle("open");
+});
+
+
+document.querySelectorAll(".dropdown-item .nav-title")
+.forEach(function(title) {
+
+  title.addEventListener("click", function(e) {
+
+    if (window.innerWidth <= 768) {
+
+      const item = this.parentElement;
+
+      document.querySelectorAll(".dropdown-item")
+      .forEach(function(other) {
+
+        if (other !== item) {
+          other.classList.remove("active");
+        }
+
+      });
+
+      item.classList.toggle("active");
+    }
+
+  });
+
+});
+
+
+const searchBtn = document.getElementById("searchBtn");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchInput");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+
+/* =========================
+   SEARCH
+========================= */
+
+searchBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+
+  searchBox.classList.toggle("show");
+
+  if (searchBox.classList.contains("show")) {
+    setTimeout(() => {
+      searchInput.focus();
+    }, 100);
+  }
+});
+
+
+/* CLOSE SEARCH WHEN CLICKING OUTSIDE */
+
+document.addEventListener("click", function (e) {
+
+  if (
+    !searchBox.contains(e.target) &&
+    !searchBtn.contains(e.target)
+  ) {
+    searchBox.classList.remove("show");
+  }
+
+});
+
+
+/* ESC = CLOSE SEARCH */
+
+document.addEventListener("keydown", function (e) {
+
+  if (e.key === "Escape") {
+    searchBox.classList.remove("show");
+  }
+
+});
+
+
+/* SEARCH ENTER */
+
+searchInput.addEventListener("keydown", function (e) {
+
+  if (e.key === "Enter") {
+
+    const searchText = searchInput.value.trim();
+
+    if (searchText === "") return;
+
+    console.log("Searching:", searchText);
+
+    // NEXT: ikkada actual website search logic add cheyochu
+  }
+
+});
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+whatsappBtn.addEventListener("click", function (e) {
+
+  e.preventDefault();
+
+  const phoneNumber = "91XXXXXXXXXX";
+
+  const message = encodeURIComponent(
+    "Hi Chandini Connects, I would like to know more."
+  );
+
+  const whatsappURL =
+    "https://wa.me/" + phoneNumber + "?text=" + message;
+
+  window.open(whatsappURL, "_blank");
+
+});
+</script>
+</body>
+</html>
