@@ -1,0 +1,4263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Chandini Connects</title>
+
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+
+      background: #f7f7f4;
+
+      font-family: Arial, sans-serif;
+    }
+
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .fixed-header {
+      position: relative;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 65px;
+
+      background: #e6e6a1;
+
+      z-index: 1000;
+
+      border-bottom:
+        1px solid rgba(34, 34, 34, .22);
+    }
+
+
+
+    /* =========================================
+       HEADER NAVBAR
+    ========================================= */
+
+    .navbar {
+      position: relative;
+
+      width: 100%;
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #efbe73;
+
+      padding: 0 35px;
+    }
+
+
+
+    /* =========================================
+       CHANDINI
+    ========================================= */
+
+    .logo {
+      position: absolute;
+
+      left: 50%;
+      top: 47%;
+
+      transform: translate(-50%, -50%);
+
+      width: auto;
+      height: auto;
+
+      padding-top: 40px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 45px;
+      font-weight: 300;
+
+      line-height: 1;
+
+      color: #220123;
+
+      text-align: center;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* =========================================
+       CONNECTS
+    ========================================= */
+
+    .below-nav-text {
+      position: absolute;
+
+      left: 51%;
+      top: 68px;
+
+      transform: translateX(-50%);
+
+      width: auto;
+      height: auto;
+
+      margin: 0;
+
+      padding: 0 0 0 80px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 20px;
+      font-weight: 400;
+
+      line-height: 1;
+
+      text-align: center;
+
+      color: #220123;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* =========================================
+       TRANSPARENT MENU
+    ========================================= */
+
+    .main-menu {
+      width: 100%;
+
+      padding: 28px 15px 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: transparent;
+    }
+
+
+
+    /* =========================================
+       MENU INNER
+    ========================================= */
+
+    .menu-inner {
+      width: 100%;
+      max-width: 650px;
+
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      background: transparent;
+    }
+
+
+
+    /* =========================================
+       MENU ITEM
+    ========================================= */
+
+    .menu-item {
+      width: auto;
+
+      flex: none;
+
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 9px 14px;
+
+      text-decoration: none;
+
+      color: #220123;
+
+      background: transparent;
+
+      border-radius: 11px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      white-space: nowrap;
+
+      cursor: pointer;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+
+
+    /* =========================================
+       ICONS
+    ========================================= */
+
+    .menu-item i {
+      font-size: 14px;
+
+      transition: transform .25s ease;
+    }
+
+
+
+    /* =========================================
+       CURRENT PAGE ACTIVE
+    ========================================= */
+
+    .menu-item.active {
+      background: #220123 !important;
+
+      color: #ffffff !important;
+
+      box-shadow:
+        0 5px 14px rgba(34, 1, 35, .18);
+    }
+
+
+
+    /* =========================================
+       HOVER
+    ========================================= */
+
+    .menu-item:hover {
+      background: #220123;
+
+      color: #ffffff;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 5px 14px rgba(34, 1, 35, .18);
+    }
+
+
+    .menu-item:hover i {
+      transform: scale(1.1);
+    }
+
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 768px) {
+
+
+      /* HEADER SAME AS PC */
+
+      .fixed-header {
+        height: 65px;
+      }
+
+
+      .navbar {
+        height: 70px;
+
+        padding: 0 15px;
+      }
+
+
+      .logo {
+        left: 50%;
+        top: 47%;
+
+        transform: translate(-50%, -50%);
+
+        padding-top: 40px;
+
+        font-size: 45px;
+      }
+
+
+      .below-nav-text {
+        left: 51%;
+        top: 68px;
+
+        transform: translateX(-50%);
+
+        padding-left: 80px;
+
+        font-size: 20px;
+
+        line-height: 1;
+      }
+
+
+
+      /* MOBILE NAVIGATION */
+
+      .main-menu {
+        width: 100%;
+
+        padding: 28px 5px 8px;
+
+        background: transparent;
+      }
+
+
+      .menu-inner {
+        width: 100%;
+
+        max-width: none;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 3px;
+      }
+
+
+      .menu-item {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 9px 4px;
+
+        gap: 4px;
+
+        font-size: 10px;
+
+        border-radius: 9px;
+      }
+
+
+      .menu-item i {
+        font-size: 12px;
+      }
+
+    }
+
+
+
+    /* =========================================
+       VERY SMALL MOBILE
+    ========================================= */
+
+    @media (max-width: 390px) {
+
+      .menu-item {
+        font-size: 9px;
+
+        padding: 8px 2px;
+
+        gap: 3px;
+      }
+
+
+      .menu-item i {
+        font-size: 11px;
+      }
+
+    }
+
+
+    /* =====================================================
+   MOBILE ONLY - FLOATING BOTTOM NAVBAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Main menu becomes bottom floating navigation */
+
+  .main-menu {
+    position: fixed;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 20px);
+    max-width: 430px;
+
+    height: 58px;
+
+    padding: 6px 7px;
+
+    background: rgba(15, 15, 17, 0.94);
+
+    border-radius: 18px;
+
+    z-index: 9999;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.25),
+      inset 0 1px 0 rgba(255,255,255,.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+
+  .menu-inner {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 3px;
+  }
+
+
+  /* -----------------------------------------
+     NORMAL NAV ITEM
+  ----------------------------------------- */
+
+  .menu-item {
+    flex: 1;
+
+    width: auto;
+    height: 44px;
+
+    min-width: 0;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    background: transparent !important;
+
+    color: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+
+    overflow: hidden;
+
+    transition:
+      flex .28s ease,
+      background .28s ease,
+      padding .28s ease;
+  }
+
+
+  /* ICON */
+
+  .menu-item i {
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    color: #ffffff;
+
+    transition: transform .25s ease;
+  }
+
+
+  /* -----------------------------------------
+     HIDE TEXT ON NORMAL ITEMS
+  ----------------------------------------- */
+
+  .menu-item span {
+    display: block;
+
+    max-width: 0;
+
+    margin-left: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    color: #ffffff;
+
+    transition:
+      max-width .28s ease,
+      opacity .2s ease,
+      margin-left .28s ease;
+  }
+
+
+  /* =========================================
+     ACTIVE ITEM
+  ========================================= */
+
+  .menu-item.active {
+    flex: 1.65;
+
+    padding: 0 12px;
+
+    gap: 0;
+
+    background:
+      linear-gradient(
+        135deg,
+        #8b00ff,
+        #c000ff
+      ) !important;
+
+    color: #ffffff !important;
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 5px 16px rgba(167,0,255,.35) !important;
+  }
+
+
+  .menu-item.active i {
+    color: #ffffff;
+
+    transform: scale(1.03);
+  }
+
+
+  /* SHOW TEXT ONLY FOR ACTIVE */
+
+  .menu-item.active span {
+    max-width: 110px;
+
+    margin-left: 7px;
+
+    opacity: 1;
+
+    color: #ffffff;
+  }
+
+
+  /* -----------------------------------------
+     REMOVE DESKTOP HOVER EFFECT ON MOBILE
+  ----------------------------------------- */
+
+  .menu-item:hover {
+    background: transparent;
+
+    color: #ffffff;
+
+    transform: none;
+
+    box-shadow: none;
+  }
+
+
+  .menu-item.active:hover {
+    background:
+      linear-gradient(
+        135deg,
+        #8b00ff,
+        #c000ff
+      ) !important;
+
+    color: #ffffff;
+  }
+
+
+  /* Page content bottom navbar kinda
+     hide avvakunda space */
+
+  body {
+    padding-bottom: 85px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+  .main-menu {
+    width: calc(100% - 14px);
+
+    bottom: 10px;
+
+    height: 56px;
+
+    padding: 6px;
+  }
+
+
+  .menu-item {
+    height: 42px;
+  }
+
+
+  .menu-item i {
+    font-size: 16px;
+  }
+
+
+  .menu-item.active {
+    flex: 1.7;
+
+    padding: 0 9px;
+  }
+
+
+  .menu-item.active span {
+    margin-left: 5px;
+
+    font-size: 9px;
+  }
+
+}/* =====================================================
+   MOBILE ONLY NAVBAR
+   BLACK BAR + ORANGE ACTIVE CIRCLE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-bottom: 85px;
+  }
+
+
+  /* =========================
+     BOTTOM BLACK BAR
+  ========================= */
+
+  .main-menu {
+    position: fixed !important;
+
+    left: 50% !important;
+    bottom: 14px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: calc(100% - 30px) !important;
+    max-width: 390px !important;
+
+    height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 8px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #111111 !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    box-shadow:
+      0 8px 22px rgba(0,0,0,.22) !important;
+
+    z-index: 99999 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     INNER
+  ========================= */
+
+  .menu-inner {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: space-around !important;
+
+    gap: 0 !important;
+
+    background: transparent !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     NAV ITEM
+  ========================= */
+
+  .menu-item {
+    position: relative !important;
+
+    flex: 1 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    text-decoration: none !important;
+
+    transform: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     DEFAULT ICON
+  ========================= */
+
+  .menu-item i {
+    position: relative !important;
+
+    z-index: 3 !important;
+
+    margin: 0 !important;
+
+    font-size: 14px !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    transform: none !important;
+
+    transition:
+      transform .3s ease,
+      color .3s ease !important;
+  }
+
+
+  /* TEXT HIDE ON MOBILE */
+
+  .menu-item span {
+    display: none !important;
+  }
+
+
+  /* ==================================================
+     ACTIVE ORANGE CIRCLE
+  ================================================== */
+
+  .menu-item.active {
+    background: transparent !important;
+
+    color: #ffffff !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  /* ORANGE CIRCLE */
+
+  .menu-item.active::before {
+    content: "";
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: -13px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    border-radius: 50% !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        #ff9a62,
+        #f36d3e
+      ) !important;
+
+    border: 4px solid #f7f7f4 !important;
+
+    box-sizing: content-box !important;
+
+    box-shadow:
+      0 4px 12px rgba(243,109,62,.35) !important;
+
+    z-index: 1 !important;
+  }
+
+
+  /* ACTIVE ICON MOVES UP */
+
+  .menu-item.active i {
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+
+    transform: translateY(-13px) !important;
+
+    z-index: 5 !important;
+  }
+
+
+  /* =========================
+     REMOVE MOBILE HOVER
+  ========================= */
+
+  .menu-item:hover {
+    background: transparent !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  .menu-item:hover i {
+    transform: none !important;
+  }
+
+
+  /* ACTIVE HOVER SAME */
+
+  .menu-item.active:hover {
+    background: transparent !important;
+
+    color: #ffffff !important;
+  }
+
+
+  .menu-item.active:hover i {
+    color: #ffffff !important;
+
+    transform: translateY(-13px) !important;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+  .main-menu {
+    width: calc(100% - 22px) !important;
+
+    bottom: 10px !important;
+
+    height: 50px !important;
+  }
+
+
+  .menu-item {
+    height: 50px !important;
+  }
+
+
+  .menu-item.active::before {
+    width: 36px !important;
+    height: 36px !important;
+
+    top: -13px !important;
+  }
+
+
+  .menu-item i {
+    font-size: 13px !important;
+  }
+
+
+  .menu-item.active i {
+    font-size: 13px !important;
+
+    transform: translateY(-13px) !important;
+  }
+
+}
+
+/* =========================================
+   MOBILE NAV NAMES
+========================================= */
+
+@media (max-width: 768px) {
+
+  .menu-item {
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+
+  /* ALL NAMES */
+  .menu-item span {
+    display: block !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 4px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: max-content !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 8px !important;
+    font-weight: 500 !important;
+
+    line-height: 1 !important;
+
+    color: rgba(255,255,255,.70) !important;
+
+    white-space: nowrap !important;
+
+    z-index: 5 !important;
+  }
+
+
+  /* NORMAL ICON LITTLE UP */
+
+  .menu-item:not(.active) i {
+    transform: translateY(-6px) !important;
+  }
+
+
+  /* ACTIVE ICON */
+
+  .menu-item.active i {
+    transform: translateY(-13px) !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* ACTIVE NAME */
+
+  .menu-item.active span {
+    color: #ffffff !important;
+
+    font-weight: 600 !important;
+  }
+
+
+  /* NORMAL HOVER ICON POSITION */
+
+  .menu-item:not(.active):hover i {
+    transform: translateY(-6px) !important;
+  }
+
+
+  /* ACTIVE HOVER ICON POSITION */
+
+  .menu-item.active:hover i {
+    transform: translateY(-13px) !important;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 390px) {
+
+  .menu-item span {
+    font-size: 7px !important;
+    bottom: 4px !important;
+  }
+
+}
+
+/* =====================================================
+   PC ONLY - HIDE MAIN MENU + SHOW BACK BUTTON
+===================================================== */
+
+/* DEFAULT = DESKTOP */
+
+.main-menu {
+  display: none;
+}
+
+.pc-back-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  padding: 22px 35px 16px;
+
+  background: transparent;
+}
+
+.pc-back-button a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  color: #220123;
+
+  background: transparent;
+
+  border: 1px solid rgba(34, 1, 35, .25);
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+.pc-back-button a:hover {
+  background: #220123;
+  color: #ffffff;
+
+  transform: translateX(-2px);
+}
+
+.pc-back-button i {
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* PC BACK BUTTON HIDE */
+
+  .pc-back-button {
+    display: none;
+  }
+
+
+  /* MOBILE NAVBAR SHOW */
+
+  .main-menu {
+    display: flex;
+  }
+
+}
+
+/* =========================================
+   FINAL FIXED HEADER OVERRIDE
+   KEEP THIS AT THE VERY END
+========================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 65px !important;
+
+  z-index: 999999 !important;
+
+  background: #e6e6a1 !important;
+}
+
+
+/* HEADER FIXED KABATTI CONTENT DOWN */
+
+body {
+  padding-top: 65px !important;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 769px) {
+
+  .main-menu {
+    display: none !important;
+  }
+
+  .pc-back-button {
+    display: flex !important;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 65px !important;
+    padding-bottom: 85px !important;
+  }
+
+  .main-menu {
+    display: flex !important;
+  }
+
+  .pc-back-button {
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================
+   BACK BUTTON INSIDE HEADER - PC ONLY
+========================================= */
+
+.header-back-btn {
+  position: absolute;
+
+  left: 28px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  color: #220123;
+
+  background: rgb(255, 255, 255);
+
+  border: 1px solid rgba(34,1,35,.18);
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  z-index: 10;
+
+  transition: .25s ease;
+}
+
+.header-back-btn:hover {
+  background: #220123;
+  color: #fff;
+}
+
+.header-back-btn i {
+  font-size: 12px;
+}
+
+
+/* MOBILE - BACK BUTTON HIDE */
+
+@media (max-width: 768px) {
+
+  .header-back-btn {
+    display: none !important;
+  }
+
+}
+
+/* =====================================================
+   CHANDINI CONNECTS FOOTER
+   BLACK + WHITE VERSION
+===================================================== */
+
+.chandini-footer {
+  position: relative;
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #000;
+  color: #fff;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FOOTER IMAGE
+===================================================== */
+
+.footer-art {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  line-height: 0;
+
+  background: #f7f7f4;
+}
+
+.footer-art img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.footer-main {
+  width: 100%;
+
+  margin: 0;
+
+  padding:
+    60px
+    max(35px, calc((100% - 1180px) / 2));
+
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    1fr
+    1fr;
+
+  align-items: start;
+
+  gap: 70px;
+
+  background: #000;
+
+  border-top:
+    1px solid rgba(255,255,255,.15);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.footer-brand h2 {
+  margin: 0;
+
+  font-family: "Bodoni Moda", serif;
+
+  font-size: 55px;
+  font-weight: 400;
+
+  line-height: .9;
+
+  letter-spacing: -2px;
+
+  color: #fff;
+}
+
+.footer-brand > span {
+  display: block;
+
+  margin-top: 13px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 7px;
+
+  color: #fff;
+}
+
+.footer-brand p {
+  margin: 28px 0 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.65);
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.footer-links {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 40px;
+}
+
+.footer-link-group {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+.footer-link-group > span,
+.footer-connect > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: rgba(229, 159, 47, 0.949);
+}
+
+.footer-link-group a {
+  display: inline-block;
+
+  font-family: "Bodoni Moda", serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+.footer-link-group a:hover {
+  transform: translateX(4px);
+
+  opacity: .55;
+}
+
+
+/* =====================================================
+   CONNECT
+===================================================== */
+
+.footer-connect h3 {
+  margin: 0 0 27px;
+
+  font-family: "Bodoni Moda", serif;
+
+  font-size: clamp(31px, 3vw, 45px);
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -1px;
+
+  color: #fff;
+}
+
+.footer-connect h3 em {
+  color: #fff;
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
+.footer-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.footer-socials a {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255,255,255,.35);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    color .3s ease;
+}
+
+.footer-socials a i {
+  color: inherit;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-4px);
+
+  background: #fff;
+
+  color: #000;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+  width: 100%;
+
+  min-height: 68px;
+
+  padding:
+    0
+    max(35px, calc((100% - 1180px) / 2));
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  background: #000;
+
+  border-top:
+    1px solid rgba(255,255,255,.15);
+
+  box-sizing: border-box;
+}
+
+.footer-bottom span,
+.footer-bottom a {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color: rgba(255,255,255,.65);
+
+  text-decoration: none;
+}
+
+.footer-bottom a {
+  transition: color .25s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
+
+.footer-brand,
+.footer-links,
+.footer-connect {
+  opacity: 0;
+
+  transform: translateY(22px);
+
+  transition:
+    opacity .8s cubic-bezier(.22,1,.36,1),
+    transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.chandini-footer.footer-visible .footer-brand {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: .05s;
+}
+
+.chandini-footer.footer-visible .footer-links {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: .17s;
+}
+
+.chandini-footer.footer-visible .footer-connect {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: .29s;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .footer-main {
+    padding: 50px 35px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 45px;
+  }
+
+  .footer-connect {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    padding: 0 35px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .chandini-footer {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    background: #000;
+  }
+
+
+  /* IMAGE */
+
+  .footer-art {
+    width: 100%;
+
+    height: 220px;
+  }
+
+  .footer-art img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+  }
+
+
+  /* MAIN */
+
+  .footer-main {
+    padding:
+      43px 20px
+      45px;
+
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    background: #000;
+  }
+
+
+  /* BRAND */
+
+  .footer-brand h2 {
+    font-size: 45px;
+  }
+
+  .footer-brand > span {
+    margin-top: 11px;
+
+    font-size: 7px;
+
+    letter-spacing: 6px;
+  }
+
+  .footer-brand p {
+    margin-top: 21px;
+
+    font-size: 10px;
+  }
+
+
+  /* LINKS */
+
+  .footer-links {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 25px;
+  }
+
+  .footer-link-group a {
+    font-size: 13px;
+  }
+
+
+  /* CONNECT */
+
+  .footer-connect h3 {
+    max-width: 280px;
+
+    font-size: 35px;
+  }
+
+
+  /* SOCIALS */
+
+  .footer-socials a {
+    width: 37px;
+    height: 37px;
+
+    font-size: 13px;
+  }
+
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    min-height: auto;
+
+    padding:
+      24px 20px
+      100px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    background: #000;
+  }
+
+  .footer-bottom span,
+  .footer-bottom a {
+    font-size: 6.5px;
+
+    letter-spacing: 1.6px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+  .footer-art {
+    height: 195px;
+  }
+
+  .footer-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-brand h2 {
+    font-size: 41px;
+  }
+
+  .footer-connect h3 {
+    font-size: 32px;
+  }
+
+  .footer-bottom {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    padding-bottom: 95px;
+  }
+}
+.email-link{
+  position:relative;
+  z-index:999;
+  pointer-events:auto !important;
+  cursor:pointer;
+}
+/* =========================================
+   HABIT TRACKER — JOURNAL HERO
+========================================= */
+
+.hp-journal-hero{
+  position:relative;
+
+  width:100%;
+  height:calc(100vh - 70px);
+  min-height:650px;
+
+  overflow:hidden;
+
+  background:#faf9f5;
+
+  color:#161616;
+}
+
+
+/* =========================================
+   PAPER GRID
+========================================= */
+
+.hp-paper-grid{
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.5;
+
+  background-image:
+    linear-gradient(
+      rgba(20,20,20,.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20,20,20,.045) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    34px 34px;
+}
+
+
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.hp-date{
+  position:absolute;
+
+  top:38px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  color:rgba(0,0,0,.48);
+}
+
+
+.hp-date i{
+  display:block;
+
+  width:22px;
+  height:1px;
+
+  background:#efbe73;
+}
+
+
+/* =========================================
+   MAIN CENTER
+========================================= */
+
+.hp-main{
+  position:absolute;
+
+  top:48%;
+  left:50%;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-1deg);
+
+  text-align:center;
+
+  z-index:3;
+}
+
+
+.hp-star{
+  margin-bottom:13px;
+
+  font-size:18px;
+
+  color:#efbe73;
+}
+
+
+.hp-kicker{
+  display:block;
+
+  margin-bottom:18px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:3.5px;
+
+  color:rgba(0,0,0,.4);
+}
+
+
+.hp-main h1{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(78px,9vw,140px);
+  font-weight:400;
+
+  line-height:.72;
+
+  letter-spacing:-7px;
+
+  color:#111;
+}
+
+
+.hp-main h1 em{
+  position:relative;
+
+  display:inline-block;
+
+  padding:0 10px;
+
+  font-weight:400;
+  font-style:italic;
+
+  color:#c78a32;
+}
+
+
+/* HAND DRAWN CIRCLE AROUND 1% */
+
+.hp-main h1 em::after{
+  content:"";
+
+  position:absolute;
+
+  inset:-7px -14px -3px;
+
+  border:1.5px solid #efbe73;
+
+  border-radius:
+    48% 52% 45% 55% /
+    53% 44% 56% 47%;
+
+  transform:rotate(-6deg);
+}
+
+
+.hp-main p{
+  margin:35px 0 0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:20px;
+  font-style:italic;
+
+  line-height:1.35;
+
+  color:rgba(0,0,0,.68);
+}
+
+
+/* =========================================
+   MINI TRACKER
+========================================= */
+
+.hp-mini-tracker{
+  position:absolute;
+
+  left:15%;
+  top:35%;
+
+  width:125px;
+
+  transform:rotate(-3deg);
+}
+
+
+.hp-mini-title{
+  display:block;
+
+  padding-bottom:8px;
+  margin-bottom:6px;
+
+  border-bottom:1px solid rgba(0,0,0,.18);
+
+  font-family:Arial,sans-serif;
+
+  font-size:5px;
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  color:rgba(0,0,0,.4);
+}
+
+
+.hp-day{
+  height:29px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px dashed rgba(0,0,0,.12);
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+
+  letter-spacing:1px;
+}
+
+
+.hp-day b{
+  width:15px;
+  height:15px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#efbe73;
+
+  font-size:8px;
+  font-weight:400;
+}
+
+
+.hp-day.muted{
+  opacity:.45;
+}
+
+
+.hp-day.muted b{
+  background:transparent;
+
+  border:1px solid rgba(0,0,0,.3);
+}
+
+
+/* =========================================
+   STREAK
+========================================= */
+
+.hp-streak{
+  position:absolute;
+
+  right:14%;
+  top:34%;
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  transform:rotate(4deg);
+}
+
+
+.hp-streak-number{
+  font-family:"Bodoni Moda",serif;
+
+  font-size:58px;
+
+  line-height:1;
+
+  color:#111;
+}
+
+
+.hp-streak > div{
+  display:flex;
+  flex-direction:column;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  line-height:1.6;
+
+  letter-spacing:2px;
+
+  color:rgba(0,0,0,.5);
+}
+
+
+.hp-streak strong{
+  color:#c78a32;
+}
+
+
+/* =========================================
+   PROGRESS DOTS
+========================================= */
+
+.hp-progress{
+  position:absolute;
+
+  left:50%;
+  bottom:110px;
+
+  transform:translateX(-50%);
+
+  display:flex;
+
+  gap:10px;
+}
+
+
+.hp-progress span{
+  width:13px;
+  height:13px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(0,0,0,.28);
+
+  border-radius:50%;
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+}
+
+
+.hp-progress .done{
+  border-color:#efbe73;
+
+  background:#efbe73;
+}
+
+
+.hp-progress .active{
+  position:relative;
+}
+
+
+.hp-progress .active::after{
+  content:"";
+
+  position:absolute;
+
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+
+  background:#111;
+}
+
+
+/* =========================================
+   HANDWRITTEN NOTE
+========================================= */
+
+.hp-note{
+  position:absolute;
+
+  left:19%;
+  top:18%;
+
+  transform:rotate(-8deg);
+
+  color:rgba(0,0,0,.52);
+}
+
+
+.hp-note span{
+  font-family:
+    "Comic Sans MS",
+    cursive;
+
+  font-size:12px;
+}
+
+
+.hp-note svg{
+  display:block;
+
+  width:75px;
+  height:40px;
+
+  margin-left:35px;
+}
+
+
+.hp-note path{
+  fill:none;
+
+  stroke:#c78a32;
+  stroke-width:1.3;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+
+/* =========================================
+   CIRCLE NOTE
+========================================= */
+
+.hp-circle-note{
+  position:absolute;
+
+  right:17%;
+  bottom:18%;
+
+  width:90px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(0,0,0,.3);
+
+  border-radius:
+    50% 46% 52% 44% /
+    48% 54% 46% 52%;
+
+  transform:rotate(-7deg);
+
+  font-family:
+    "Comic Sans MS",
+    cursive;
+
+  font-size:9px;
+
+  color:rgba(0,0,0,.55);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.hp-bottom{
+  position:absolute;
+
+  left:50%;
+  bottom:32px;
+
+  transform:translateX(-50%);
+
+  text-align:center;
+}
+
+
+.hp-bottom > span{
+  display:block;
+
+  margin-bottom:7px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:5px;
+  font-weight:600;
+
+  letter-spacing:2.5px;
+
+  color:rgba(0,0,0,.4);
+}
+
+
+.hp-scroll-arrow{
+  font-family:"Bodoni Moda",serif;
+
+  font-size:19px;
+
+  animation:
+    hpArrowMove
+    1.8s ease-in-out
+    infinite;
+}
+
+
+@keyframes hpArrowMove{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(6px);
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP ENTRANCE
+========================================= */
+
+.hp-main,
+.hp-mini-tracker,
+.hp-streak,
+.hp-note,
+.hp-circle-note{
+  opacity:0;
+
+  animation:
+    hpPaperReveal
+    .9s ease forwards;
+}
+
+
+.hp-main{
+  animation-delay:.15s;
+}
+
+.hp-mini-tracker{
+  animation-delay:.45s;
+}
+
+.hp-streak{
+  animation-delay:.65s;
+}
+
+.hp-note{
+  animation-delay:.85s;
+}
+
+.hp-circle-note{
+  animation-delay:1s;
+}
+
+
+@keyframes hpPaperReveal{
+
+  from{
+    opacity:0;
+    filter:blur(7px);
+  }
+
+  to{
+    opacity:1;
+    filter:blur(0);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .hp-journal-hero{
+    height:calc(100svh - 60px);
+    min-height:650px;
+  }
+
+
+  .hp-paper-grid{
+    background-size:
+      25px 25px;
+  }
+
+
+  .hp-margin-line{
+    left:30px;
+  }
+
+
+  /* DATE */
+
+  .hp-date{
+    top:27px;
+
+    font-size:5px;
+
+    letter-spacing:2px;
+  }
+
+
+  /* MAIN */
+
+  .hp-main{
+    top:43%;
+
+    width:90%;
+  }
+
+
+  .hp-kicker{
+    margin-bottom:17px;
+
+    font-size:5px;
+
+    letter-spacing:2.4px;
+  }
+
+
+  .hp-main h1{
+    font-size:73px;
+
+    line-height:.75;
+
+    letter-spacing:-4px;
+  }
+
+
+  .hp-main p{
+    margin-top:27px;
+
+    font-size:16px;
+  }
+
+
+  /* MINI TRACKER */
+
+  .hp-mini-tracker{
+    left:48px;
+    top:18%;
+
+    width:85px;
+  }
+
+
+  .hp-mini-title{
+    font-size:4px;
+  }
+
+
+  .hp-day{
+    height:22px;
+
+    font-size:5px;
+  }
+
+
+  .hp-day b{
+    width:12px;
+    height:12px;
+
+    font-size:6px;
+  }
+
+
+  /* STREAK */
+
+  .hp-streak{
+    top:auto;
+
+    right:34px;
+    bottom:20%;
+  }
+
+
+  .hp-streak-number{
+    font-size:39px;
+  }
+
+
+  .hp-streak > div{
+    font-size:4px;
+
+    letter-spacing:1.3px;
+  }
+
+
+  /* NOTE */
+
+  .hp-note{
+    left:auto;
+    right:30px;
+
+    top:17%;
+  }
+
+
+  .hp-note span{
+    font-size:9px;
+  }
+
+
+  .hp-note svg{
+    width:50px;
+    height:27px;
+  }
+
+
+  /* CONSISTENCY */
+
+  .hp-circle-note{
+    left:48px;
+    right:auto;
+
+    bottom:20%;
+
+    width:70px;
+    height:33px;
+
+    font-size:7px;
+  }
+
+
+  /* PROGRESS */
+
+  .hp-progress{
+    bottom:110px;
+
+    gap:7px;
+  }
+
+
+  .hp-progress span{
+    width:10px;
+    height:10px;
+
+    font-size:5px;
+  }
+
+
+  .hp-progress .active::after{
+    width:4px;
+    height:4px;
+  }
+
+
+  .hp-bottom{
+    bottom:27px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:390px){
+
+  .hp-main h1{
+    font-size:65px;
+  }
+
+
+  .hp-main p{
+    font-size:15px;
+  }
+
+
+  .hp-mini-tracker{
+    left:40px;
+  }
+
+
+  .hp-note{
+    right:20px;
+  }
+
+
+  .hp-streak{
+    right:22px;
+  }
+
+
+  .hp-circle-note{
+    left:40px;
+  }
+
+}
+/* =====================================
+   SIMPLE PLANNERS SECTION
+===================================== */
+
+.hp-simple-section{
+  width:100%;
+  padding:110px 6%;
+  background:#faf9f5;
+  color:#151515;
+}
+
+
+/* HEADER */
+
+.hp-simple-head{
+  max-width:760px;
+  margin-bottom:80px;
+}
+
+.hp-simple-head > span{
+  display:block;
+
+  margin-bottom:18px;
+
+  font-family:Arial,sans-serif;
+  font-size:7px;
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  color:rgba(0,0,0,.4);
+}
+
+.hp-simple-head h2{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(55px,7vw,95px);
+  font-weight:400;
+
+  line-height:.9;
+  letter-spacing:-4px;
+}
+
+.hp-simple-head h2 em{
+  font-weight:400;
+  color:#c78a32;
+}
+
+.hp-simple-head p{
+  max-width:430px;
+
+  margin:30px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:10px;
+  line-height:1.8;
+
+  color:rgba(0,0,0,.52);
+}
+
+
+/* =====================================
+   LIST
+===================================== */
+
+.hp-simple-list{
+  width:100%;
+  max-width:1180px;
+
+  margin-left:auto;
+
+  border-top:1px solid rgba(0,0,0,.18);
+}
+
+
+/* ROW */
+
+.hp-simple-item{
+  position:relative;
+
+  min-height:135px;
+
+  display:grid;
+
+  grid-template-columns:
+    70px
+    1fr
+    50px;
+
+  align-items:center;
+
+  border-bottom:1px solid rgba(0,0,0,.18);
+
+  transition:
+    padding .35s ease,
+    background .35s ease;
+}
+
+
+/* NUMBER */
+
+.hp-simple-num{
+  align-self:start;
+
+  padding-top:32px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:1px;
+
+  color:rgba(0,0,0,.35);
+}
+
+
+/* TITLE */
+
+.hp-simple-content h3{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:38px;
+  font-weight:400;
+
+  line-height:1;
+
+  letter-spacing:-1.5px;
+}
+
+
+/* DESCRIPTION */
+
+.hp-simple-content p{
+  margin:10px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:8px;
+  line-height:1.6;
+
+  color:rgba(0,0,0,.48);
+}
+
+
+/* ARROW */
+
+.hp-simple-arrow{
+  font-family:Arial,sans-serif;
+
+  font-size:20px;
+
+  text-align:right;
+
+  transition:
+    transform .35s ease,
+    color .35s ease;
+}
+
+
+/* HOVER */
+
+@media(hover:hover){
+
+  .hp-simple-item:hover{
+    padding-left:15px;
+  }
+
+  .hp-simple-item:hover
+  .hp-simple-content h3{
+    color:#b77c27;
+  }
+
+  .hp-simple-item:hover
+  .hp-simple-arrow{
+    transform:
+      translate(4px,-4px);
+
+    color:#c78a32;
+  }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+  .hp-simple-section{
+    padding:
+      75px 20px
+      80px;
+  }
+
+
+  .hp-simple-head{
+    margin-bottom:55px;
+  }
+
+
+  .hp-simple-head > span{
+    font-size:5px;
+
+    letter-spacing:2px;
+  }
+
+
+  .hp-simple-head h2{
+    font-size:48px;
+
+    line-height:.92;
+
+    letter-spacing:-2.5px;
+  }
+
+
+  .hp-simple-head p{
+    max-width:300px;
+
+    margin-top:22px;
+
+    font-size:8px;
+
+    line-height:1.7;
+  }
+
+
+  /* ROW */
+
+  .hp-simple-item{
+    min-height:105px;
+
+    grid-template-columns:
+      35px
+      1fr
+      25px;
+  }
+
+
+  .hp-simple-num{
+    padding-top:24px;
+
+    font-size:4px;
+  }
+
+
+  .hp-simple-content h3{
+    font-size:25px;
+
+    letter-spacing:-1px;
+  }
+
+
+  .hp-simple-content p{
+    max-width:230px;
+
+    margin-top:7px;
+
+    font-size:6.5px;
+  }
+
+
+  .hp-simple-arrow{
+    font-size:14px;
+  }
+
+}
+
+/* =========================================
+   PLANNER — IMAGE + CONTENT
+========================================= */
+
+.hp-life-section{
+  width:100%;
+  padding:120px 6%;
+  background:#f0ede5;
+  overflow:hidden;
+}
+
+
+.hp-life-inner{
+  width:100%;
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    1.05fr
+    .95fr;
+
+  gap:100px;
+
+  align-items:center;
+}
+
+
+/* =========================================
+   LEFT IMAGE
+========================================= */
+
+.hp-life-visual{
+  position:relative;
+
+  width:100%;
+  height:620px;
+}
+
+
+.hp-life-slider{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+}
+
+
+.hp-life-slide{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+
+  transform:scale(1.04);
+
+  transition:
+    opacity .9s ease,
+    transform 1.2s ease;
+}
+
+
+.hp-life-slide.active{
+  opacity:1;
+
+  transform:scale(1);
+
+  z-index:2;
+}
+
+
+.hp-life-slide img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+}
+
+
+/* subtle paper edge */
+
+.hp-life-visual::before{
+  content:"";
+
+  position:absolute;
+
+  width:94%;
+  height:96%;
+
+  left:-13px;
+  bottom:-13px;
+
+  border:1px solid rgba(0,0,0,.17);
+
+  z-index:0;
+}
+
+
+/* =========================================
+   IMAGE COUNTER
+========================================= */
+
+.hp-life-count{
+  position:absolute;
+
+  left:24px;
+  bottom:23px;
+
+  z-index:5;
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:9px 13px;
+
+  background:#faf9f5;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  letter-spacing:1px;
+}
+
+
+.hp-life-count i{
+  width:22px;
+  height:1px;
+
+  background:rgba(0,0,0,.35);
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.hp-life-dots{
+  position:absolute;
+
+  right:20px;
+  bottom:26px;
+
+  z-index:5;
+
+  display:flex;
+
+  gap:7px;
+}
+
+
+.hp-life-dots button{
+  width:18px;
+  height:2px;
+
+  padding:0;
+
+  border:0;
+
+  background:rgba(255,255,255,.45);
+
+  cursor:pointer;
+
+  transition:
+    width .35s ease,
+    background .35s ease;
+}
+
+
+.hp-life-dots button.active{
+  width:35px;
+
+  background:#fff;
+}
+
+
+/* =========================================
+   RIGHT
+========================================= */
+
+.hp-life-content{
+  max-width:470px;
+}
+
+
+.hp-life-label{
+  display:block;
+
+  margin-bottom:23px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  color:rgba(0,0,0,.4);
+}
+
+
+.hp-life-content h2{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(52px,5vw,75px);
+  font-weight:400;
+
+  line-height:.88;
+
+  letter-spacing:-3.5px;
+
+  color:#151515;
+}
+
+
+.hp-life-content h2 em{
+  font-weight:400;
+
+  color:#c78a32;
+}
+
+
+.hp-life-content > p{
+  max-width:390px;
+
+  margin:34px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:10px;
+
+  line-height:1.9;
+
+  color:rgba(0,0,0,.55);
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.hp-life-quote{
+  max-width:360px;
+
+  margin-top:38px;
+
+  padding:
+    19px 0
+    19px 24px;
+
+  border-left:1px solid #c78a32;
+
+  display:flex;
+
+  gap:13px;
+}
+
+
+.hp-life-quote > span{
+  font-family:"Bodoni Moda",serif;
+
+  font-size:34px;
+
+  line-height:.7;
+
+  color:#c78a32;
+}
+
+
+.hp-life-quote p{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:15px;
+
+  font-style:italic;
+
+  line-height:1.45;
+
+  color:rgba(0,0,0,.68);
+}
+
+
+/* =========================================
+   LINK
+========================================= */
+
+.hp-life-link{
+  width:max-content;
+
+  margin-top:38px;
+
+  padding-bottom:7px;
+
+  display:flex;
+  align-items:center;
+
+  gap:17px;
+
+  border-bottom:1px solid #111;
+
+  color:#111;
+
+  text-decoration:none;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:2px;
+}
+
+
+.hp-life-link span{
+  font-size:13px;
+
+  transition:transform .3s ease;
+}
+
+
+.hp-life-link:hover span{
+  transform:
+    translate(3px,-3px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .hp-life-section{
+    padding:
+      70px 20px
+      80px;
+  }
+
+
+  .hp-life-inner{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:55px;
+  }
+
+
+  /* IMAGE FIRST */
+
+  .hp-life-visual{
+    width:100%;
+    height:430px;
+  }
+
+
+  .hp-life-visual::before{
+    left:-7px;
+    bottom:-7px;
+  }
+
+
+  .hp-life-count{
+    left:14px;
+    bottom:14px;
+
+    padding:7px 10px;
+
+    font-size:5px;
+  }
+
+
+  .hp-life-dots{
+    right:13px;
+    bottom:17px;
+  }
+
+
+  /* CONTENT */
+
+  .hp-life-content{
+    width:100%;
+    max-width:none;
+  }
+
+
+  .hp-life-label{
+    margin-bottom:17px;
+
+    font-size:5px;
+
+    letter-spacing:2px;
+  }
+
+
+  .hp-life-content h2{
+    font-size:47px;
+
+    line-height:.9;
+
+    letter-spacing:-2.5px;
+  }
+
+
+  .hp-life-content > p{
+    max-width:320px;
+
+    margin-top:25px;
+
+    font-size:8px;
+
+    line-height:1.8;
+  }
+
+
+  .hp-life-quote{
+    max-width:300px;
+
+    margin-top:27px;
+
+    padding:
+      15px 0
+      15px 17px;
+  }
+
+
+  .hp-life-quote p{
+    font-size:13px;
+  }
+
+
+  .hp-life-link{
+    margin-top:28px;
+
+    font-size:5px;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:390px){
+
+  .hp-life-section{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+
+  .hp-life-visual{
+    height:390px;
+  }
+
+
+  .hp-life-content h2{
+    font-size:43px;
+  }
+
+}
+/* =========================================
+   SAME COMPOSITION — PC + MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .hp-life-section{
+    padding:60px 12px;
+  }
+
+  .hp-life-inner{
+    display:grid !important;
+    grid-template-columns:46% 54% !important;
+    gap:0 !important;
+    align-items:stretch;
+  }
+
+  /* LEFT IMAGE */
+
+  .hp-life-visual{
+    width:100% !important;
+    height:430px !important;
+  }
+
+  .hp-life-slider{
+    height:100%;
+  }
+
+  .hp-life-slide img{
+    width:100%;
+    height:80%;
+    padding-top:90px;
+    object-fit:cover;
+  }
+
+  .hp-life-visual::before{
+    display:none;
+  }
+
+
+  /* RIGHT CONTENT */
+
+  .hp-life-content{
+    width:100%;
+    max-width:none;
+
+    padding:
+      30px 10px
+      25px 18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .hp-life-label{
+    margin-bottom:11px;
+
+    font-size:4px;
+    letter-spacing:1.3px;
+  }
+
+  .hp-life-content h2{
+    font-size:29px !important;
+    line-height:.92;
+    letter-spacing:-1.6px;
+  }
+
+  .hp-life-content > p{
+    max-width:100%;
+
+    margin-top:17px;
+
+    font-size:6px;
+    line-height:1.65;
+  }
+
+
+  /* QUOTE */
+
+  .hp-life-quote{
+    max-width:100%;
+
+    margin-top:17px;
+
+    padding:
+      10px 0
+      10px 10px;
+
+    gap:7px;
+  }
+
+  .hp-life-quote > span{
+    font-size:22px;
+  }
+
+  .hp-life-quote p{
+    font-size:9px;
+    line-height:1.35;
+  }
+
+
+  /* LINK */
+
+  .hp-life-link{
+    margin-top:18px;
+
+    gap:7px;
+
+    font-size:3.7px;
+    letter-spacing:.8px;
+  }
+
+  .hp-life-link span{
+    font-size:8px;
+  }
+
+
+  /* IMAGE COUNTER */
+
+  .hp-life-count{
+    left:7px;
+    bottom:8px;
+
+    padding:5px 6px;
+
+    gap:4px;
+
+    font-size:3.5px;
+  }
+
+  .hp-life-count i{
+    width:10px;
+  }
+
+
+  /* SLIDER INDICATORS */
+
+  .hp-life-dots{
+    right:7px;
+    bottom:9px;
+
+    gap:3px;
+  }
+
+  .hp-life-dots button{
+    width:8px;
+    height:1px;
+  }
+
+  .hp-life-dots button.active{
+    width:15px;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .hp-life-inner{
+    grid-template-columns:45% 55% !important;
+  }
+
+  .hp-life-visual{
+    height:400px !important;
+  }
+
+  .hp-life-content{
+    padding-left:14px;
+    padding-right:7px;
+  }
+
+  .hp-life-content h2{
+    font-size:26px !important;
+  }
+
+  .hp-life-content > p{
+    font-size:5.5px;
+  }
+
+  .hp-life-quote p{
+    font-size:8px;
+  }
+
+}
+  </style>
+
+
+</head>
+
+
+
+<!--
+=========================================
+CURRENT PAGE
+
+HOME:
+data-page="home"
+
+MANIFEST:
+data-page="manifest"
+
+CAREER:
+data-page="career"
+
+HABIT:
+data-page="habit"
+=========================================
+-->
+
+<body data-page="habit">
+
+
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+
+  <div class="fixed-header">
+
+
+    <nav class="navbar">
+
+      <a href="header.html" class="header-back-btn">
+  <i class="fa-solid fa-arrow-left"></i>
+  <span>Back</span>
+</a>
+
+      <div class="logo">
+        Chandini
+      </div>
+
+    </nav>
+
+
+    <div class="below-nav-text">
+      Connects
+    </div>
+
+
+  </div>
+
+
+  <!-- =========================================
+       TRANSPARENT NAVIGATION
+  ========================================= -->
+
+  <div class="main-menu">
+
+
+    <div class="menu-inner">
+
+
+
+      <!-- HOME -->
+
+      <a href="header.html"
+         class="menu-item"
+         data-nav="home">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+      </a>
+
+
+
+      <!-- MANIFEST -->
+
+      <a href="manifest.html"
+         class="menu-item"
+         data-nav="manifest">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <span>Manifest</span>
+
+      </a>
+
+
+
+      <!-- CAREER CONNECT -->
+
+      <a href="career-connect.html"
+         class="menu-item"
+         data-nav="career">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <span>Career Connect</span>
+
+      </a>
+
+
+
+      <!-- HABIT TRACKER -->
+
+      <a href="habit-tracker.html"
+         class="menu-item"
+         data-nav="habit">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <span>Habit Tracker</span>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+<!-- =========================================
+       HABIT TRACKER HERO
+    ========================================= -->
+  <section class="hp-journal-hero" id="habit-planner">
+
+  <!-- PAPER DETAILS -->
+  <div class="hp-paper-grid"></div>
+  
+
+ 
+
+
+  <!-- LEFT HANDWRITTEN NOTE -->
+  <div class="hp-note hp-note-one">
+    <span>start small</span>
+    <svg viewBox="0 0 90 50">
+      <path d="M5 8 C28 4, 55 18, 75 37"></path>
+      <path d="M65 34 L76 38 L72 27"></path>
+    </svg>
+  </div>
+
+
+  <!-- MAIN -->
+  <div class="hp-main">
+
+    <div class="hp-star">✦</div>
+
+    <span class="hp-kicker">
+      HABIT TRACKER &amp; PLANNERS
+    </span>
+
+    <h1>
+      THE<br>
+      <em>1%</em> RULE
+    </h1>
+
+    <p>
+      Small habits become<br>
+      big changes.
+    </p>
+
+  </div>
+
+
+  <!-- LEFT TRACKER -->
+  <div class="hp-mini-tracker">
+
+    <span class="hp-mini-title">
+      THIS WEEK
+    </span>
+
+    <div class="hp-day">
+      <span>MON</span>
+      <b>✓</b>
+    </div>
+
+    <div class="hp-day">
+      <span>TUE</span>
+      <b>✓</b>
+    </div>
+
+    <div class="hp-day">
+      <span>WED</span>
+      <b>✓</b>
+    </div>
+
+    <div class="hp-day muted">
+      <span>THU</span>
+      <b></b>
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT STREAK -->
+  <div class="hp-streak">
+
+    <span class="hp-streak-number">
+      07
+    </span>
+
+    <div>
+      <strong>DAY</strong>
+      <span>STREAK</span>
+    </div>
+
+  </div>
+
+
+  <!-- HABIT DOTS -->
+  <div class="hp-progress">
+
+    <span class="done">✓</span>
+    <span class="done">✓</span>
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
+
+
+  <!-- BOTTOM -->
+  <div class="hp-bottom">
+
+    <span>START SMALL</span>
+
+    <div class="hp-scroll-arrow">
+      ↓
+    </div>
+
+  </div>
+
+
+  <!-- RANDOM PAPER MARK -->
+  <div class="hp-circle-note">
+    consistency
+  </div>
+
+</section>
+
+<!-- =========================================
+     HABIT TRACKER — SIMPLE PLANNERS
+========================================= -->
+
+<section class="hp-simple-section">
+
+  <div class="hp-simple-head">
+    <span>PLAN WITH PURPOSE</span>
+
+    <h2>
+      Make space for<br>
+      <em>what matters.</em>
+    </h2>
+
+    <p>
+      Simple planners designed to bring clarity,
+      structure and intention into your everyday life.
+    </p>
+  </div>
+
+
+  <div class="hp-simple-list">
+
+    <div class="hp-simple-item">
+      <span class="hp-simple-num">01</span>
+
+      <div class="hp-simple-content">
+        <h3>Daily Planner</h3>
+        <p>Organize your day with clarity and focus.</p>
+      </div>
+
+      <span class="hp-simple-arrow">↗</span>
+    </div>
+
+
+    <div class="hp-simple-item">
+      <span class="hp-simple-num">02</span>
+
+      <div class="hp-simple-content">
+        <h3>Weekly Planner</h3>
+        <p>Plan ahead and make room for what matters.</p>
+      </div>
+
+      <span class="hp-simple-arrow">↗</span>
+    </div>
+
+
+    <div class="hp-simple-item">
+      <span class="hp-simple-num">03</span>
+
+      <div class="hp-simple-content">
+        <h3>Habit Planner</h3>
+        <p>Create routines that support your growth.</p>
+      </div>
+
+      <span class="hp-simple-arrow">↗</span>
+    </div>
+
+
+    <div class="hp-simple-item">
+      <span class="hp-simple-num">04</span>
+
+      <div class="hp-simple-content">
+        <h3>Goal Planner</h3>
+        <p>Turn your goals into clear, intentional steps.</p>
+      </div>
+
+      <span class="hp-simple-arrow">↗</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="hp-life-section">
+
+  <div class="hp-life-inner">
+
+    <!-- LEFT : IMAGE CAROUSEL -->
+    <div class="hp-life-visual">
+
+      <div class="hp-life-slider">
+
+  <div class="hp-life-slide active">
+    <img
+      src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=85"
+      alt="Journal and planning">
+  </div>
+
+  <div class="hp-life-slide">
+    <img
+      src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85"
+      alt="Planner workspace">
+  </div>
+
+  <div class="hp-life-slide">
+    <img
+      src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=85"
+      alt="Planning desk">
+  </div>
+
+</div>
+
+
+     
+
+
+    
+
+    </div>
+
+
+    <!-- RIGHT : CONTENT -->
+    <div class="hp-life-content">
+
+      <span class="hp-life-label">
+        MADE FOR REAL LIFE
+      </span>
+
+      <h2>
+        Plan less.<br>
+        Live with more<br>
+        <em>intention.</em>
+      </h2>
+
+      <p>
+        Our planners are created to make everyday
+        planning feel simple, thoughtful and personal.
+        A space to organize your thoughts, understand
+        your priorities and move through your days
+        with more clarity.
+      </p>
+
+
+      <div class="hp-life-quote">
+
+        <span>“</span>
+
+        <p>
+          Your planner doesn't have to control
+          your life. It should help you create it.
+        </p>
+
+      </div>
+
+
+      <a href="#planners" class="hp-life-link">
+        EXPLORE THE PLANNERS
+        <span>↗</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- =========================================
+     CHANDINI CONNECTS FOOTER
+========================================= -->
+
+<footer class="chandini-footer">
+
+  <!-- FOOTER ART -->
+  <div class="footer-art">
+    <img src="footer.webp" alt="Chandini Connects">
+  </div>
+
+
+  <!-- MAIN FOOTER -->
+  <div class="footer-main">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+
+      <h2>Chandini</h2>
+      <span>CONNECTS</span>
+
+      <p>
+        Learn with clarity.<br>
+        Grow with confidence.<br>
+        Create with purpose.
+      </p>
+
+    </div>
+
+
+    <!-- LINKS -->
+    <div class="footer-links">
+
+      <div class="footer-link-group">
+
+        <span>EXPLORE</span>
+
+        <a href="header.html">Home</a>
+        <a href="manifest.html">Manifest</a>
+        <a href="career-connect.html">Career Connect</a>
+        <a href="habit-tracker.html">Habit Tracker</a>
+
+      </div>
+
+
+      <div class="footer-link-group">
+
+        <span>CONNECT</span>
+
+        <a href="#contact">Contact</a>
+
+        <a href="https://www.instagram.com/chandini_connects/"
+           target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://www.youtube.com/@chandiniconnects" target="_blank">
+          YouTube
+        </a>
+
+        <a href="https://wa.me/9019053580" target="_blank">
+          WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CONNECT -->
+    <div class="footer-connect">
+
+      <span>LET'S CONNECT</span>
+
+      <h3>
+        Let’s learn,<br>
+        grow & <em>create.</em>
+      </h3>
+
+      <div class="footer-socials">
+
+        <a href="https://www.instagram.com/chandini_connects/"
+           target="_blank"
+           aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@chandiniconnects"
+           target="_blank"
+           aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://wa.me/9019053580"
+           target="_blank"
+           aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chandiniconnects@gmail.com"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Email Chandini Connects">
+  <i class="fa-regular fa-envelope"></i>
+</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 CHANDINI CONNECTS
+    </span>
+
+    <span>
+      LEARN • GROW • CREATE • TOGETHER
+    </span>
+
+    <a href="#top">
+      BACK TO TOP ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+
+
+  <!-- =========================================
+       ACTIVE NAV SCRIPT
+  ========================================= -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /* CURRENT PAGE FROM BODY */
+
+        const currentPage =
+          document.body.getAttribute("data-page");
+
+
+        /* ALL NAV BUTTONS */
+
+        const menuItems =
+          document.querySelectorAll(".menu-item");
+
+
+        /* LOOP THROUGH BUTTONS */
+
+        menuItems.forEach(function (item) {
+
+
+          /* FIRST REMOVE ACTIVE */
+
+          item.classList.remove("active");
+
+
+          /* GET BUTTON PAGE */
+
+          const navPage =
+            item.getAttribute("data-nav");
+
+
+          /* MATCH CURRENT PAGE */
+
+          if (navPage === currentPage) {
+
+            item.classList.add("active");
+
+          }
+
+        });
+
+
+      }
+    );
+
+  </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const footer =
+    document.querySelector(".chandini-footer");
+
+  if (!footer) return;
+
+
+  const footerObserver =
+    new IntersectionObserver(
+      function (entries) {
+
+        entries.forEach(function (entry) {
+
+          if (entry.isIntersecting) {
+
+            footer.classList.add(
+              "footer-visible"
+            );
+
+            footerObserver.unobserve(
+              footer
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+
+  footerObserver.observe(footer);
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const slides =
+    document.querySelectorAll(".hp-life-slide");
+
+  const dots =
+    document.querySelectorAll(".hp-life-dots button");
+
+  const counter =
+    document.getElementById("hpLifeCurrent");
+
+  let current = 0;
+  let timer;
+
+
+  function showLifeSlide(index){
+
+    current = index;
+
+    slides.forEach(function(slide, i){
+      slide.classList.toggle(
+        "active",
+        i === current
+      );
+    });
+
+
+    dots.forEach(function(dot, i){
+      dot.classList.toggle(
+        "active",
+        i === current
+      );
+    });
+
+
+    if(counter){
+      counter.textContent =
+        String(current + 1).padStart(2, "0");
+    }
+
+  }
+
+
+  function startLifeSlider(){
+
+    clearInterval(timer);
+
+    timer = setInterval(function(){
+
+      const next =
+        (current + 1) % slides.length;
+
+      showLifeSlide(next);
+
+    }, 4000);
+
+  }
+
+
+  dots.forEach(function(dot, index){
+
+    dot.addEventListener("click", function(){
+
+      showLifeSlide(index);
+
+      startLifeSlider();
+
+    });
+
+  });
+
+
+  showLifeSlide(0);
+
+  startLifeSlider();
+
+});
+</script>
+
+</body>
+
+</html>
