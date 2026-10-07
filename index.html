@@ -1,1049 +1,1202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0,
-               maximum-scale=1.0,
-               minimum-scale=1.0,
-               user-scalable=no">
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+        content="width=device-width, initial-scale=1.0">
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  <title>Chandini Connects</title>
+
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+
+      background: #f7f7f4;
+
+      font-family: Arial, sans-serif;
+    }
+
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .fixed-header {
+      position: relative;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 65px;
+
+      background: #e6e6a1;
+
+      z-index: 1000;
+
+      border-bottom:
+        1px solid rgba(34, 34, 34, .22);
+    }
+
+
+
+    /* =========================================
+       HEADER NAVBAR
+    ========================================= */
+
+    .navbar {
+      position: relative;
+
+      width: 100%;
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #efbe73;
+
+      padding: 0 35px;
+    }
+
+
+
+    /* =========================================
+       CHANDINI
+    ========================================= */
+
+    .logo {
+      position: absolute;
+
+      left: 50%;
+      top: 47%;
+
+      transform: translate(-50%, -50%);
+
+      width: auto;
+      height: auto;
+
+      padding-top: 40px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 45px;
+      font-weight: 300;
+
+      line-height: 1;
+
+      color: #220123;
+
+      text-align: center;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* =========================================
+       CONNECTS
+    ========================================= */
+
+    .below-nav-text {
+      position: absolute;
+
+      left: 51%;
+      top: 68px;
+
+      transform: translateX(-50%);
+
+      width: auto;
+      height: auto;
+
+      margin: 0;
+
+      padding: 0 0 0 80px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 20px;
+      font-weight: 400;
+
+      line-height: 1;
+
+      text-align: center;
+
+      color: #220123;
+
+      white-space: nowrap;
+    }
+
+
+
+    /* =========================================
+       TRANSPARENT MENU
+    ========================================= */
+
+    .main-menu {
+      width: 100%;
+
+      padding: 28px 15px 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: transparent;
+    }
+
+
+
+    /* =========================================
+       MENU INNER
+    ========================================= */
+
+    .menu-inner {
+      width: 100%;
+      max-width: 650px;
+
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      background: transparent;
+    }
+
+
+
+    /* =========================================
+       MENU ITEM
+    ========================================= */
+
+    .menu-item {
+      width: auto;
+
+      flex: none;
+
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 9px 14px;
+
+      text-decoration: none;
+
+      color: #220123;
+
+      background: transparent;
+
+      border-radius: 11px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      white-space: nowrap;
+
+      cursor: pointer;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+
+
+    /* =========================================
+       ICONS
+    ========================================= */
+
+    .menu-item i {
+      font-size: 14px;
+
+      transition: transform .25s ease;
+    }
+
+
+
+    /* =========================================
+       CURRENT PAGE ACTIVE
+    ========================================= */
+
+    .menu-item.active {
+      background: #220123 !important;
+
+      color: #ffffff !important;
+
+      box-shadow:
+        0 5px 14px rgba(34, 1, 35, .18);
+    }
+
+
+
+    /* =========================================
+       HOVER
+    ========================================= */
+
+    .menu-item:hover {
+      background: #220123;
+
+      color: #ffffff;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 5px 14px rgba(34, 1, 35, .18);
+    }
+
+
+    .menu-item:hover i {
+      transform: scale(1.1);
+    }
+
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 768px) {
+
+
+      /* HEADER SAME AS PC */
+
+      .fixed-header {
+        height: 65px;
+      }
+
+
+      .navbar {
+        height: 70px;
+
+        padding: 0 15px;
+      }
+
+
+      .logo {
+        left: 50%;
+        top: 47%;
+
+        transform: translate(-50%, -50%);
+
+        padding-top: 40px;
+
+        font-size: 45px;
+      }
+
+
+      .below-nav-text {
+        left: 51%;
+        top: 68px;
+
+        transform: translateX(-50%);
+
+        padding-left: 80px;
+
+        font-size: 20px;
+
+        line-height: 1;
+      }
+
+
+
+      /* MOBILE NAVIGATION */
+
+      .main-menu {
+        width: 100%;
+
+        padding: 28px 5px 8px;
+
+        background: transparent;
+      }
+
+
+      .menu-inner {
+        width: 100%;
+
+        max-width: none;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 3px;
+      }
+
+
+      .menu-item {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 9px 4px;
+
+        gap: 4px;
+
+        font-size: 10px;
+
+        border-radius: 9px;
+      }
+
+
+      .menu-item i {
+        font-size: 12px;
+      }
+
+    }
+
+
+
+    /* =========================================
+       VERY SMALL MOBILE
+    ========================================= */
+
+    @media (max-width: 390px) {
+
+      .menu-item {
+        font-size: 9px;
+
+        padding: 8px 2px;
+
+        gap: 3px;
+      }
+
+
+      .menu-item i {
+        font-size: 11px;
+      }
+
+    }
+
+
+    /* =====================================================
+   MOBILE ONLY - FLOATING BOTTOM NAVBAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Main menu becomes bottom floating navigation */
+
+  .main-menu {
+    position: fixed;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 20px);
+    max-width: 430px;
+
+    height: 58px;
+
+    padding: 6px 7px;
+
+    background:  #f7f7f4;
+
+    border-radius: 18px;
+
+    z-index: 9999;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.25),
+      inset 0 1px 0 rgba(255,255,255,.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
-  html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  touch-action: pan-x pan-y;
-}
-
-input,
-textarea,
-select,
-button {
-  font-size: 16px;
-}
-
-  body {
-    background: #f7f7f4;
-    font-family: Arial, sans-serif;
-  }
-  
 
 
-  /* ========================================
-     TOP PURPLE BAR
-  ======================================== */
-
-  .top-line {
+  .menu-inner {
     width: 100%;
-    height: 30px;
+    height: 100%;
 
-    background: #979704;
+    max-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 3px;
+  }
+
+
+  /* -----------------------------------------
+     NORMAL NAV ITEM
+  ----------------------------------------- */
+
+  .menu-item {
+    flex: 1;
+
+    width: auto;
+    height: 44px;
+
+    min-width: 0;
+
+    padding: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .top-line h2 {
-    color: #ffffff;
-
-    text-align: center;
-
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-
-  /* ========================================
-     MAIN NAVBAR
-  ======================================== */
-
-.navbar {
-  width: 100%;
-  height: 70px;
-
-  background: #e6e6a1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-  padding: 0 35px;
-
-  overflow: hidden;
-  isolation: isolate;
-}
-
-/* FOG ONLY INSIDE NAVBAR */
-.navbar::before {
-  content: "";
-
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  left: 0;
-  top: 0;
-
-  background: transparent;
-
-  filter: blur(5px);
-
-  z-index: -1;
-  pointer-events: none;
-}
-
-
-  /* ========================================
-     CENTER LOGO
-  ======================================== */
-
-  .logo {
-    position: absolute;
-
-    left: 50%;
-    top: 55%;
-
-    transform: translate(-50%, -50%);
-
-    font-family: "Italianno", cursive;
-
-    font-size: 60px;
-    font-weight: 300;
-
-    color: #220123;
-
-    padding-top: 40px;
-
-    line-height: 1;
-  }
-
-
-  /* ========================================
-     CONNECTS TEXT
-  ======================================== */
-
-  .below-nav-text {
-    width: 100%;
-
-    height: 25px;
-
-    background: transparent;
-
-    text-align: center;
-
-    font-size: 18px;
-    font-weight: 400;
-
-    color: #220123;
-
-    font-family: emoji;
-
-    margin-top: -25px;
-
-    padding-top: 23px;
-    padding-left: 80px;
-
-    position: relative;
-    z-index: 2;
-  }
-
-
-  /* ========================================
-     RIGHT SIDE NAVIGATION
-  ======================================== */
-
-  .nav-right {
-    position: absolute;
-
-    right: 35px;
-    top: 20px;
-
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    z-index: 100;
-  }
-
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-  }
-
-
-  /* ========================================
-     NAV ITEM
-  ======================================== */
-
-  .nav-item {
-    position: relative;
-
-    white-space: nowrap;
-  }
-
-
-  .nav-title,
-  .nav-item > a {
-    position: relative;
-
-    display: inline-block;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    color: #2b172b;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    padding-bottom: 6px;
-  }
-
-
-  /* ========================================
-     LINE UNDER NAV TEXT
-  ======================================== */
-
-  .nav-title::after,
-  .nav-item > a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    width: 0;
-    height: 1px;
-
-    background: #410144;
-
-    transform: translateX(-50%);
-
-    transition: width 0.3s ease;
-  }
-
-
-  .nav-item:hover .nav-title::after,
-  .nav-item:hover > a::after,
-  .nav-item.active .nav-title::after {
-    width: 100%;
-  }
-
-
-  /* ========================================
-     WITH CHANDHINI
-  ======================================== */
-
-  .with-chandhini {
-    display: inline-block;
-
-    max-width: 0;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    white-space: nowrap;
-
-    vertical-align: bottom;
-
-    margin-left: 0;
-
-    transition:
-      max-width 0.4s ease,
-      opacity 0.3s ease,
-      margin-left 0.3s ease;
-  }
-
-
-  .dropdown-item:hover .with-chandhini,
-  .dropdown-item.active .with-chandhini {
-    max-width: 130px;
-
-    opacity: 1;
-
-    margin-left: 4px;
-  }
-
-
-  /* ========================================
-     DROPDOWN MENU
-  ======================================== */
-
-  .sub-menu {
-    position: absolute;
-
-    top: calc(100% + 10px);
-    left: 50%;
-
-    transform: translateX(-50%) translateY(8px);
-
-    min-width: 170px;
-
-    background: #ffffff;
-
-    padding: 7px 0;
-
-    border: 1px solid rgba(65, 1, 68, 0.10);
-
-    border-radius: 6px;
-
-    box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.08);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease,
-      visibility 0.25s ease;
-
-    z-index: 1000;
-  }
-
-
-  .sub-menu a {
-    display: block;
-
-    width: 100%;
-
-    padding: 10px 16px;
-
-    color: #2b172b;
-
-    text-decoration: none;
-
-    font-size: 13px;
-    font-weight: 400;
-
-    transition:
-      background 0.2s ease,
-      color 0.2s ease;
-  }
-
-
-  .sub-menu a:hover {
-    background: rgb(252, 240, 253);
-
-    color: #410144;
-  }
-
-
-  /* PC HOVER */
-
-  .dropdown-item:hover .sub-menu {
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-
-    transform: translateX(-50%) translateY(0);
-  }
-
-
-  /* ========================================
-     MOBILE MENU BUTTON
-  ======================================== */
-
-  .menu-toggle {
-    display: none;
-
-    width: 30px;
-    height: 24px;
-
-    padding: 0;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    cursor: pointer;
-  }
-
-
-  .menu-toggle span {
-    display: block;
-
-    width: 100%;
-    height: 1.5px;
-
-    background: #2b172b;
-
-    margin: 6px 0;
-
-    transition: 0.3s ease;
-  }
-  body {
-  padding-top: 125px;
-}
-
-/* =========================
-   PC SEARCH + WHATSAPP
-========================= */
-
-.nav-icons {
-  position: absolute;
-
-  left: calc(15% - 190px);
-  top: 70%;
-
-  transform: translateY(-50%);
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  z-index: 200;
-}
-
-.search-icon,
-.whatsapp-icon {
-  width: 21px;
-  height: 21px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-  margin: 0;
-
-  border: none;
-  outline: none;
-  background: transparent;
-
-  color: #2b172b;
-  text-decoration: none;
-
-  cursor: pointer;
-}
-
-.search-icon svg,
-.whatsapp-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* SEARCH ICON */
-.search-icon svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-}
-
-/* WHATSAPP ICON */
-.whatsapp-icon svg {
-  fill: currentColor;
-}
-
-.search-icon:hover,
-.whatsapp-icon:hover {
-  opacity: 0.6;
-}
-
-
-  /* ========================================
-     MOBILE
-  ======================================== */
-
-  @media (max-width: 768px) {
-
-
-    .nav-icons {
-  position: absolute;
-
-  left: auto;
-  right: 15px;
-
-  top: 80%;
-
-  transform: translateY(-50%);
-
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  z-index: 200;
-}
-
-.search-icon,
-.whatsapp-icon {
-  width: 20px;
-  height: 20px;
-}
-
-
-    body {
-    padding-top: 100px;
-  }
-
-   /* TOP BAR */
-
-.top-line {
-  height: 30px;
-}
-
-.top-line h2 {
-  font-size: 14px;
-}
-
-
-/* NAVBAR - MOBILE ONLY */
-
-.navbar {
-  height: 52px;
-  padding: 0 15px;
-}
-
-
-/* LOGO */
-
-.logo {
-  font-size: 48px;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  padding-top: 17px;
-}
-
-
-/* CONNECTS */
-
-.below-nav-text {
-  height: 25px;
-
-  margin-top: -18px;
-  padding: 0;
-
-  position: relative;
-  top: 8px;
-  left: 30px;
-
-  text-align: center;
-
-  font-size: 16px !important;
-  line-height: 25px;
-  font-family: emoji;
-}
-
-
-/* MENU LEFT SIDE */
-
-.nav-right {
-  position: absolute;
-
-  left: 15px;
-  right: auto;
-
-  top: 0;
-
-  height: 62px;
-
-  display: flex;
-  align-items: center;
-}
-
-
-/* SHOW HAMBURGER */
-
-.menu-toggle {
-  display: block;
-
-  width: 20px;
-  height: 22px;
-}
-
-    /* ========================================
-       MOBILE NAVIGATION
-    ======================================== */
-
-      .nav-links {
-    display: none;
-
-    position: fixed;
-
-    top: 82px;
-    left: 0;
-    right: auto;
-
-    width: 80%;
-    max-width: 80%;
-
-    height: calc(100vh - 82px);
-
-    background: #ffffff;
-
-    flex-direction: column;
-    align-items: flex-start;
 
     gap: 0;
 
-    padding: 20px 22px;
+    background: transparent !important;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    color: #ffffff;
 
-    box-shadow: 8px 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
 
-    z-index: 9999;
+    box-shadow: none !important;
+
+    transform: none !important;
+
+    overflow: hidden;
+
+    transition:
+      flex .28s ease,
+      background .28s ease,
+      padding .28s ease;
   }
 
-  .nav-links.open {
-    display: flex;
+
+  /* ICON */
+
+  .menu-item i {
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    color: #ffffff;
+
+    transition: transform .25s ease;
   }
 
 
-    /* NAV ITEMS */
+  /* -----------------------------------------
+     HIDE TEXT ON NORMAL ITEMS
+  ----------------------------------------- */
 
-    .nav-item {
-      width: 100%;
+  .menu-item span {
+    display: block;
 
-      padding: 15px 0;
+    max-width: 0;
 
-      border-bottom: 1px solid #eeeeee;
-    }
+    margin-left: 0;
 
+    opacity: 0;
 
-    .nav-item:last-child {
-      border-bottom: none;
-    }
+    overflow: hidden;
 
+    white-space: nowrap;
 
-    .nav-title,
-    .nav-item > a {
-      font-size: 15px;
+    font-size: 11px;
+    font-weight: 600;
 
-      padding-bottom: 5px;
-    }
+    color: #ffffff;
 
-
-    /* ========================================
-       REMOVE DESKTOP HOVER ON MOBILE
-    ======================================== */
-
-    .dropdown-item:hover .with-chandhini {
-      max-width: 0;
-
-      opacity: 0;
-
-      margin-left: 0;
-    }
-
-
-    .dropdown-item:hover .sub-menu {
-      opacity: 0;
-
-      visibility: hidden;
-
-      pointer-events: none;
-    }
-
-
-    /* ========================================
-       MOBILE TOUCH ACTIVE
-    ======================================== */
-
-    .dropdown-item.active .with-chandhini {
-      max-width: 130px;
-
-      opacity: 1;
-
-      margin-left: 4px;
-    }
-
-
-    .dropdown-item.active .nav-title::after {
-      width: 100%;
-    }
-
-
-    .dropdown-item.active .sub-menu {
-      position: relative;
-
-      top: auto;
-      left: auto;
-
-      transform: none;
-
-      min-width: 100%;
-
-      margin-top: 8px;
-
-      padding: 5px 0 0 14px;
-
-      background: transparent;
-
-      border: none;
-
-      border-radius: 0;
-
-      box-shadow: none;
-
-      opacity: 1;
-
-      visibility: visible;
-
-      pointer-events: auto;
-    }
-
-
-    .dropdown-item.active .sub-menu a {
-      padding: 8px 0;
-
-      color: #6b5a6b;
-
-      font-size: 13px;
-    }
-
+    transition:
+      max-width .28s ease,
+      opacity .2s ease,
+      margin-left .28s ease;
   }
 
-  
 
+  /* =========================================
+     ACTIVE ITEM
+  ========================================= */
 
-  /* ========================================
-     SMALL MOBILE
-  ======================================== */
+  .menu-item.active {
+    flex: 1.65;
 
-@media (max-width: 420px) {
+    padding: 0 12px;
 
-  .navbar {
-    height: 45px;
+    gap: 0;
+
+    background:
+      linear-gradient(
+        135deg,
+        #8b00ff,
+        #c000ff
+      ) !important;
+
+    color: #ffffff !important;
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 5px 16px rgba(167,0,255,.35) !important;
   }
 
-  .logo {
-    font-size: 48px;
+
+  .menu-item.active i {
+    color: #ffffff;
+
+    transform: scale(1.03);
   }
 
-  .nav-right {
-    left: 15px;
-    right: auto;
-    height: 65px;
+
+  /* SHOW TEXT ONLY FOR ACTIVE */
+
+  .menu-item.active span {
+    max-width: 110px;
+
+    margin-left: 7px;
+
+    opacity: 1;
+
+    color: #ffffff;
   }
 
-  .menu-toggle {
-    width: 20px;
+
+  /* -----------------------------------------
+     REMOVE DESKTOP HOVER EFFECT ON MOBILE
+  ----------------------------------------- */
+
+  .menu-item:hover {
+    background: transparent;
+
+    color: #ffffff;
+
+    transform: none;
+
+    box-shadow: none;
   }
 
-  .below-nav-text {
-    font-size: 16px !important;
+
+  .menu-item.active:hover {
+    background:
+      linear-gradient(
+        135deg,
+        #8b00ff,
+        #c000ff
+      ) !important;
+
+    color: #ffffff;
   }
 
-  .nav-links {
-    top: 95px;
+
+  /* Page content bottom navbar kinda
+     hide avvakunda space */
+
+  body {
+    padding-bottom: 85px;
   }
-}
-  .fixed-header {
-  position: fixed;
 
-  top: 0;
-  left: 0;
-  right: 0;
-
-  width: 100%;
-
-  z-index: 9999;
 }
 
 
-/* =========================
-   SEARCH BOX
-========================= */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-.search-box {
-  position: fixed;
-  top: 105px;
-  left: 50%;
+@media (max-width: 390px) {
 
-  transform: translateX(-50%) translateY(-10px);
+  .main-menu {
+    width: calc(100% - 14px);
 
-  width: min(500px, calc(100% - 30px));
+    bottom: 10px;
 
-  background: #ffffff;
-  padding: 10px;
+    height: 56px;
 
-  border-radius: 8px;
+    padding: 6px;
+  }
 
-  box-shadow: 0 10px 35px rgba(0,0,0,.12);
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  .menu-item {
+    height: 42px;
+  }
 
-  transition: .25s ease;
 
-  z-index: 10001;
-}
+  .menu-item i {
+    font-size: 16px;
+  }
 
-.search-box.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
 
-  transform: translateX(-50%) translateY(0);
-}
+  .menu-item.active {
+    flex: 1.7;
 
-.search-box input {
-  width: 100%;
-  height: 44px;
+    padding: 0 9px;
+  }
 
-  padding: 0 15px;
 
-  border: 1px solid #dddddd;
-  border-radius: 6px;
+  .menu-item.active span {
+    margin-left: 5px;
 
-  outline: none;
+    font-size: 9px;
+  }
 
-  font-size: 15px;
-}
-
-.search-box input:focus {
-  border-color: #410144;
-}
+}/* =====================================================
+   MOBILE ONLY NAVBAR
+   BLACK BAR + ORANGE ACTIVE CIRCLE
+===================================================== */
 
 @media (max-width: 768px) {
-  .search-box {
-    top: 90px;
-    width: calc(100% - 30px);
+
+  body {
+    padding-bottom: 85px;
   }
+
+
+  /* =========================
+     BOTTOM BLACK BAR
+  ========================= */
+
+  .main-menu {
+    position: fixed !important;
+
+    left: 50% !important;
+    bottom: 14px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: calc(100% - 30px) !important;
+    max-width: 390px !important;
+
+    height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 8px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #111111 !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    box-shadow:
+      0 8px 22px rgba(0,0,0,.22) !important;
+
+    z-index: 99999 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     INNER
+  ========================= */
+
+  .menu-inner {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: space-around !important;
+
+    gap: 0 !important;
+
+    background: transparent !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     NAV ITEM
+  ========================= */
+
+  .menu-item {
+    position: relative !important;
+
+    flex: 1 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    text-decoration: none !important;
+
+    transform: none !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================
+     DEFAULT ICON
+  ========================= */
+
+  .menu-item i {
+    position: relative !important;
+
+    z-index: 3 !important;
+
+    margin: 0 !important;
+
+    font-size: 14px !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    transform: none !important;
+
+    transition:
+      transform .3s ease,
+      color .3s ease !important;
+  }
+
+
+  /* TEXT HIDE ON MOBILE */
+
+  .menu-item span {
+    display: none !important;
+  }
+
+
+  /* ==================================================
+     ACTIVE ORANGE CIRCLE
+  ================================================== */
+
+  .menu-item.active {
+    background: transparent !important;
+
+    color: #ffffff !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  /* ORANGE CIRCLE */
+
+  .menu-item.active::before {
+    content: "";
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: -13px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    border-radius: 50% !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        #ff9a62,
+        #f36d3e
+      ) !important;
+
+    border: 4px solid #f7f7f4 !important;
+
+    box-sizing: content-box !important;
+
+    box-shadow:
+      0 4px 12px rgba(243,109,62,.35) !important;
+
+    z-index: 1 !important;
+  }
+
+
+  /* ACTIVE ICON MOVES UP */
+
+  .menu-item.active i {
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+
+    transform: translateY(-13px) !important;
+
+    z-index: 5 !important;
+  }
+
+
+  /* =========================
+     REMOVE MOBILE HOVER
+  ========================= */
+
+  .menu-item:hover {
+    background: transparent !important;
+
+    color: rgba(255,255,255,.65) !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+
+  .menu-item:hover i {
+    transform: none !important;
+  }
+
+
+  /* ACTIVE HOVER SAME */
+
+  .menu-item.active:hover {
+    background: transparent !important;
+
+    color: #ffffff !important;
+  }
+
+
+  .menu-item.active:hover i {
+    color: #ffffff !important;
+
+    transform: translateY(-13px) !important;
+  }
+
 }
 
 
-/* ========================================
-   EDUCATION PORTFOLIO
-======================================== */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+  .main-menu {
+    width: calc(100% - 22px) !important;
+
+    bottom: 10px !important;
+
+    height: 50px !important;
+  }
+
+
+  .menu-item {
+    height: 50px !important;
+  }
+
+
+  .menu-item.active::before {
+    width: 36px !important;
+    height: 36px !important;
+
+    top: -13px !important;
+  }
+
+
+  .menu-item i {
+    font-size: 13px !important;
+  }
+
+
+  .menu-item.active i {
+    font-size: 13px !important;
+
+    transform: translateY(-13px) !important;
+  }
+
+}
+
+/* =========================================
+   MOBILE NAV NAMES
+========================================= */
+
+@media (max-width: 768px) {
+
+  .menu-item {
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+
+  /* ALL NAMES */
+  .menu-item span {
+    display: block !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 4px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: max-content !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 8px !important;
+    font-weight: 500 !important;
+
+    line-height: 1 !important;
+
+    color: rgba(255,255,255,.70) !important;
+
+    white-space: nowrap !important;
+
+    z-index: 5 !important;
+  }
+
+
+  /* NORMAL ICON LITTLE UP */
+
+  .menu-item:not(.active) i {
+    transform: translateY(-6px) !important;
+  }
+
+
+  /* ACTIVE ICON */
+
+  .menu-item.active i {
+    transform: translateY(-13px) !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* ACTIVE NAME */
+
+  .menu-item.active span {
+    color: #ffffff !important;
+
+    font-weight: 600 !important;
+  }
+
+
+  /* NORMAL HOVER ICON POSITION */
+
+  .menu-item:not(.active):hover i {
+    transform: translateY(-6px) !important;
+  }
+
+
+  /* ACTIVE HOVER ICON POSITION */
+
+  .menu-item.active:hover i {
+    transform: translateY(-13px) !important;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 390px) {
+
+  .menu-item span {
+    font-size: 7px !important;
+    bottom: 4px !important;
+  }
+
+}
+
+/* =====================================================
+   HOME VIDEO GALLERY
+===================================================== */
 
 .edu-portfolio {
   width: 100%;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
-  display: grid;
-  grid-template-columns: 180px 1fr;
-
-  background: #f7f7f4;
-
-  padding: 10px;
-  gap: 12px;
+  background: #000;
 }
 
 
-/* ========================================
-   LEFT SIDEBAR - PC
-======================================== */
-
-/* ========================================
-   PC FIXED LEFT SIDEBAR
-======================================== */
-
-.edu-sidebar {
-  position: fixed;
-
-  left: 10px;
-  top: 125px;
-
-  width: 180px;
-  height: calc(100vh - 135px);
-
-  padding: 28px 25px;
-
-  display: flex;
-  flex-direction: column;
-
-  background: #e6e6a1;
-
-  z-index: 100;
-}
-
-
-.edu-brand h1 {
-  font-family: "Italianno", cursive;
-
-  font-size: 42px;
-  font-weight: 400;
-
-  color: #220123;
-
-  line-height: .9;
-}
-
-
-.edu-brand span {
-  display: block;
-
-  margin-top: 18px;
-
-  font-size: 9px;
-  letter-spacing: 4px;
-  line-height: 1.7;
-
-  color: #333;
-}
-
-
-.edu-side-links {
-  display: flex;
-  flex-direction: column;
-
-  gap: 28px;
-
-  margin-top: 70px;
-}
-
-
-.edu-side-links a {
-  color: #222;
-
-  text-decoration: none;
-
-  font-size: 11px;
-  letter-spacing: 4px;
-
-  transition: .25s ease;
-}
-
-
-.edu-side-links a:hover {
-  color: #9c4ba5;
-  transform: translateX(4px);
-}
-
-
-.edu-social {
-  margin-top: auto;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 18px;
-
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-
-/* ========================================
-   PORTFOLIO GRID
-======================================== */
-
-.edu-portfolio {
-  width: 100%;
-  min-height: 100vh;
-
-  display: block;
-
-  background: #f7f7f4;
-
-  padding: 10px;
-}
-
+/* =====================================================
+   GALLERY - PC
+===================================================== */
 .edu-gallery {
-  margin-left: 192px;
-
-  width: calc(100% - 192px);
+  width: 100%;
+  margin: 0;
+  padding: 10px;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 310px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  /* EXACT TWO ROWS */
+  grid-template-rows: 310px 310px;
 
   gap: 10px;
+
+  background: #f7f7f4;
 }
 
+
+/* CARD */
 
 .edu-card {
   position: relative;
 
-  overflow: hidden;
-
-  background: #e9e9e9;
+  width: 100%;
+  height: 100%;
 
   min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #000;
 }
 
 
-.edu-card img {
+/* FIRST ROW */
+
+.edu-card:nth-child(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.edu-card:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.edu-card:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+
+/* SECOND ROW */
+
+.edu-card:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.edu-card:nth-child(5) {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+.edu-card:nth-child(6) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+
+/* VIDEO */
+
+.edu-card video {
+  position: absolute;
+
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
   display: block;
 
   object-fit: cover;
+  object-position: center;
 
-  transition: transform .7s ease;
+  transform: scale(1.03);
+
+  filter:
+    blur(5px)
+    brightness(.4);
+
+  transition:
+    filter .7s ease,
+    transform .8s ease;
 }
 
 
-.edu-card:hover img {
-  transform: scale(1.035);
+/* ACTIVE */
+
+.edu-card.is-active video {
+  filter:
+    blur(0)
+    brightness(1);
+
+  transform: scale(1);
 }
 
 
-/* FIRST BIG IMAGE */
+/* DARK OVERLAY */
 
-.edu-feature {
-  grid-column: span 2;
+.edu-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(0,0,0,.32);
+
+  pointer-events: none;
+
+  transition: background .5s ease;
 }
 
 
-.edu-card:nth-child(2) {
-  grid-column: span 1;
+.edu-card.is-active::after {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.55),
+      transparent 55%
+    );
 }
 
 
-.edu-card:nth-child(3) {
-  grid-column: span 1;
-}
-
-
-.edu-card:nth-child(4) {
-  grid-column: span 1;
-}
-
-
-.edu-card:nth-child(5) {
-  grid-column: span 2;
-}
-
-
-.edu-card:nth-child(6) {
-  grid-column: span 1;
-}
-
-
-/* ========================================
-   IMAGE TEXT
-======================================== */
+/* TEXT */
 
 .edu-card-overlay {
   position: absolute;
@@ -1052,44 +1205,78 @@ button {
   right: 20px;
   bottom: 18px;
 
+  z-index: 3;
+
   color: #fff;
-
-  z-index: 2;
-}
-
-
-.edu-card::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.48),
-    transparent 45%
-  );
-
-  pointer-events: none;
 }
 
 
 .edu-card-overlay h2 {
-  font-family: Georgia, serif;
+  margin: 0 0 7px;
+
+  font-family: "Bodoni Moda", Georgia, serif;
 
   font-size: 18px;
   font-weight: 400;
 
-  margin-bottom: 7px;
+  color: #fff;
 }
 
 
 .edu-card-overlay p {
-  font-size: 8px;
+  margin: 0;
+
+  font-size: 7px;
+
+  font-weight: 500;
 
   letter-spacing: 3px;
 
-  font-weight: 500;
+  color: rgba(255,255,255,.8);
+}
+
+
+/* INACTIVE TEXT */
+
+.edu-card:not(.is-active) .edu-card-overlay {
+  opacity: .5;
+}
+
+
+/* ACTIVE TIMER LINE */
+
+.edu-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+
+  z-index: 5;
+
+  background: #efbe73;
+}
+
+
+.edu-card.is-active::before {
+  animation: eduTimer 8s linear forwards;
+}
+
+
+@keyframes eduTimer {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+
 }
 
 
@@ -1099,1906 +1286,271 @@ button {
 
 @media (max-width: 768px) {
 
-  .edu-portfolio {
-    display: block;
+  .edu-gallery {
+    width: 100%;
 
+    margin: 0;
     padding: 8px;
 
-    background: #ffffff;
-  }
-
-
-  /* SIDEBAR NOT NEEDED ON MOBILE
-     YOUR EXISTING HAMBURGER = NAVIGATION */
-
-  .edu-sidebar {
-    display: none;
-  }
-
-
-  .edu-gallery {
     display: grid;
 
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-rows:
+      240px
+      180px
+      180px;
 
     gap: 8px;
   }
 
 
-  .edu-card,
-  .edu-feature,
+  /* ROW 1 */
+
+  .edu-card:nth-child(1) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+
+  /* ROW 2 */
+
+  .edu-card:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .edu-card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+
+  /* ROW 3 */
+
+  .edu-card:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .edu-card:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+
+  /* LAST VIDEO FULL WIDTH */
+
+  .edu-card:nth-child(6) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+
+    height: 220px;
+  }
+
+
+  .edu-card-overlay {
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+  }
+
+
+  .edu-card-overlay h2 {
+    font-size: 15px;
+  }
+
+
+  .edu-card-overlay p {
+    font-size: 6px;
+
+    letter-spacing: 1.7px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .edu-gallery {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 270px;
+  }
+
+  .edu-feature {
+    grid-column: span 2;
+  }
+
   .edu-card:nth-child(2),
   .edu-card:nth-child(3),
   .edu-card:nth-child(4),
-  .edu-card:nth-child(5),
   .edu-card:nth-child(6) {
-    grid-column: 1;
-
-    width: 100%;
-    height: 320px;
+    grid-column: span 1;
   }
 
-
-  /* FIRST IMAGE BIG LIKE REFERENCE */
-
-  .edu-feature {
-    height: 360px;
-  }
-
-
-  .edu-card img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-  }
-
-
-  .edu-card-overlay {
-    left: 14px;
-    bottom: 15px;
-  }
-
-
-  .edu-card-overlay h2 {
-    font-size: 17px;
-  }
-
-
-  .edu-card-overlay p {
-    font-size: 7px;
-    letter-spacing: 2.5px;
+  .edu-card:nth-child(5) {
+    grid-column: span 2;
   }
 
 }
 
 
-/* SMALL MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
-@media (max-width: 420px) {
+@media (max-width: 768px) {
 
-  .edu-feature {
-    height: 360px;
+  .edu-portfolio {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
   }
 
-  .edu-card {
+
+  .edu-gallery {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 190px;
+
+    gap: 8px;
+
+    background: #f7f7f4;
+  }
+
+
+  /* first video wide */
+
+  .edu-feature {
+    grid-column: 1 / -1;
+
     height: 250px;
   }
 
-}
 
-/* ==============================
-   PC SIDEBAR LINKS
-============================== */
-
-.edu-side-links a {
-  color: #222;
-  text-decoration: none;
-
-  font-size: 11px;
-  letter-spacing: 4px;
-
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  width: fit-content;
-}
-
-.edu-side-links a span {
-  opacity: 0;
-  transform: translateX(-5px);
-
-  transition: .25s ease;
-}
-
-.edu-side-links a:hover span {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-/* ==============================
-   SOCIAL ICONS
-============================== */
-
-.edu-social {
-  margin-top: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  gap: 18px;
-}
-
-.edu-social a {
-  width: 18px;
-  height: 18px;
-
-  display: block;
-
-  color: #222;
-}
-
-.edu-social svg {
-  width: 100%;
-  height: 100%;
-
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.4;
-}
-
-.edu-social .edu-whatsapp {
-  fill: currentColor;
-  stroke: none;
-}
-
-.edu-social a:hover {
-  opacity: .55;
-}
-
-/* ========================================
-   MOBILE SCROLL MENU
-======================================== */
-
-/* PC LO HIDE */
-.mobile-scroll-menu {
-  display: none;
-}
-
-
-@media (max-width: 768px) {
-
-  /* OLD HAMBURGER ONLY HIDE */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  /* OLD DROPDOWN MENU MOBILE LO HIDE */
-  .nav-links,
-  .nav-links.open {
-    display: none !important;
+  .edu-card:nth-child(2),
+  .edu-card:nth-child(3) {
+    grid-column: span 1;
   }
 
 
-  /* NEW HORIZONTAL MENU */
-  .mobile-scroll-menu {
-    width: 100%;
-    height: 39px;
+  /* fourth wide */
 
-    display: flex;
-    align-items: center;
+  .edu-card:nth-child(4) {
+    grid-column: 1 / -1;
 
-    gap: 30px;
-
-    padding: 0 14px;
-
-    background: #f7f7f4;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    white-space: nowrap;
-
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-
-    border-bottom: 1px solid #eeeeee;
+    height: 220px;
   }
 
 
-  .mobile-scroll-menu::-webkit-scrollbar {
-    display: none;
+  /* fifth + sixth */
+
+  .edu-card:nth-child(5),
+  .edu-card:nth-child(6) {
+    grid-column: span 1;
   }
 
 
-  .mobile-scroll-menu a {
-    flex: 0 0 auto;
-
-    color: #555;
-
-    text-decoration: none;
-
-    font-size: 9px;
-    font-weight: 500;
-
-    letter-spacing: 2.5px;
-
-    line-height: 39px;
-  }
-
-
-  .mobile-scroll-menu a:active {
-    color: #410144;
-  }
-
-
-  /* HEADER + SCROLL MENU SPACE */
-  body {
-    padding-top: 139px;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .edu-sidebar {
-    display: none !important;
-  }
-
-  .edu-gallery {
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
-
-}
-/* =========================================
-   MOBILE PORTFOLIO GRID
-========================================= */
-
-@media (max-width: 768px) {
-
-  .edu-portfolio {
-    padding: 6px;
-  }
-
-  .edu-gallery {
-    width: 100% !important;
-    margin-left: 0 !important;
-
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-auto-rows: auto !important;
-
-    gap: 6px;
-  }
-
-
-  /* RESET OLD CARD SETTINGS */
-  .edu-gallery .edu-card,
-  .edu-gallery .edu-feature,
-  .edu-gallery .edu-card:nth-child(2),
-  .edu-gallery .edu-card:nth-child(3),
-  .edu-gallery .edu-card:nth-child(4),
-  .edu-gallery .edu-card:nth-child(5),
-  .edu-gallery .edu-card:nth-child(6) {
-    width: 100%;
-    height: 190px;
-
-    grid-column: auto !important;
-  }
-
-
-  /* 1ST = FULL BIG IMAGE */
-  .edu-gallery .edu-card:nth-child(1) {
-    grid-column: 1 / -1 !important;
-    height: 350px;
-  }
-
-
-  /* 2 + 3 = TWO SMALL IMAGES */
-  .edu-gallery .edu-card:nth-child(2),
-  .edu-gallery .edu-card:nth-child(3) {
-    height: 190px;
-  }
-
-
-  /* 4TH = FULL BIG IMAGE */
-  .edu-gallery .edu-card:nth-child(4) {
-    grid-column: 1 / -1 !important;
-    height: 280px;
-  }
-
-
-  /* 5 + 6 = TWO SMALL IMAGES */
-  .edu-gallery .edu-card:nth-child(5),
-  .edu-gallery .edu-card:nth-child(6) {
-    height: 190px;
-  }
-
-
-  .edu-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-  /* SMALL CARDS TEXT */
   .edu-card-overlay {
-    left: 10px;
-    right: 8px;
-    bottom: 10px;
+    left: 13px;
+    right: 13px;
+    bottom: 14px;
   }
+
 
   .edu-card-overlay h2 {
-    font-size: 13px;
-    margin-bottom: 4px;
+    font-size: 15px;
+
+    margin-bottom: 5px;
   }
+
 
   .edu-card-overlay p {
     font-size: 6px;
-    letter-spacing: 1.5px;
+
+    letter-spacing: 1.7px;
   }
 
 
-  /* BIG FIRST IMAGE TEXT */
-  .edu-gallery .edu-card:nth-child(1) .edu-card-overlay h2 {
-    font-size: 19px;
-  }
-
-}
-
-/* ========================================
-   MOBILE IMAGE TOUCH / HOVER EFFECT
-======================================== */
-
-@media (max-width: 768px) {
-
-  .edu-card {
-    cursor: pointer;
-  }
-
-  .edu-card img {
-    transition:
-      transform 0.45s ease,
-      filter 0.45s ease;
-  }
-
-  /* Desktop-style hover where supported */
-  .edu-card:hover img {
-    transform: scale(1.06);
-    filter: brightness(0.78);
-  }
-
-  /* Mobile finger press */
-  .edu-card:active img {
-    transform: scale(1.06);
-    filter: brightness(0.72);
-  }
-
-  /* Text also moves slightly */
-  .edu-card-overlay {
-    transition:
-      transform 0.4s ease,
-      opacity 0.4s ease;
-  }
-
-  .edu-card:hover .edu-card-overlay,
-  .edu-card:active .edu-card-overlay {
-    transform: translateY(-6px);
-  }
-
-}
-
-
-/* ========================================
-   ABOUT CHANDINI
-======================================== */
-
-.about-chandini {
-  width: 100%;
-  background: #f7f7f4;
-
-  padding: 80px 60px 0;
-}
-
-
-/* HEADING */
-
-.about-heading {
-  max-width: 1450px;
-  margin: 0 auto 65px;
-}
-
-.about-heading > span {
-  display: block;
-
-  font-size: 9px;
-  letter-spacing: 5px;
-
-  color: #777;
-
-  margin-bottom: 18px;
-}
-
-.about-heading h2 {
-  max-width: 1100px;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(42px, 5vw, 78px);
-  line-height: 1.02;
-
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-.about-heading h2 em {
-  font-weight: 400;
-}
-
-
-/* MAIN LAYOUT */
-
-.about-layout {
-  max-width: 1450px;
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(320px, 460px)
-    minmax(450px, 1fr);
-
-  gap: clamp(60px, 11vw, 180px);
-
-  align-items: end;
-}
-
-
-/* IMAGE */
-
-.about-image {
-  width: 100%;
-  height: 540px;
-
-  overflow: hidden;
-
-  background: #ddd;
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  filter: grayscale(100%);
-
-  transition:
-    transform .8s ease,
-    filter .6s ease;
-}
-
-.about-image:hover img {
-  transform: scale(1.035);
-  filter: grayscale(0%);
-}
-
-
-/* CONTENT */
-
-.about-content {
-  align-self: stretch;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: flex-end;
-}
-
-.about-copy {
-  max-width: 750px;
-
-  margin-bottom: 60px;
-}
-
-.about-copy p {
-  font-size: 19px;
-  line-height: 1.75;
-
-  color: #17231d;
-  font-family: Georgia, serif;
-
-  margin-bottom: 24px;
-}
-
-.about-copy p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* STATS */
-
-.about-stats {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  border-top: 1px solid #c8ccc9;
-}
-
-.about-stat {
-  min-height: 145px;
-
-  padding: 38px 30px 20px 0;
-}
-
-.about-stat + .about-stat {
-  border-left: 1px solid #c8ccc9;
-
-  padding-left: 30px;
-}
-
-.about-stat span {
-  display: block;
-
-  min-height: 28px;
-
-  font-family: Georgia, serif;
-
-  font-size: 9px;
-  letter-spacing: 4px;
-  line-height: 1.5;
-
-  color: #555;
-}
-
-.about-stat strong {
-  display: block;
-
-  margin-top: 8px;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 48px;
-  line-height: 1;
-
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-  .about-chandini {
-    padding: 55px 12px 0;
+  .edu-card video {
+    filter:
+      blur(4px)
+      brightness(.38);
   }
 
 
-  .about-heading {
-    margin-bottom: 32px;
-  }
-
-  .about-heading > span {
-    font-size: 8px;
-    letter-spacing: 4px;
-
-    margin-bottom: 12px;
-  }
-
-  .about-heading h2 {
-    font-size: 34px;
-    line-height: 1.06;
-  }
-
-
-  /* IMAGE FIRST */
-
-  .about-layout {
-    display: flex;
-    flex-direction: column;
-
-    gap: 32px;
-  }
-
-
-  .about-image {
-    width: 100%;
-    height: 430px;
-  }
-
-
-  /* MOBILE TOUCH EFFECT */
-
-  .about-image:active img {
-    transform: scale(1.04);
-    filter: grayscale(0%);
-  }
-
-
-  .about-copy {
-    margin-bottom: 35px;
-  }
-
-  .about-copy p {
-    font-size: 15px;
-    line-height: 1.7;
-
-    margin-bottom: 18px;
-  }
-
-
-  /* THREE STATS SAME ROW */
-
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .about-stat {
-    min-width: 0;
-    min-height: 105px;
-
-    padding: 22px 8px 18px 0;
-  }
-
-  .about-stat + .about-stat {
-    padding-left: 10px;
-  }
-
-  .about-stat span {
-    min-height: 25px;
-
-    font-size: 6px;
-    letter-spacing: 1.5px;
-  }
-
-  .about-stat strong {
-    font-size: 29px;
-
-    margin-top: 8px;
-  }
-
-}
-.about-chandini {
-  width: calc(100% - 192px);
-  margin-left: 192px;
-
-  background: #f7f7f4;
-
-  padding: 80px 45px 0;
-}
-@media (max-width: 768px) {
-
-  .about-chandini {
-    width: 100%;
-    margin-left: 0;
-
-    padding: 55px 12px 0;
+  .edu-card.is-active video {
+    filter:
+      blur(0)
+      brightness(1);
   }
 
 }
 
 
 /* =====================================================
-   FINAL DESKTOP LAYOUT FIX
-   HEADER + SIDEBAR CONNECTED / NO GAP
+   SMALL MOBILE
 ===================================================== */
 
-@media (min-width: 769px) {
-
-  html,
-  body {
-    margin: 0;
-    padding-left: 0;
-  }
-
-
-  /* ==========================
-     FIXED TOP HEADER
-  ========================== */
-
-  .fixed-header {
-    position: fixed !important;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    width: 100%;
-
-    z-index: 9999;
-  }
-
-
-  /* ==========================
-     FIXED LEFT SIDEBAR
-  ========================== */
-@media (min-width: 769px) {
-
-  .edu-sidebar {
-    position: fixed !important;
-
-    left: 0 !important;
-
-    /* HEADER ENDS AT 83px */
-    top: 83px !important;
-
-    width: 192px !important;
-
-    /* DIRECTLY HEADER TO SCREEN BOTTOM */
-    height: calc(100vh - 83px) !important;
-
-    margin: 0 !important;
-
-    padding: 28px 25px !important;
-
-    background: #e6e6a1 !important;
-
-    display: flex;
-    flex-direction: column;
-
-    border-right: 1px solid rgba(34,34,34,.22);
-
-    box-sizing: border-box;
-
-    z-index: 500;
-  }
-
-}
-
-
-  /* ==========================
-     REMOVE PORTFOLIO GAP
-  ========================== */
-
-  .edu-portfolio {
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: #f7f7f4;
-  }
-
-
-  /* ==========================
-     CONTENT EXACTLY AFTER LINE
-  ========================== */
+@media (max-width: 390px) {
 
   .edu-gallery {
-    margin-left: 192px !important;
-
-    width: calc(100% - 192px) !important;
-
-    padding: 0 !important;
-
-    /* tiny image gap only */
-    gap: 6px !important;
+    grid-auto-rows: 170px;
   }
 
 
-  /* ==========================
-     ABOUT ALSO SAME ALIGNMENT
-  ========================== */
+  .edu-feature {
+    height: 225px;
+  }
 
-  .about-chandini {
-    width: calc(100% - 192px) !important;
 
-    margin-left: 192px !important;
+  .edu-card:nth-child(4) {
+    height: 200px;
+  }
 
-    box-sizing: border-box;
+
+  .edu-card-overlay h2 {
+    font-size: 14px;
+  }
+
+
+  .edu-card-overlay p {
+    font-size: 5.5px;
+
+    letter-spacing: 1.4px;
   }
 
 }
 
 
 /* =====================================================
-   FIRST SECTION IMAGES
-   START BLACK & WHITE
+   FOOTER
 ===================================================== */
 
-.edu-gallery .edu-card img {
-  filter: grayscale(100%);
-
-  transition:
-    transform .7s ease,
-    filter .65s ease;
-}
-
-
-/* PC HOVER = COLOR */
-
-.edu-gallery .edu-card:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.045);
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  /* sidebar completely removed */
-  .edu-sidebar {
-    display: none !important;
-  }
-
-
-  .edu-portfolio {
-    margin: 0 !important;
-    padding: 6px !important;
-  }
-
-
-  .edu-gallery {
-    margin-left: 0 !important;
-
-    width: 100% !important;
-  }
-
-
-  .about-chandini {
-    margin-left: 0 !important;
-
-    width: 100% !important;
-  }
-
-
-  /* MOBILE ALSO START B&W */
-
-  .edu-gallery .edu-card img {
-    filter: grayscale(100%);
-  }
-
-
-  /* TOUCH */
-
-  .edu-gallery .edu-card:active img,
-  .edu-gallery .edu-card.mobile-hover img {
-    filter: grayscale(0%);
-    transform: scale(1.06);
-  }
-
-}
-
-@media (min-width: 769px) {
-
-  .edu-sidebar {
-    position: fixed !important;
-
-    left: 0 !important;
-
-    /* HEADER ENDS AT 83px */
-    top: 70px !important;
-
-    width: 182px !important;
-
-    /* DIRECTLY HEADER TO SCREEN BOTTOM */
-    height: calc(100vh - 70px) !important;
-
-    margin: 0 !important;
-
-    padding: 28px 25px !important;
-
-    background: #e6e6a1 !important;
-
-    display: flex;
-    flex-direction: column;
-
-    border-right: 1px solid rgba(34,34,34,.22);
-
-    box-sizing: border-box;
-
-    z-index: 500;
-  }
-
-}
-/* ========================================
-   HEADER BOTTOM HORIZONTAL LINE
-======================================== */
-
-.fixed-header {
-  border-bottom: 1px solid rgba(34, 34, 34, 0.22);
-}
-
-/* ========================================
-   WORK SECTION
-======================================== */
-
-.work-services {
-  width: calc(100% - 192px);
-  margin-left: 192px;
-
-  padding: 65px 35px 80px;
-
-  background: #f7f7f4;
-  box-sizing: border-box;
-}
-
-
-/* TOP SMALL TITLE */
-
-.work-label {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-
-  margin-bottom: 35px;
-
-  color: #33443c;
-}
-
-.work-label span {
-  flex: 0 0 auto;
-
-  font-size: 10px;
-  letter-spacing: 5px;
-}
-
-.work-label div {
+.chandini-footer {
   width: 100%;
-  height: 1px;
-
-  background: #c9cfca;
-}
-
-
-/* MAIN HEADING */
-
-.work-title {
-  margin: 0 0 65px;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(48px, 5vw, 78px);
-  line-height: 1;
-
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-
-/* ROW */
-
-.work-row {
-  position: relative;
-
-  width: 100%;
-  min-height: 170px;
-
-  display: grid;
-
-  grid-template-columns:
-    120px
-    minmax(300px, 1.1fr)
-    minmax(350px, 1.3fr)
-    30px;
-
-  align-items: center;
-
-  gap: 30px;
-
-  padding: 30px 20px;
-
-  border-top: 1px solid #c9cfca;
-
-  text-decoration: none;
-
-  color: #17231d;
-
-  transition:
-    background .35s ease,
-    padding-left .35s ease;
-}
-
-
-/* LAST LINE */
-
-.work-row:last-child {
-  border-bottom: 1px solid #c9cfca;
-}
-
-
-/* HOVER */
-
-.work-row:hover {
-  background: #e7eee8;
-  padding-left: 28px;
-}
-
-
-/* NUMBER */
-
-.work-number {
-  font-size: 10px;
-
-  letter-spacing: 5px;
-
-  color: #44554d;
-}
-
-
-/* TITLE */
-
-.work-row h3 {
-  margin: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(25px, 2.4vw, 38px);
-
-  line-height: 1.1;
-
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-
-/* DESCRIPTION */
-
-.work-row p {
-  max-width: 600px;
 
   margin: 0;
-
-  font-size: 15px;
-  line-height: 1.65;
-
-  color: #536159;
-}
-
-
-/* ARROW */
-
-.work-arrow {
-  justify-self: end;
-
-  font-size: 20px;
-
-  transition: transform .3s ease;
-}
-
-.work-row:hover .work-arrow {
-  transform: translate(4px, -4px);
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-  .work-services {
-    width: 100%;
-
-    margin-left: 0;
-
-    padding: 45px 12px 50px;
-  }
-
-
-  .work-label {
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-
-  .work-label span {
-    font-size: 8px;
-    letter-spacing: 3px;
-  }
-
-
-  .work-title {
-    margin-bottom: 40px;
-
-    font-size: 42px;
-  }
-
-
-  .work-row {
-    min-height: 150px;
-
-    grid-template-columns: 35px 1fr 22px;
-
-    gap: 10px;
-
-    padding: 25px 5px;
-  }
-
-
-  .work-number {
-    align-self: start;
-
-    padding-top: 5px;
-
-    font-size: 8px;
-    letter-spacing: 2px;
-  }
-
-
-  .work-row h3 {
-    font-size: 25px;
-  }
-
-
-  .work-row p {
-    grid-column: 2 / 3;
-
-    margin-top: -5px;
-
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-
-  .work-arrow {
-    grid-column: 3;
-    grid-row: 1;
-
-    align-self: start;
-
-    font-size: 17px;
-  }
-
-
-  .work-row:hover {
-    padding-left: 5px;
-  }
-
-}
-html {
-  scroll-behavior: smooth;
-}
-
-#manifest,
-#career,
-#planners {
-  scroll-margin-top: 110px;
-}
-
-/* WORK ROW SCROLL REVEAL */
-
-.work-row {
-  opacity: 0;
-  transform: translateY(55px);
-
-  transition:
-    opacity .75s ease,
-    transform .75s ease,
-    background .35s ease;
-}
-
-.work-row.work-show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========================================
-   INSTAGRAM REELS SHOWCASE
-======================================== */
-
-.reels-showcase {
-  width: calc(100% - 192px);
-  margin-left: 192px;
-  padding: 80px 35px 100px;
-  background: #f7f7f4;
-  box-sizing: border-box;
-}
-
-
-/* ========================================
-   HEADING
-======================================== */
-
-.reels-heading {
-  margin-bottom: 45px;
-}
-
-.reels-heading > span {
-  display: block;
-  margin-bottom: 17px;
-
-  font-size: 9px;
-  letter-spacing: 5px;
-
-  color: #777;
-}
-
-.reels-heading h2 {
-  margin: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(45px, 5vw, 78px);
-  line-height: 1;
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-.reels-heading h2 em {
-  font-weight: 400;
-}
-
-
-/* ========================================
-   CAROUSEL STAGE
-======================================== */
-
-.reels-stage {
-  position: relative;
-
-  width: 100%;
-  height: 650px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-
-  background: black;
-
-  padding: 35px;
-
-  box-sizing: border-box;
-}
-
-
-/* ========================================
-   CAROUSEL TRACK
-======================================== */
-
-.reels-track {
-  position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* ========================================
-   REEL CARD
-======================================== */
-
-.reel-card {
-  position: absolute;
-
-  width: 290px;
-
-  aspect-ratio: 9 / 16;
-
-  border-radius: 10px;
-
-  overflow: hidden;
-
-  background: #111;
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, .15);
-
-  transition:
-    transform 1s cubic-bezier(.16, 1, .3, 1),
-    opacity .8s ease,
-    filter .8s ease;
-
-  will-change:
-    transform,
-    opacity,
-    filter;
-}
-
-
-/* ========================================
-   VIDEO
-======================================== */
-
-.reel-card video {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
+  padding: 0;
 
   background: #000;
 
-  transition:
-    transform 5s linear;
-}
-
-
-/* ========================================
-   LEFT CARD
-======================================== */
-
-.reel-card.left {
-  transform:
-    translateX(-330px)
-    scale(.80)
-    rotate(-5deg);
-
-  opacity: .60;
-
-  filter:
-    brightness(.72)
-    saturate(.75);
-
-  z-index: 2;
-}
-
-
-/* ========================================
-   CENTER ACTIVE CARD
-======================================== */
-
-.reel-card.center {
-  transform:
-    translateX(0)
-    scale(1.06)
-    rotate(0deg);
-
-  opacity: 1;
-
-  filter:
-    brightness(1)
-    saturate(1);
-
-  z-index: 10;
-
-  box-shadow:
-    0 35px 80px rgba(0, 0, 0, .25);
-}
-
-
-/* ACTIVE VIDEO SLOW ZOOM */
-
-.reel-card.center video {
-  transform: scale(1.06);
-}
-
-
-/* ========================================
-   RIGHT CARD
-======================================== */
-
-.reel-card.right {
-  transform:
-    translateX(330px)
-    scale(.80)
-    rotate(5deg);
-
-  opacity: .60;
-
-  filter:
-    brightness(.72)
-    saturate(.75);
-
-  z-index: 2;
-}
-
-
-/* ========================================
-   HIDDEN LEFT
-======================================== */
-
-.reel-card.hidden-left {
-  transform:
-    translateX(-680px)
-    scale(.55)
-    rotate(-10deg);
-
-  opacity: 0;
-
-  filter:
-    brightness(.5)
-    blur(4px);
-
-  pointer-events: none;
-
-  z-index: 1;
-}
-
-
-/* ========================================
-   HIDDEN RIGHT
-======================================== */
-
-.reel-card.hidden-right {
-  transform:
-    translateX(680px)
-    scale(.55)
-    rotate(10deg);
-
-  opacity: 0;
-
-  filter:
-    brightness(.5)
-    blur(4px);
-
-  pointer-events: none;
-
-  z-index: 1;
-}
-
-
-/* ========================================
-   REEL NUMBER
-======================================== */
-
-.reel-number {
-  position: absolute;
-
-  top: 17px;
-  right: 17px;
-
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, .25);
-
-  border:
-    1px solid rgba(255, 255, 255, .45);
-
   color: #fff;
 
-  font-size: 9px;
-  letter-spacing: 1px;
-
-  backdrop-filter: blur(8px);
-
-  z-index: 10;
-}
-
-
-/* ========================================
-   COUNTER
-======================================== */
-
-.reels-counter {
-  position: absolute;
-
-  left: 35px;
-  right: 35px;
-  bottom: 24px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  color: #17231d;
-
-  font-size: 9px;
-  letter-spacing: 2px;
-
-  z-index: 30;
-}
-
-
-/* ========================================
-   PROGRESS LINE
-======================================== */
-
-.reels-line {
-  flex: 1;
-
-  height: 1px;
-
   overflow: hidden;
-
-  background:
-    rgba(23, 35, 29, .25);
 }
 
 
-#reelsProgress {
-  width: 0%;
-  height: 100%;
-
-  background: #17231d;
-
-  transition:
-    width .1s linear;
-}
-
-
-/* ========================================
-   SIDE CARDS CLICK
-======================================== */
-
-.reel-card.left,
-.reel-card.right {
-  cursor: pointer;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-  .reels-showcase {
-    width: 100%;
-
-    margin-left: 0;
-
-    padding:
-      55px 0
-      70px;
-  }
-
-
-  /* HEADING */
-
-  .reels-heading {
-    margin-bottom: 28px;
-
-    padding:
-      0 14px;
-  }
-
-
-  .reels-heading > span {
-    margin-bottom: 12px;
-
-    font-size: 7px;
-
-    letter-spacing: 3px;
-  }
-
-
-  .reels-heading h2 {
-    font-size: 38px;
-  }
-
-
-  /* STAGE */
-
-  .reels-stage {
-    height: 590px;
-
-    padding:
-      25px 0;
-  }
-
-
-  /* CARD */
-
-  .reel-card {
-    width: 245px;
-
-    border-radius: 9px;
-  }
-
-
-  /* LEFT */
-
-  .reel-card.left {
-    transform:
-      translateX(-205px)
-      scale(.70)
-      rotate(-5deg);
-
-    opacity: .48;
-  }
-
-
-  /* CENTER */
-
-  .reel-card.center {
-    transform:
-      translateX(0)
-      scale(1)
-      rotate(0deg);
-
-    opacity: 1;
-  }
-
-
-  /* RIGHT */
-
-  .reel-card.right {
-    transform:
-      translateX(205px)
-      scale(.70)
-      rotate(5deg);
-
-    opacity: .48;
-  }
-
-
-  /* HIDDEN */
-
-  .reel-card.hidden-left {
-    transform:
-      translateX(-440px)
-      scale(.45)
-      rotate(-10deg);
-
-    opacity: 0;
-  }
-
-
-  .reel-card.hidden-right {
-    transform:
-      translateX(440px)
-      scale(.45)
-      rotate(10deg);
-
-    opacity: 0;
-  }
-
-
-  /* COUNTER */
-
-  .reels-counter {
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-  }
-
-}
-
-
-/* ========================================
-   SMALL MOBILE
-======================================== */
-
-@media (max-width: 390px) {
-
-  .reels-stage {
-    height: 550px;
-  }
-
-
-  .reel-card {
-    width: 220px;
-  }
-
-
-  .reel-card.left {
-    transform:
-      translateX(-180px)
-      scale(.68)
-      rotate(-5deg);
-  }
-
-
-  .reel-card.right {
-    transform:
-      translateX(180px)
-      scale(.68)
-      rotate(5deg);
-  }
-
-
-  .reel-card.hidden-left {
-    transform:
-      translateX(-380px)
-      scale(.45);
-  }
-
-
-  .reel-card.hidden-right {
-    transform:
-      translateX(380px)
-      scale(.45);
-  }
-
-}
-/* ========================================
-   QUOTE SECTION
-======================================== */
-
-.chandini-quote-section {
-  width: calc(100% - 192px);
-  margin-left: 192px;
-
-  min-height: 630px;
-
-  padding: 90px 60px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  background: #f7f7f4;
-
-  border-top: 1px solid rgba(23, 35, 29, .18);
-  border-bottom: 1px solid rgba(23, 35, 29, .18);
-
-  box-sizing: border-box;
-}
-
-
-/* SMALL TOP LINE */
-
-.quote-top-line,
-.quote-bottom-line {
-  width: 80px;
-  height: 1px;
-
-  background: rgba(23, 35, 29, .40);
-}
-
-
-/* QUOTE */
-
-.chandini-quote {
-  max-width: 1050px;
-
-  margin: 45px auto 42px;
-
-  padding: 0;
-
-  border: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(35px, 4vw, 58px);
-
-  line-height: 1.03;
-
-  letter-spacing: -1.5px;
-
-  font-weight: 400;
-
-  color: #17231d;
-}
-
-
-/* ITALIC PART */
-
-.chandini-quote em {
-  font-family: "Italianno", cursive;
-
-  font-size: 1.15em;
-
-  font-weight: 400;
-
-  line-height: .8;
-}
-
-
-/* AUTHOR */
-
-.quote-author {
-  margin-bottom: 50px;
-
-  font-size: 9px;
-
-  font-weight: 500;
-
-  letter-spacing: 5px;
-
-  line-height: 1.7;
-
-  color: #59635d;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-  .chandini-quote-section {
-    width: 100%;
-
-    margin-left: 0;
-
-    min-height: 520px;
-
-    padding: 70px 22px;
-  }
-
-
-  .quote-top-line,
-  .quote-bottom-line {
-    width: 55px;
-  }
-
-
-  .chandini-quote {
-    margin: 35px auto 35px;
-
-    font-size: 34px;
-
-    line-height: 1.05;
-
-    letter-spacing: -1px;
-  }
-
-
-  .chandini-quote em {
-    font-size: 1.18em;
-  }
-
-
-  .quote-author {
-    margin-bottom: 38px;
-
-    font-size: 7px;
-
-    letter-spacing: 3px;
-
-    line-height: 1.8;
-  }
-
-}
-
-
-/* SMALL MOBILE */
-
-@media (max-width: 390px) {
-
-  .chandini-quote-section {
-    min-height: 500px;
-
-    padding:
-      60px 17px;
-  }
-
-
-  .chandini-quote {
-    font-size: 30px;
-  }
-
-}
-
-/* ========================================
-   CHANDINI CONNECTS FOOTER
-======================================== */
-
-.chandini-footer {
-  width: calc(100% - 192px);
-  margin-left: 192px;
-
-  background: #f7f7f4;
-  color: white;
-
-  overflow: hidden;
-
-  box-sizing: border-box;
-}
-
-
-/* ========================================
-   ART IMAGE
-======================================== */
+/* FOOTER IMAGE */
 
 .footer-art {
   width: 100%;
@@ -3013,98 +1565,83 @@ html {
 
 
 .footer-art img {
-  width: 100%;
-  height: auto;
-
   display: block;
 
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: auto;
 
   object-fit: cover;
 }
 
 
-/* ========================================
-   MAIN FOOTER
-======================================== */
+/* FOOTER MAIN */
 
 .footer-main {
-  position: relative;
+  width: 100%;
 
-  margin-top: -1px;
-
-  padding: 70px 55px 65px;
+  padding:
+    55px
+    max(35px, calc((100% - 1180px) / 2));
 
   display: grid;
 
   grid-template-columns:
-    1.2fr
+    1.15fr
     1fr
-    1.1fr;
+    1fr;
 
   gap: 70px;
 
-  background: black;
+  background: #000;
 
   border-top:
-    1px solid rgba(23,35,29,.18);
-
-  box-sizing: border-box;
+    1px solid rgba(255,255,255,.13);
 }
 
 
-/* ========================================
-   BRAND
-======================================== */
+/* BRAND */
 
 .footer-brand h2 {
   margin: 0;
 
-  font-family: "Italianno", cursive;
+  font-family: "Bodoni Moda", serif;
 
-  font-size: 68px;
-
-  line-height: .75;
-
+  font-size: 52px;
   font-weight: 400;
 
-  color: white;
+  line-height: .9;
+
+  letter-spacing: -2px;
+
+  color: #fff;
 }
 
 
 .footer-brand > span {
   display: block;
 
-  margin-top: 19px;
+  margin-top: 13px;
 
-  font-size: 9px;
+  font-size: 8px;
 
-  letter-spacing: 8px;
+  letter-spacing: 7px;
 
-  color: white;
+  color: #fff;
 }
 
 
 .footer-brand p {
-  margin: 32px 0 0;
+  margin: 25px 0 0;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 15px;
+  font-size: 10px;
 
   line-height: 1.8;
 
-  color: white;
+  color: rgba(255,255,255,.60);
 }
 
 
-/* ========================================
-   LINKS
-======================================== */
+/* LINKS */
 
 .footer-links {
   display: grid;
@@ -3112,7 +1649,7 @@ html {
   grid-template-columns:
     1fr 1fr;
 
-  gap: 45px;
+  gap: 35px;
 }
 
 
@@ -3123,130 +1660,124 @@ html {
 
   align-items: flex-start;
 
-  gap: 13px;
+  gap: 12px;
 }
 
 
 .footer-link-group > span,
 .footer-connect > span {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 
-  font-size: 8px;
+  font-size: 7px;
+  font-weight: 600;
 
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 
-  color: rgba(232, 244, 161, 0.945)
+  color: rgba(255,255,255,.42);
 }
 
 
 .footer-link-group a {
-  position: relative;
+  font-family: "Bodoni Moda", serif;
 
-  color: white;
+  font-size: 14px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 15px;
+  color: #fff;
 
   text-decoration: none;
 
   transition:
-    transform .3s ease,
-    opacity .3s ease;
+    opacity .25s ease,
+    transform .25s ease;
 }
 
 
 .footer-link-group a:hover {
-  transform: translateX(5px);
-
   opacity: .55;
+
+  transform: translateX(4px);
 }
 
 
-/* ========================================
-   CONNECT
-======================================== */
+/* CONNECT */
 
 .footer-connect h3 {
-  margin: 0 0 30px;
+  margin: 0 0 25px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: "Bodoni Moda", serif;
 
-  font-size: clamp(31px, 3vw, 48px);
-
-  line-height: .98;
+  font-size: clamp(30px,3vw,43px);
 
   font-weight: 400;
 
-  color: white;
+  line-height: 1;
+
+  color: #fff;
 }
 
 
 .footer-connect h3 em {
-  font-family:
-    "Italianno",
-    cursive;
-
-  font-size: 1.25em;
+  color: #fff;
 
   font-weight: 400;
 }
 
 
-/* BUTTON */
+/* SOCIALS */
 
-.footer-contact-btn {
-  width: fit-content;
-
+.footer-socials {
   display: flex;
 
   align-items: center;
 
-  gap: 25px;
+  gap: 9px;
+}
 
-  padding: 14px 0;
 
-  border-bottom:
-    1px solid white;
+.footer-socials a {
+  width: 38px;
+  height: 38px;
 
-  color: white;
+  display: flex;
 
-  font-size: 8px;
+  align-items: center;
+  justify-content: center;
 
-  letter-spacing: 3px;
+  border:
+    1px solid rgba(255,255,255,.35);
+
+  border-radius: 50%;
+
+  color: #fff;
 
   text-decoration: none;
 
-  transition: gap .3s ease;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
 }
 
 
-.footer-contact-btn b {
-  font-size: 15px;
+.footer-socials a:hover {
+  background: #fff;
 
-  font-weight: 400;
+  color: #000;
+
+  transform: translateY(-3px);
 }
 
 
-.footer-contact-btn:hover {
-  gap: 35px;
-}
-
-
-/* ========================================
-   BOTTOM BAR
-======================================== */
+/* FOOTER BOTTOM */
 
 .footer-bottom {
-  min-height: 78px;
+  width: 100%;
 
-  padding: 0 55px;
+  min-height: 65px;
+
+  padding:
+    0
+    max(35px, calc((100% - 1180px) / 2));
 
   display: flex;
 
@@ -3254,14 +1785,12 @@ html {
 
   justify-content: space-between;
 
-  gap: 25px;
+  gap: 20px;
 
-  background: black;
+  background: #000;
 
   border-top:
-    1px solid rgba(23,35,29,.18);
-
-  box-sizing: border-box;
+    1px solid rgba(255,255,255,.13);
 }
 
 
@@ -3269,41 +1798,22 @@ html {
 .footer-bottom a {
   font-size: 7px;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
-  color: white;
+  color: rgba(255,255,255,.60);
 
   text-decoration: none;
 }
 
 
-.footer-bottom a {
-  transition: opacity .3s ease;
-}
-
-
-.footer-bottom a:hover {
-  opacity: .5;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
+/* =====================================================
+   FOOTER MOBILE
+===================================================== */
 
 @media (max-width: 768px) {
 
-  .chandini-footer {
-    width: 100%;
-
-    margin-left: 0;
-  }
-
-
-  /* IMAGE */
-
   .footer-art {
-    height: 260px;
+    height: 210px;
 
     overflow: hidden;
   }
@@ -3315,62 +1825,662 @@ html {
 
     object-fit: cover;
 
-    /* CENTER CHANDINI NAME */
     object-position: center;
   }
 
 
-  /* MAIN */
-
   .footer-main {
-    padding:
-      55px 22px
-      50px;
+    padding: 42px 20px;
 
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    gap: 50px;
+    gap: 38px;
   }
 
-
-  /* BRAND */
 
   .footer-brand h2 {
-    font-size: 60px;
+    font-size: 43px;
   }
 
-
-  /* LINKS */
 
   .footer-links {
     grid-template-columns:
       1fr 1fr;
 
-    gap: 30px;
+    gap: 25px;
   }
 
-
-  /* CONNECT */
 
   .footer-connect h3 {
-    font-size: 38px;
+    font-size: 33px;
   }
 
-
-  /* BOTTOM */
 
   .footer-bottom {
     min-height: auto;
 
     padding:
-      25px 22px;
+      22px 20px
+      100px;
 
     flex-direction: column;
 
     align-items: flex-start;
 
-    gap: 12px;
+    gap: 10px;
+  }
+
+}
+
+/* =========================================
+   MOBILE - FIRST 3 VIDEO CAROUSEL
+========================================= */
+
+@media (max-width: 768px) {
+
+  .edu-gallery {
+    display: flex !important;
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 12px 0 16px !important;
+
+    gap: 10px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    background: #f7f7f4;
+
+    scrollbar-width: none;
+  }
+
+  .edu-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* FIRST 3 ONLY */
+
+  .edu-card:nth-child(-n+3) {
+    position: relative !important;
+
+    flex: 0 0 82% !important;
+
+    width: 82% !important;
+    height: 270px !important;
+
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    scroll-snap-align: center;
+
+    overflow: hidden;
+
+    background: #000;
+  }
+
+
+  /* hide remaining 3 on mobile */
+
+  .edu-card:nth-child(n+4) {
+    display: none !important;
+  }
+
+
+  /* first/last side spacing */
+
+  .edu-card:first-child {
+    margin-left: 9%;
+  }
+
+  .edu-card:nth-child(3) {
+    margin-right: 9%;
+  }
+
+
+  /* VIDEO */
+
+  .edu-card video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.05);
+
+    filter:
+      blur(4px)
+      brightness(.42);
+
+    transition:
+      filter .65s ease,
+      transform .8s ease,
+      opacity .65s ease;
+  }
+
+
+  /* ACTIVE VIDEO */
+
+  .edu-card.is-active video {
+    filter:
+      blur(0)
+      brightness(1);
+
+    transform: scale(1);
+  }
+
+
+  /* inactive cards */
+
+  .edu-card:not(.is-active) {
+    opacity: .78;
+
+    transform: scale(.94);
+
+    transition:
+      transform .6s ease,
+      opacity .6s ease;
+  }
+
+
+  /* active center card */
+
+  .edu-card.is-active {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+      transform .6s ease,
+      opacity .6s ease;
+  }
+
+
+  /* TEXT */
+
+  .edu-card-overlay {
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+
+    z-index: 4;
+  }
+
+  .edu-card-overlay h2 {
+    margin: 0 0 6px;
+
+    font-size: 20px !important;
+
+    line-height: 1.05;
+
+    color: #fff;
+  }
+
+  .edu-card-overlay p {
+    margin: 0;
+
+    font-size: 6px !important;
+
+    letter-spacing: 2.2px !important;
+
+    color: rgba(255,255,255,.8);
+  }
+
+
+  /* TIMER */
+
+  .edu-card.is-active::before {
+    animation: eduTimer 8s linear forwards;
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 390px) {
+
+  .edu-card:nth-child(-n+3) {
+    flex-basis: 84% !important;
+
+    width: 84% !important;
+
+    height: 245px !important;
+  }
+
+  .edu-card:first-child {
+    margin-left: 8%;
+  }
+
+  .edu-card:nth-child(3) {
+    margin-right: 8%;
+  }
+
+}
+
+/* ========================================
+   ABOUT CHANDINI
+======================================== */
+
+.ch-about{
+  width:100%;
+  position:relative;
+  overflow:hidden;
+
+  background:#f7f7f4;
+
+  padding:110px 35px;
+  box-sizing:border-box;
+}
+
+
+.ch-about-inner{
+  width:100%;
+  max-width:1180px;
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1fr .9fr;
+
+  align-items:center;
+
+  gap:100px;
+}
+
+
+/* ========================================
+   LEFT CONTENT
+======================================== */
+
+.ch-about-content{
+  position:relative;
+  z-index:2;
+
+  max-width:570px;
+}
+
+
+/* SMALL LABEL */
+
+.ch-about-label{
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  margin-bottom:28px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:8px;
+  font-weight:600;
+
+  letter-spacing:4px;
+
+  color:rgba(20,20,20,.55);
+}
+
+.ch-about-label span{
+  display:block;
+
+  width:35px;
+  height:1px;
+
+  background:#efbe73;
+}
+
+
+/* TITLE */
+
+.ch-about-title{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(55px,6vw,86px);
+
+  font-weight:400;
+
+  line-height:.93;
+
+  letter-spacing:-4px;
+
+  color:#111;
+}
+
+.ch-about-title em{
+  font-weight:400;
+  color:#efbe73;
+}
+
+
+/* PARAGRAPH */
+
+.ch-about-text{
+  max-width:510px;
+
+  margin:36px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  color:#292929;
+}
+
+.ch-about-text-small{
+  margin-top:15px;
+
+  font-size:12px;
+
+  color:rgba(20,20,20,.58);
+}
+
+
+/* ========================================
+   SOCIAL STATS
+======================================== */
+
+.ch-about-stats{
+  width:100%;
+
+  margin-top:48px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  border-top:1px solid rgba(20,20,20,.15);
+  border-bottom:1px solid rgba(20,20,20,.15);
+}
+
+
+.ch-stat{
+  position:relative;
+
+  min-height:125px;
+
+  padding:25px 25px 22px 0;
+
+  box-sizing:border-box;
+
+  text-decoration:none;
+
+  color:#111;
+
+  transition:
+    padding-left .35s ease,
+    background .35s ease;
+}
+
+
+.ch-stat:first-child{
+  border-right:1px solid rgba(20,20,20,.15);
+}
+
+
+.ch-stat:nth-child(2){
+  padding-left:27px;
+}
+
+
+/* ICON + NUMBER */
+
+.ch-stat-top{
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+}
+
+
+.ch-stat-top i{
+  font-size:19px;
+
+  color:#111;
+}
+
+
+.ch-stat-number{
+  font-family:"Bodoni Moda",serif;
+
+  font-size:33px;
+
+  font-weight:500;
+
+  line-height:1;
+
+  letter-spacing:-1px;
+
+  color:#111;
+}
+
+
+/* NAME */
+
+.ch-stat-name{
+  margin-top:12px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:8px;
+
+  font-weight:500;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:rgba(20,20,20,.48);
+}
+
+
+/* ARROW */
+
+.ch-stat-arrow{
+  position:absolute;
+
+  right:20px;
+  top:27px;
+
+  font-size:16px;
+
+  opacity:.35;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+
+.ch-stat:hover .ch-stat-arrow{
+  transform:translate(4px,-4px);
+
+  opacity:1;
+}
+
+
+/* ========================================
+   CHANDINI — FRAMED PHOTO
+======================================== */
+
+.ch-about-visual{
+  position:relative;
+  width:100%;
+  min-height:540px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* OLD BACKGROUNDS REMOVE */
+
+.ch-about-visual::before,
+.ch-about-visual::after{
+  display:none;
+}
+
+.ch-about-shape{
+  display:none;
+}
+
+
+/* PHOTO FRAME */
+
+.ch-about-image{
+  position:relative;
+  z-index:2;
+
+  width:370px;
+  height:470px;
+
+  padding:11px;
+
+  background:#efbe73;
+
+  border:7px solid #f7f7f4;
+
+  outline:1px solid rgba(0,0,0,.18);
+
+  box-shadow:
+    0 22px 45px rgba(0,0,0,.16),
+    8px 10px 0 #efbe73;
+
+  box-sizing:border-box;
+
+  overflow:hidden;
+}
+
+
+/* INNER FRAME LINE */
+
+.ch-about-image::before{
+  content:"";
+
+  position:absolute;
+  inset:16px;
+
+  border:1px solid rgba(255,255,255,.7);
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+
+/* PHOTO */
+
+.ch-about-image img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center top;
+}
+
+
+/* LABEL */
+
+.ch-about-note{
+  position:absolute;
+  z-index:5;
+
+  left:50%;
+  bottom:17px;
+
+  transform:translateX(-50%);
+
+  display:flex;
+  align-items:center;
+
+  gap:7px;
+
+  padding:10px 16px;
+
+  white-space:nowrap;
+
+  background:#111;
+  color:#fff;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  box-shadow:0 7px 18px rgba(0,0,0,.15);
+}
+
+
+/* ========================================
+   MOBILE — CONTENT + IMAGE SIDE BY SIDE
+======================================== */
+
+@media(max-width:768px){
+
+  .ch-about-inner{
+    display:grid !important;
+
+    grid-template-columns:
+      1.15fr .85fr !important;
+
+    align-items:center;
+
+    gap:14px;
+  }
+
+
+  .ch-about-visual{
+    min-height:255px;
+  }
+
+
+  .ch-about-image{
+    width:165px;
+    height:220px;
+
+    padding:6px;
+
+    border-width:4px;
+
+    box-shadow:
+      0 12px 25px rgba(0,0,0,.14),
+      5px 6px 0 #efbe73;
+  }
+
+
+  .ch-about-image::before{
+    inset:9px;
+  }
+
+
+  .ch-about-note{
+    bottom:3px;
+
+    padding:6px 7px;
+
+    gap:3px;
+
+    font-size:3.5px;
+
+    letter-spacing:.6px;
   }
 
 }
@@ -3380,307 +2490,3364 @@ html {
    SMALL MOBILE
 ======================================== */
 
-@media (max-width: 390px) {
+@media(max-width:390px){
 
-  .footer-art {
-    height: 220px;
+  .ch-about-inner{
+    grid-template-columns:
+      1.25fr .75fr !important;
+
+    gap:9px;
   }
 
 
-  .footer-main {
-    padding-left: 17px;
-    padding-right: 17px;
+  .ch-about-visual{
+    min-height:215px;
   }
 
 
-  .footer-brand h2 {
-    font-size: 54px;
+  .ch-about-image{
+    width:135px;
+    height:185px;
+
+    padding:5px;
+
+    border-width:3px;
+
+    box-shadow:
+      0 10px 20px rgba(0,0,0,.13),
+      4px 5px 0 #efbe73;
   }
 
 
-  .footer-connect h3 {
-    font-size: 34px;
+  .ch-about-image::before{
+    inset:7px;
   }
 
 
-  .footer-bottom {
-    padding-left: 17px;
-    padding-right: 17px;
+  .ch-about-note{
+    bottom:1px;
+
+    font-size:3px;
+
+    padding:5px 6px;
   }
 
 }
+
+
+/* ========================================
+   BOTTOM LABEL
+======================================== */
+
+.ch-about-note{
+  position:absolute;
+
+  z-index:5;
+
+  bottom:18px;
+  left:2%;
+
+  padding:13px 18px;
+
+  display:flex;
+  align-items:center;
+
+  gap:9px;
+
+  background:#111;
+
+  color:#fff;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  pointer-events:none;
+
+  transition:
+    transform .6s cubic-bezier(.22,1,.36,1),
+    background .4s ease,
+    color .4s ease;
+}
+
+
+.ch-about-visual:hover .ch-about-note,
+.ch-about-visual.image-active .ch-about-note{
+  transform:translate(14px,-12px);
+
+  background:#efbe73;
+
+  color:#111;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .ch-about-visual{
+    min-height:480px;
+  }
+
+  .ch-about-image{
+    width:88%;
+    height:440px;
+  }
+
+  .ch-about-visual::before{
+    width:84%;
+    height:84%;
+
+    top:7%;
+    right:0;
+  }
+
+  .ch-about-visual::after{
+    width:78%;
+    height:77%;
+
+    left:0;
+    bottom:1%;
+  }
+
+  .ch-about-note{
+    left:1%;
+    bottom:8px;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .ch-about-visual{
+    min-height:430px;
+  }
+
+  .ch-about-image{
+    height:395px;
+  }
+
+}
+
+/* ========================================
+   REVEAL ANIMATION
+======================================== */
+
+.ch-about-content{
+  opacity:0;
+
+  transform:translateY(35px);
+
+  transition:
+    opacity .9s cubic-bezier(.22,1,.36,1),
+    transform .9s cubic-bezier(.22,1,.36,1);
+}
+
+
+.ch-about-visual{
+  opacity:0;
+
+  transform:translateX(45px);
+
+  transition:
+    opacity 1s cubic-bezier(.22,1,.36,1),
+    transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+
+.ch-about.ch-about-visible .ch-about-content{
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+
+.ch-about.ch-about-visible .ch-about-visual{
+  opacity:1;
+
+  transform:translateX(0);
+
+  transition-delay:.15s;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media(max-width:950px){
+
+  .ch-about{
+    padding:85px 35px;
+  }
+
+  .ch-about-inner{
+    gap:55px;
+  }
+
+  .ch-about-visual{
+    min-height:530px;
+  }
+
+  .ch-about-image{
+    width:92%;
+    height:480px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .ch-about{
+    padding:70px 20px;
+  }
+
+
+  .ch-about-inner{
+    display:flex;
+
+    flex-direction:column-reverse;
+
+    align-items:stretch;
+
+    gap:55px;
+  }
+
+
+  /* IMAGE */
+
+  .ch-about-visual{
+    min-height:auto;
+
+    height:470px;
+  }
+
+
+  .ch-about-shape{
+    width:90%;
+    height:91%;
+
+    top:15px;
+    right:-12px;
+  }
+
+
+  .ch-about-image{
+    width:92%;
+    height:440px;
+
+    margin-right:auto;
+  }
+
+
+  /* CONTENT */
+
+  .ch-about-content{
+    max-width:none;
+  }
+
+
+  .ch-about-label{
+    margin-bottom:22px;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+  }
+
+
+  .ch-about-title{
+    font-size:55px;
+
+    letter-spacing:-3px;
+  }
+
+
+  .ch-about-text{
+    margin-top:28px;
+
+    font-size:13px;
+
+    line-height:1.8;
+  }
+
+
+  .ch-about-text-small{
+    margin-top:13px;
+
+    font-size:11px;
+  }
+
+
+  /* STATS */
+
+  .ch-about-stats{
+    margin-top:38px;
+  }
+
+
+  .ch-stat{
+    min-height:115px;
+
+    padding-top:22px;
+  }
+
+
+  .ch-stat:nth-child(2){
+    padding-left:18px;
+  }
+
+
+  .ch-stat-top{
+    gap:9px;
+  }
+
+
+  .ch-stat-top i{
+    font-size:16px;
+  }
+
+
+  .ch-stat-number{
+    font-size:27px;
+  }
+
+
+  .ch-stat-name{
+    font-size:6.5px;
+
+    letter-spacing:1.2px;
+  }
+
+
+  .ch-stat-arrow{
+    display:none;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media(max-width:390px){
+
+  .ch-about{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+
+  .ch-about-visual{
+    height:420px;
+  }
+
+
+  .ch-about-image{
+    height:395px;
+  }
+
+
+  .ch-about-title{
+    font-size:49px;
+  }
+
+
+  .ch-stat-number{
+    font-size:24px;
+  }
+
+}
+
+.video-intro-line{
+  width:100%;
+  padding:38px 20px 28px;
+  background:#f7f7f4;
+  text-align:center;
+  box-sizing:border-box;
+}
+
+.video-intro-line p{
+  margin:0;
+
+  font-family:"Bodoni Moda", serif;
+  font-size:clamp(20px, 2.4vw, 34px);
+  font-weight:400;
+
+  letter-spacing:1px;
+  line-height:1.2;
+
+  color:#111;
+}
+
+/* =========================================
+   FINAL MOBILE ABOUT FIX
+   KEEP THIS AT VERY END OF CSS
+========================================= */
+
+@media only screen and (max-width: 768px){
+
+  .ch-about{
+    padding:40px 12px !important;
+  }
+
+  /* MAIN LAYOUT */
+  .ch-about-inner{
+    width:100% !important;
+
+    display:grid !important;
+    grid-template-columns:minmax(0, 1fr) 145px !important;
+
+    align-items:center !important;
+
+    gap:12px !important;
+
+    margin:0 auto !important;
+  }
+
+
+  /* CONTENT LEFT */
+  .ch-about-content{
+    width:100% !important;
+    max-width:none !important;
+
+    min-width:0 !important;
+
+    order:1 !important;
+  }
+
+
+  /* IMAGE RIGHT */
+  .ch-about-visual{
+    width:145px !important;
+    height:205px !important;
+
+    min-height:0 !important;
+
+    order:2 !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    position:relative !important;
+
+    margin:0 !important;
+  }
+
+
+  /* REMOVE OLD SHAPES */
+  .ch-about-shape{
+    display:none !important;
+  }
+
+  .ch-about-visual::before,
+  .ch-about-visual::after{
+    display:none !important;
+    content:none !important;
+  }
+
+
+  /* PHOTO FRAME */
+  .ch-about-image{
+    position:relative !important;
+
+    width:125px !important;
+    height:170px !important;
+
+    max-width:none !important;
+
+    margin:0 !important;
+
+    padding:5px !important;
+
+    box-sizing:border-box !important;
+
+    overflow:hidden !important;
+
+    border-radius:0 !important;
+
+    background:#efbe73 !important;
+
+    border:4px solid #f7f7f4 !important;
+
+    outline:1px solid rgba(0,0,0,.18) !important;
+
+    box-shadow:
+      5px 6px 0 #efbe73,
+      0 12px 25px rgba(0,0,0,.16) !important;
+
+    transform:none !important;
+  }
+
+
+  /* PHOTO */
+  .ch-about-image img{
+    display:block !important;
+
+    width:100% !important;
+    height:100% !important;
+
+    max-width:none !important;
+
+    object-fit:cover !important;
+    object-position:center top !important;
+
+    border-radius:0 !important;
+
+    transform:none !important;
+  }
+
+
+  /* INNER FRAME */
+  .ch-about-image::before{
+    content:"" !important;
+
+    display:block !important;
+
+    position:absolute !important;
+
+    inset:8px !important;
+
+    border:1px solid rgba(255,255,255,.75) !important;
+
+    pointer-events:none !important;
+
+    z-index:3 !important;
+  }
+
+
+  /* LABEL */
+  .ch-about-note{
+    position:absolute !important;
+
+    left:50% !important;
+    bottom:0 !important;
+
+    transform:translateX(-50%) !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:3px !important;
+
+    padding:6px 7px !important;
+
+    white-space:nowrap !important;
+
+    background:#111 !important;
+    color:#fff !important;
+
+    font-size:3.5px !important;
+    letter-spacing:.6px !important;
+
+    z-index:10 !important;
+  }
+
+
+  /* SMALL CONTENT */
+  .ch-about-label{
+    margin-bottom:10px !important;
+
+    font-size:5px !important;
+
+    letter-spacing:1.5px !important;
+  }
+
+
+  .ch-about-title{
+    margin:0 !important;
+
+    font-size:31px !important;
+
+    line-height:.95 !important;
+
+    letter-spacing:-1.5px !important;
+  }
+
+
+  .ch-about-text{
+    margin-top:15px !important;
+
+    font-size:8.5px !important;
+
+    line-height:1.6 !important;
+  }
+
+
+  .ch-about-text-small{
+    margin-top:7px !important;
+
+    font-size:7.5px !important;
+
+    line-height:1.55 !important;
+  }
+
+
+  /* SOCIAL STATS */
+  .ch-about-stats{
+    margin-top:18px !important;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media only screen and (max-width: 390px){
+
+  .ch-about{
+    padding-left:10px !important;
+    padding-right:10px !important;
+  }
+
+
+  .ch-about-inner{
+    grid-template-columns:minmax(0, 1fr) 120px !important;
+
+    gap:8px !important;
+  }
+
+
+  .ch-about-visual{
+    width:120px !important;
+    height:180px !important;
+  }
+
+
+  .ch-about-image{
+    width:105px !important;
+    height:145px !important;
+
+    padding:4px !important;
+
+    border-width:3px !important;
+
+    box-shadow:
+      4px 5px 0 #efbe73,
+      0 9px 20px rgba(0,0,0,.15) !important;
+  }
+
+
+  .ch-about-image::before{
+    inset:6px !important;
+  }
+
+
+  .ch-about-title{
+    font-size:27px !important;
+  }
+
+
+  .ch-about-text{
+    font-size:8px !important;
+  }
+
+
+  .ch-about-text-small{
+    font-size:7px !important;
+  }
+
+
+  .ch-about-note{
+    font-size:3px !important;
+
+    padding:5px !important;
+  }
+
+}
+@media only screen and (max-width:768px){
+  .ch-about-visual{
+    transform: translateY(-30px) !important;
+  }
+}
+
+
+/* =========================================
+   CHANDINI JOURNEY SECTION
+========================================= */
+
+.ch-journey{
+  width:100%;
+
+  padding:110px 35px;
+
+  background:#f7f7f4;
+
+  box-sizing:border-box;
+
+  overflow:hidden;
+}
+
+
+.ch-journey-inner{
+  width:100%;
+  max-width:1180px;
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:1fr .82fr;
+
+  align-items:center;
+
+  gap:100px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.ch-journey-content{
+  position:relative;
+
+  max-width:580px;
+}
+
+
+.ch-journey-label{
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:34px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:9px;
+
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  color:#555;
+}
+
+
+.ch-journey-label span{
+  width:38px;
+  height:1px;
+
+  background:#111;
+}
+
+
+.ch-journey-number{
+  margin-bottom:15px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:8px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  color:#999;
+}
+
+
+.ch-journey-title{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(55px,6vw,82px);
+
+  font-weight:400;
+
+  line-height:.96;
+
+  letter-spacing:-4px;
+
+  color:#111;
+}
+
+
+.ch-journey-title em{
+  display:block;
+
+  font-weight:400;
+
+  color:#efbe73;
+}
+
+
+.ch-journey-text{
+  max-width:500px;
+
+  margin:32px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  color:#666;
+}
+
+
+.ch-journey-tags{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:28px;
+}
+
+
+.ch-journey-tags span{
+  padding:8px 14px;
+
+  border:1px solid #d8d8d0;
+
+  border-radius:50px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+
+  font-weight:600;
+
+  letter-spacing:1.4px;
+
+  text-transform:uppercase;
+
+  color:#333;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.ch-journey-controls{
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-top:42px;
+}
+
+
+.journey-arrow{
+  width:43px;
+  height:43px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  border:1px solid #222;
+
+  border-radius:50%;
+
+  background:transparent;
+
+  color:#111;
+
+  font-size:17px;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+}
+
+
+.journey-arrow:hover{
+  background:#111;
+
+  color:#fff;
+}
+
+
+.journey-dots{
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+}
+
+
+.journey-dots button{
+  width:6px;
+  height:6px;
+
+  padding:0;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#ccc;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+
+.journey-dots button.active{
+  width:22px;
+
+  border-radius:20px;
+
+  background:#efbe73;
+}
+
+
+/* =========================================
+   PHONE AREA
+========================================= */
+
+.ch-phone-area{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+}
+
+
+/* PHONE */
+
+.ch-phone{
+  position:relative;
+
+  width:300px;
+  height:600px;
+
+  padding:9px;
+
+  border:2px solid #292929;
+
+  border-radius:46px;
+
+  background:#090909;
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,.20),
+    0 8px 20px rgba(0,0,0,.12);
+
+  box-sizing:border-box;
+}
+
+
+/* DYNAMIC ISLAND */
+
+.ch-phone-island{
+  position:absolute;
+
+  z-index:20;
+
+  top:19px;
+  left:50%;
+
+  width:82px;
+  height:23px;
+
+  transform:translateX(-50%);
+
+  border-radius:20px;
+
+  background:#050505;
+}
+
+
+/* SCREEN */
+
+.ch-phone-screen{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+  border-radius:37px;
+
+  background:#efbe73;
+
+  touch-action:pan-y;
+
+  cursor:grab;
+}
+
+
+.ch-phone-screen:active{
+  cursor:grabbing;
+}
+
+
+/* SLIDER */
+
+.ch-phone-slider{
+  display:flex;
+
+  width:100%;
+  height:100%;
+
+  transition:
+    transform .65s cubic-bezier(.22,1,.36,1);
+
+  will-change:transform;
+}
+
+
+/* SLIDE */
+
+.ch-phone-slide{
+  position:relative;
+
+  flex:0 0 100%;
+
+  width:100%;
+  height:100%;
+
+  padding:62px 25px 35px;
+
+  box-sizing:border-box;
+
+  display:flex;
+
+  flex-direction:column;
+
+  overflow:hidden;
+
+  user-select:none;
+}
+
+
+/* =========================================
+   SLIDE COLORS
+========================================= */
+
+.manifest-slide{
+  background:#efbe73;
+  color:#111;
+}
+
+
+.career-slide{
+  background:#111;
+  color:#fff;
+}
+
+
+.habit-slide{
+  background:#f7f7f4;
+  color:#111;
+}
+
+
+.growth-slide{
+  background:#e8d8be;
+  color:#111;
+}
+
+
+/* TOP */
+
+.phone-slide-top{
+  position:relative;
+
+  z-index:3;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+}
+
+
+/* BIG SYMBOL */
+
+.phone-symbol{
+  position:absolute;
+
+  top:115px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:160px;
+
+  line-height:1;
+
+  opacity:.13;
+
+  pointer-events:none;
+}
+
+
+/* CONTENT */
+
+.phone-slide-content{
+  position:relative;
+
+  z-index:3;
+
+  margin-top:auto;
+}
+
+
+.phone-small{
+  display:block;
+
+  margin-bottom:15px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  padding-top:80px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  opacity:.65;
+}
+
+
+.phone-slide-content h3{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:41px;
+
+  font-weight:400;
+
+  line-height:.98;
+
+  letter-spacing:-2px;
+}
+
+
+.phone-slide-content h3 em{
+  display:block;
+
+  font-weight:400;
+}
+
+
+.phone-slide-content p{
+  max-width:205px;
+
+  margin:20px 0 0;
+
+  font-family:Arial,sans-serif;
+
+  font-size:9px;
+
+  line-height:1.7;
+
+  opacity:.75;
+}
+
+
+/* PHONE HOME LINE */
+
+.ch-phone-home{
+  position:absolute;
+
+  z-index:30;
+
+  bottom:16px;
+  left:50%;
+
+  width:90px;
+  height:4px;
+
+  transform:translateX(-50%);
+
+  border-radius:10px;
+
+  background:rgba(255,255,255,.65);
+
+  pointer-events:none;
+}
+
+
+/* SWIPE TEXT */
+
+.ch-swipe-note{
+  display:flex;
+
+  align-items:center;
+
+  gap:11px;
+
+  margin-top:27px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  color:#777;
+}
+
+
+/* =========================================
+   CONTENT CHANGE ANIMATION
+========================================= */
+
+.ch-content-change{
+  animation:chContentChange .45s ease;
+}
+
+
+@keyframes chContentChange{
+
+  0%{
+    opacity:0;
+    transform:translateY(12px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .ch-journey{
+    padding:65px 18px 75px;
+  }
+
+
+  .ch-journey-inner{
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:48px;
+  }
+
+
+  .ch-journey-content{
+    max-width:100%;
+  }
+
+
+  .ch-journey-label{
+    margin-bottom:22px;
+
+    font-size:6px;
+
+    letter-spacing:2px;
+  }
+
+
+  .ch-journey-label span{
+    width:25px;
+  }
+
+
+  .ch-journey-number{
+    font-size:6px;
+
+    margin-bottom:10px;
+  }
+
+
+  .ch-journey-title{
+    font-size:46px;
+
+    line-height:.98;
+
+    letter-spacing:-2.5px;
+  }
+
+
+  .ch-journey-text{
+    margin-top:22px;
+
+    max-width:430px;
+
+    font-size:10px;
+
+    line-height:1.75;
+  }
+
+
+  .ch-journey-tags{
+    margin-top:20px;
+  }
+
+
+  .ch-journey-tags span{
+    padding:7px 10px;
+
+    font-size:5px;
+
+    letter-spacing:1px;
+  }
+
+
+  .ch-journey-controls{
+    margin-top:28px;
+  }
+
+
+  .journey-arrow{
+    width:37px;
+    height:37px;
+
+    font-size:14px;
+  }
+
+
+  /* PHONE SHORTER ON MOBILE */
+
+  .ch-phone{
+    width:250px;
+    height:500px;
+
+    border-radius:40px;
+
+    padding:8px;
+  }
+
+
+  .ch-phone-screen{
+    border-radius:32px;
+  }
+
+
+  .ch-phone-island{
+    top:17px;
+
+    width:70px;
+    height:20px;
+  }
+
+
+  .ch-phone-slide{
+    padding:
+      55px
+      21px
+      30px;
+  }
+
+
+  .phone-symbol{
+    top:105px;
+
+    font-size:125px;
+  }
+
+
+  .phone-slide-content h3{
+    font-size:34px;
+  }
+
+
+  .phone-slide-content p{
+    font-size:8px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:390px){
+
+  .ch-journey{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+
+  .ch-journey-title{
+    font-size:41px;
+  }
+
+
+  .ch-phone{
+    width:230px;
+    height:460px;
+  }
+
+
+  .phone-slide-content h3{
+    font-size:31px;
+  }
+
+}
+
+/* =========================================
+   CHANDINI VIDEO SLIDE
+========================================= */
+
+.video-slide{
+  position:relative;
+  padding:0 !important;
+  background:#111;
+  overflow:hidden;
+}
+
+
+.ch-phone-video{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  pointer-events:none;
+}
+
+
+.ch-video-overlay{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.05),
+    rgba(0,0,0,.08) 50%,
+    rgba(0,0,0,.75) 100%
+  );
+}
+
+
+.video-top{
+  position:absolute;
+
+  top:62px;
+  left:25px;
+  right:25px;
+
+  z-index:5;
+
+  color:#fff;
+}
+
+
+.ch-video-text{
+  position:absolute;
+
+  left:25px;
+  right:25px;
+  bottom:45px;
+
+  z-index:5;
+
+  color:#fff;
+}
+
+
+.ch-video-text > span{
+  display:block;
+
+  margin-bottom:12px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:2px;
+}
+
+
+.ch-video-text h3{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:38px;
+
+  font-weight:400;
+
+  line-height:1;
+
+  letter-spacing:-2px;
+}
+
+
+.ch-video-text h3 em{
+  font-weight:400;
+  color:#efbe73;
+}
+
+
+@media(max-width:768px){
+
+  .ch-video-text h3{
+    font-size:32px;
+  }
+
+  .video-top{
+    top:55px;
+    left:21px;
+    right:21px;
+  }
+
+  .ch-video-text{
+    left:21px;
+    right:21px;
+    bottom:40px;
+  }
+
+}
+
+/* =========================================
+   PREMIUM YOUTUBE SHOWCASE
+========================================= */
+
+.yt-showcase{
+  width:100%;
+
+  padding:105px 35px;
+
+  background:#111;
+
+  color:#fff;
+
+  box-sizing:border-box;
+
+  overflow:hidden;
+}
+
+
+.yt-showcase-inner{
+  width:100%;
+
+  max-width:1180px;
+
+  margin:0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.yt-head{
+  width:100%;
+
+  margin-bottom:50px;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:60px;
+}
+
+
+.yt-label{
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:18px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  color:rgba(255,255,255,.48);
+}
+
+
+.yt-label span{
+  width:35px;
+  height:1px;
+
+  background:#efbe73;
+}
+
+
+.yt-head h2{
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(52px,5.5vw,76px);
+
+  font-weight:400;
+
+  line-height:.92;
+
+  letter-spacing:-4px;
+
+  color:#fff;
+}
+
+
+.yt-head h2 em{
+  display:block;
+
+  font-weight:400;
+
+  color:#efbe73;
+}
+
+
+/* RIGHT HEADER */
+
+.yt-head-right{
+  padding-bottom:7px;
+
+  text-align:right;
+}
+
+
+.yt-head-right p{
+  margin:0 0 17px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:10px;
+
+  line-height:1.7;
+
+  color:rgba(255,255,255,.48);
+}
+
+
+.yt-head-right a{
+  display:inline-block;
+
+  padding-bottom:5px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.7);
+
+  font-family:Arial,sans-serif;
+
+  font-size:7px;
+
+  font-weight:600;
+
+  letter-spacing:1.8px;
+
+  color:#fff;
+
+  text-decoration:none;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.yt-grid{
+  display:grid;
+
+  grid-template-columns:
+    1.55fr .85fr;
+
+  gap:13px;
+
+  height:610px;
+}
+
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.yt-card{
+  display:block;
+
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+  color:#fff;
+
+  text-decoration:none;
+}
+
+
+.yt-image{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+  background:#222;
+}
+
+
+.yt-image img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform .9s cubic-bezier(.22,1,.36,1),
+    filter .6s ease;
+}
+
+
+.yt-card:hover img{
+  transform:scale(1.055);
+}
+
+
+/* DARK GRADIENT */
+
+.yt-dark{
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.85) 0%,
+      rgba(0,0,0,.25) 48%,
+      rgba(0,0,0,.08) 100%
+    );
+
+  transition:background .5s ease;
+}
+
+
+.yt-card:hover .yt-dark{
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.9),
+      rgba(0,0,0,.15) 55%,
+      rgba(0,0,0,.02)
+    );
+}
+
+
+/* =========================================
+   FEATURED
+========================================= */
+
+.yt-featured{
+  min-width:0;
+}
+
+
+.yt-top{
+  position:absolute;
+
+  z-index:4;
+
+  top:24px;
+  left:25px;
+  right:25px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  color:rgba(255,255,255,.8);
+}
+
+
+.yt-top span:first-child{
+  padding:7px 10px;
+
+  background:#efbe73;
+
+  color:#111;
+}
+
+
+/* FEATURE CONTENT */
+
+.yt-feature-content{
+  position:absolute;
+
+  z-index:4;
+
+  left:35px;
+  right:35px;
+  bottom:34px;
+}
+
+
+.yt-feature-content > span{
+  display:block;
+
+  margin-bottom:13px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:600;
+
+  letter-spacing:2.5px;
+
+  color:#efbe73;
+}
+
+
+.yt-feature-content h3{
+  margin:0;
+
+  max-width:560px;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:clamp(40px,4vw,58px);
+
+  font-weight:400;
+
+  line-height:.98;
+
+  letter-spacing:-2.5px;
+
+  color:#fff;
+}
+
+
+/* =========================================
+   PLAY BUTTON
+========================================= */
+
+.yt-play{
+  position:absolute;
+
+  z-index:5;
+
+  top:50%;
+  left:50%;
+
+  width:68px;
+  height:68px;
+
+  transform:translate(-50%,-50%);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#efbe73;
+
+  color:#111;
+
+  font-size:17px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.25);
+
+  transition:
+    transform .4s cubic-bezier(.22,1,.36,1),
+    background .3s ease;
+}
+
+
+.yt-play i{
+  margin-left:4px;
+}
+
+
+.yt-card:hover .yt-play{
+  transform:
+    translate(-50%,-50%)
+    scale(1.12);
+
+  background:#fff;
+}
+
+
+/* WATCH */
+
+.yt-watch{
+  margin-top:22px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:600;
+
+  letter-spacing:1.8px;
+
+  color:rgba(255,255,255,.75);
+}
+
+
+.yt-watch b{
+  font-size:12px;
+
+  font-weight:400;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.yt-side{
+  min-width:0;
+
+  display:grid;
+
+  grid-template-rows:
+    1fr 1fr;
+
+  gap:13px;
+}
+
+
+.yt-small{
+  min-height:0;
+}
+
+
+.yt-small-number{
+  position:absolute;
+
+  z-index:4;
+
+  top:20px;
+  right:20px;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:13px;
+
+  color:rgba(255,255,255,.65);
+}
+
+
+.yt-play-small{
+  width:46px;
+  height:46px;
+
+  font-size:11px;
+}
+
+
+/* SMALL CONTENT */
+
+.yt-small-content{
+  position:absolute;
+
+  z-index:4;
+
+  left:22px;
+  right:22px;
+  bottom:21px;
+}
+
+
+.yt-small-content > span{
+  display:block;
+
+  margin-bottom:8px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:5px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  color:#efbe73;
+}
+
+
+.yt-small-content h3{
+  max-width:310px;
+
+  margin:0;
+
+  font-family:"Bodoni Moda",serif;
+
+  font-size:25px;
+
+  font-weight:400;
+
+  line-height:1.08;
+
+  letter-spacing:-1px;
+
+  color:#fff;
+}
+
+
+.yt-small-content .yt-watch{
+  margin-top:11px;
+
+  font-size:5px;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.yt-bottom{
+  margin-top:24px;
+
+  padding-top:20px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.14);
+
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  color:rgba(255,255,255,.4);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:950px){
+
+  .yt-grid{
+    grid-template-columns:
+      1.3fr .9fr;
+
+    height:540px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .yt-showcase{
+    padding:
+      65px 0
+      75px;
+  }
+
+
+  .yt-head{
+    padding:0 18px;
+
+    margin-bottom:30px;
+
+    box-sizing:border-box;
+
+    align-items:flex-end;
+
+    gap:15px;
+  }
+
+
+  .yt-label{
+    margin-bottom:11px;
+
+    font-size:5px;
+
+    letter-spacing:1.7px;
+  }
+
+
+  .yt-label span{
+    width:23px;
+  }
+
+
+  .yt-head h2{
+    font-size:40px;
+
+    letter-spacing:-2.2px;
+  }
+
+
+  .yt-head-right p{
+    display:none;
+  }
+
+
+  .yt-head-right a{
+    font-size:5px;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+  }
+
+
+  /* =====================================
+     MOBILE HORIZONTAL CARDS
+  ===================================== */
+
+  .yt-grid{
+    width:100%;
+
+    height:auto;
+
+    padding:
+      0 18px 12px;
+
+    display:flex;
+
+    gap:12px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-snap-type:
+      x mandatory;
+
+    scrollbar-width:none;
+
+    box-sizing:border-box;
+  }
+
+
+  .yt-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+
+  .yt-featured,
+  .yt-side{
+    display:contents;
+  }
+
+
+  .yt-card,
+  .yt-small,
+  .yt-featured{
+    flex:
+      0 0 82%;
+
+    width:82%;
+
+    height:390px;
+
+    scroll-snap-align:center;
+  }
+
+
+  .yt-top{
+    top:17px;
+    left:16px;
+    right:16px;
+
+    font-size:4.5px;
+
+    letter-spacing:1px;
+  }
+
+
+  .yt-top span:first-child{
+    padding:6px 8px;
+  }
+
+
+  /* SAME CONTENT STYLE MOBILE */
+
+  .yt-feature-content,
+  .yt-small-content{
+    left:18px;
+    right:18px;
+    bottom:20px;
+  }
+
+
+  .yt-feature-content > span,
+  .yt-small-content > span{
+    margin-bottom:8px;
+
+    font-size:5px;
+
+    letter-spacing:1.5px;
+  }
+
+
+  .yt-feature-content h3,
+  .yt-small-content h3{
+    max-width:270px;
+
+    font-size:29px;
+
+    line-height:1;
+
+    letter-spacing:-1.4px;
+  }
+
+
+  .yt-play,
+  .yt-play-small{
+    width:50px;
+    height:50px;
+
+    font-size:12px;
+  }
+
+
+  .yt-small-number{
+    top:18px;
+    right:18px;
+
+    font-size:11px;
+  }
+
+
+  .yt-watch,
+  .yt-small-content .yt-watch{
+    margin-top:14px;
+
+    font-size:5px;
+
+    letter-spacing:1.3px;
+  }
+
+
+  .yt-bottom{
+    margin:
+      13px 18px 0;
+
+    padding-top:15px;
+
+    font-size:4.5px;
+
+    letter-spacing:1.2px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:390px){
+
+  .yt-card,
+  .yt-small,
+  .yt-featured{
+    flex-basis:85%;
+
+    width:85%;
+
+    height:365px;
+  }
+
+
+  .yt-head h2{
+    font-size:36px;
+  }
+
+
+  .yt-feature-content h3,
+  .yt-small-content h3{
+    font-size:27px;
+  }
+
+}
+/* =========================================
+   CHANDINI ANIMATED WORD SECTION
+========================================= */
+
+.ch-word-section{
+  position:relative;
+  width:100%;
+  height:520px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f7f7f4;
+
+  overflow:hidden;
+}
+
+
+.ch-word-stage{
+  position:relative;
+
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+}
+
+
+/* SMALL TOP TEXT */
+
+.ch-word-mini{
+  margin-bottom:18px;
+
+  font-family:Arial, sans-serif;
+
+  font-size:8px;
+  font-weight:600;
+
+  letter-spacing:4px;
+
+  color:rgba(0,0,0,.45);
+}
+
+
+/* MAIN WORD */
+
+.ch-animated-word{
+  margin:0;
+
+  font-family:"Bodoni Moda", serif;
+
+  font-size:clamp(60px,9vw,135px);
+
+  font-weight:400;
+
+  line-height:.95;
+
+  letter-spacing:-5px;
+
+  color:#111;
+
+  opacity:0;
+
+  filter:blur(14px);
+
+  transform:
+    translateY(35px)
+    scale(.97);
+
+  transition:
+    opacity .8s ease,
+    transform .9s cubic-bezier(.2,.8,.2,1),
+    filter .9s ease;
+}
+
+
+/* WORD ENTER */
+
+.ch-animated-word.word-show{
+
+  opacity:1;
+
+  filter:blur(0);
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* WORD EXIT */
+
+.ch-animated-word.word-hide{
+
+  opacity:0;
+
+  filter:blur(12px);
+
+  transform:
+    translateY(-30px)
+    scale(1.02);
+}
+
+
+/* ORANGE LINE */
+
+.ch-word-line{
+  width:38px;
+  height:2px;
+
+  margin-top:28px;
+
+  background:#efbe73;
+
+  transform:scaleX(0);
+
+  transform-origin:center;
+
+  transition:transform .7s ease;
+}
+
+
+.ch-word-stage.active .ch-word-line{
+  transform:scaleX(1);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+  .ch-word-section{
+    height:390px;
+    padding:0 18px;
+  }
+
+
+  .ch-word-mini{
+    margin-bottom:15px;
+
+    font-size:6px;
+
+    letter-spacing:3px;
+  }
+
+
+  .ch-animated-word{
+    width:100%;
+
+    font-size:clamp(38px,12vw,60px);
+
+    letter-spacing:-2px;
+
+    overflow-wrap:anywhere;
+  }
+
+
+  .ch-word-line{
+    margin-top:22px;
+    width:30px;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .ch-word-section{
+    height:350px;
+  }
+
+  .ch-animated-word{
+    font-size:38px;
+    letter-spacing:-1.5px;
+  }
+
+}
+.email-link{
+  position:relative;
+  z-index:999;
+  pointer-events:auto !important;
+  cursor:pointer;
+}
+
+.phone-mini-marquee{
+  width:calc(100% + 40px);
+  margin-left:-20px;
+  margin-top:18px;
+
+  overflow:hidden;
+
+  padding:9px 0;
+
+  border-top:1px solid rgba(0,0,0,.12);
+  border-bottom:1px solid rgba(0,0,0,.12);
+
+  transform:rotate(-2deg);
+}
+
+.phone-mini-track{
+  width:max-content;
+
+  display:flex;
+  align-items:center;
+  gap:17px;
+
+  white-space:nowrap;
+
+  animation:phoneMiniMove 13s linear infinite;
+}
+
+.phone-mini-track span{
+  font-family:Arial,sans-serif;
+
+  font-size:6px;
+  font-weight:600;
+
+  letter-spacing:2.2px;
+
+  color:rgba(0,0,0,.65);
+}
+
+.phone-mini-track i{
+  font-size:7px;
+  font-style:normal;
+
+  color:#efbe73;
+}
+
+.phone-mini-marquee.reverse{
+  transform:rotate(2deg);
+}
+
+.phone-mini-marquee.reverse .phone-mini-track{
+  animation-direction:reverse;
+}
+
+
+@keyframes phoneMiniMove{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+.phone-symbol-image{
+  width:100%;
+  height:205px;
+  padding-right:10px;
+  margin:18px auto 22px;
+  overflow:hidden;
+  transform:rotate(-2deg);
+}
+
+.phone-symbol-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+/* CAREER MARQUEE — WHITE */
+
+.career-marquee{
+  border-top:1px solid rgba(255,255,255,.25);
+  border-bottom:1px solid rgba(255,255,255,.25);
+}
+
+.career-marquee .phone-mini-track span{
+  color:#fff !important;
+}
+
+.career-marquee .phone-mini-track i{
+  color:#fff !important;
+}
+
+.instagram-card{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.instagram-card img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+  </style>
+
+
+
+<style>
+/* YouTube playback-only override — keeps existing desktop/mobile layout */
+#ytAutoShowcase .yt-player-wrap{position:relative;overflow:hidden;background:#000;transition:filter .55s ease,opacity .55s ease,transform .55s ease}
+#ytAutoShowcase .yt-player{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+#ytAutoShowcase .yt-player iframe{width:100%!important;height:100%!important;border:0;display:block}
+#ytAutoShowcase .yt-video-shade{position:absolute;inset:0;z-index:2;pointer-events:none;transition:background .55s ease}
+#ytAutoShowcase .yt-top,#ytAutoShowcase .yt-feature-content,#ytAutoShowcase .yt-small-number,#ytAutoShowcase .yt-small-content{position:relative;z-index:4;pointer-events:none}
+#ytAutoShowcase .yt-watch{position:relative;z-index:6;pointer-events:auto}
+#ytAutoShowcase .yt-card:not(.yt-active) .yt-player{filter:blur(6px) brightness(.28);opacity:.62;transform:scale(1.04);transition:filter .55s ease,opacity .55s ease,transform .55s ease}
+#ytAutoShowcase .yt-card.yt-active .yt-player{filter:none;opacity:1;transform:scale(1);transition:filter .55s ease,opacity .55s ease,transform .55s ease}
+#ytAutoShowcase .yt-card:not(.yt-active) .yt-video-shade{background:rgba(0,0,0,.50)!important}
+#ytAutoShowcase .yt-card.yt-active .yt-video-shade{background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.03) 65%)!important}
 </style>
+
 </head>
 
-<body>
-<div class="fixed-header">
-
-<nav class="navbar">
 
 
-  <!-- CENTER LOGO -->
-  <div class="logo">
-    Chandini
+<!--
+=========================================
+CURRENT PAGE
+
+HOME:
+data-page="home"
+
+MANIFEST:
+data-page="manifest"
+
+CAREER:
+data-page="career"
+
+HABIT:
+data-page="habit"
+=========================================
+-->
+
+<body data-page="home">
+
+
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+
+  <div class="fixed-header">
+
+
+    <nav class="navbar">
+
+      <div class="logo">
+        Chandini
+      </div>
+
+    </nav>
+
+
+    <div class="below-nav-text">
+      Connects
+    </div>
+
+
   </div>
 
-  <!-- RIGHT SIDE MENU -->
-  <div class="nav-right">
 
-    <!-- MOBILE MENU ICON -->
-    <button class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
-   
+  <!-- =========================================
+       TRANSPARENT NAVIGATION
+  ========================================= -->
+
+  <div class="main-menu">
+
+
+    <div class="menu-inner">
+
+
+
+      <!-- HOME -->
+
+      <a href="header.html"
+         class="menu-item"
+         data-nav="home">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+      </a>
+
+
+
+      <!-- MANIFEST -->
+
+      <a href="manifest.html"
+         class="menu-item"
+         data-nav="manifest">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <span>Manifest</span>
+
+      </a>
+
+
+
+      <!-- CAREER CONNECT -->
+
+      <a href="career-connect.html"
+         class="menu-item"
+         data-nav="career">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <span>Career Connect</span>
+
+      </a>
+
+
+
+      <!-- HABIT TRACKER -->
+
+      <a href="habit-tracker.html"
+         class="menu-item"
+         data-nav="habit">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <span>Habit Tracker</span>
+
+      </a>
+
+
+    </div>
 
   </div>
 
-</nav>
 
-<!-- SEARCH BOX -->
-<div class="search-box" id="searchBox">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Search..."
-    autocomplete="off"
-  >
-</div>
 
-<!-- NAVBAR OUTSIDE -->
-<div class="below-nav-text">
-  Connects
-</div>
-
-<!-- MOBILE HORIZONTAL SCROLL MENU -->
-<div class="mobile-scroll-menu">
-
-  <a href="#manifest">MANIFEST</a>
-
-  <a href="#career">CAREER CONNECT</a>
-
-  <a href="#about">ABOUT</a>
-
-  <a href="#work">WORK</a>
-
-  <a href="#courses">COURSES</a>
-
-  <a href="#workshops">WORKSHOPS</a>
-
-  <a href="#planners">HABIT TRACKERS & PLANNERS</a>
-
-  <a href="#contact">CONTACT</a>
-
-</div>
-
-</div>
-
-<!-- ========================================
-     EDUCATION PORTFOLIO
+  <!-- ========================================
+     ABOUT CHANDINI
 ======================================== -->
 
-<main class="edu-portfolio">
+<section class="ch-about" id="about">
 
-  <!-- LEFT INTRO / PC SIDEBAR -->
-<aside class="edu-sidebar">
+  <div class="ch-about-inner">
 
-  <div class="edu-brand">
-    <h1>Chandini</h1>
-    <span>EDUCATOR • MENTOR</span>
+    <!-- LEFT CONTENT -->
+    <div class="ch-about-content">
+
+      <div class="ch-about-label">
+        
+        ABOUT CHANDINI
+      </div>
+
+      <h2 class="ch-about-title">
+        Learn. Grow.<br>
+        <em>Create.</em>
+      </h2>
+
+      <p class="ch-about-text">
+        Hi, I’m Chandini — an educator, mentor and creator
+        passionate about making learning simple, meaningful
+        and inspiring.
+      </p>
+
+      <p class="ch-about-text ch-about-text-small">
+        Through my content and community, I share knowledge,
+        experiences and ideas that help people learn with clarity,
+        grow with confidence and create with purpose.
+      </p>
+
+
+      <!-- SOCIAL STATS -->
+      <div class="ch-about-stats">
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/chandini_connects/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ch-stat">
+
+          <div class="ch-stat-top">
+            <i class="fa-brands fa-instagram"></i>
+
+            <div class="ch-stat-number">
+              <span class="ch-counter" data-target="12.3">0</span>K+
+            </div>
+          </div>
+
+          <div class="ch-stat-name">
+            Instagram Followers
+          </div>
+
+          <span class="ch-stat-arrow">↗</span>
+
+        </a>
+
+
+        <!-- YOUTUBE -->
+        <a href="https://www.youtube.com/@chandiniconnects"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ch-stat">
+
+          <div class="ch-stat-top">
+            <i class="fa-brands fa-youtube"></i>
+
+            <div class="ch-stat-number">
+              <span class="ch-counter" data-target="19.2">0</span>K+
+            </div>
+          </div>
+
+          <div class="ch-stat-name">
+            YouTube Subscribers
+          </div>
+
+          <span class="ch-stat-arrow">↗</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT IMAGE -->
+    <div class="ch-about-visual">
+
+  <div class="ch-about-shape"></div>
+
+  <div class="ch-about-image">
+    <img src="chandini.jpeg" alt="Chandini">
   </div>
 
-  <div class="edu-side-links">
-
-    <a href="#about">ABOUT <span>↗</span></a>
-    <a href="#work">WORK <span>↗</span></a>
-    <a href="#courses">COURSES <span>↗</span></a>
-    <a href="#workshops">WORKSHOPS <span>↗</span></a>
-    <a href="#contact">CONTACT <span>↗</span></a>
+  <div class="ch-about-note">
+    <span>EDUCATOR</span>
+    <span>•</span>
+    <span>MENTOR</span>
+    <span>•</span>
+    <span>CREATOR</span>
   </div>
 
-  <div class="edu-social">
-
-    <!-- INSTAGRAM -->
-    <a
-  href="https://www.instagram.com/chandini_connects/"
-  target="_blank"
-  rel="noopener"
-  aria-label="Instagram"
->
-  <svg viewBox="0 0 24 24">
-    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-    <circle cx="12" cy="12" r="4"></circle>
-    <circle cx="17.5" cy="6.5" r="1"></circle>
-  </svg>
-</a>
-
-    <!-- WHATSAPP -->
-  <a
-  href="https://wa.me/91XXXXXXXXXX?text=Hi%20Chandini%20Connects"
-  target="_blank"
-  rel="noopener"
-  class="social-whatsapp"
-  aria-label="WhatsApp"
->
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3C8.84 3 3 8.75 3 15.84c0 2.26.6 4.47 1.73 6.41L3 28.55l6.49-1.69a13.15 13.15 0 0 0 6.54 1.66h.01C23.24 28.52 29 22.77 29 15.68 29 8.6 23.24 3 16.04 3zm0 23.35a10.96 10.96 0 0 1-5.59-1.51l-.4-.23-3.85 1 1.03-3.73-.25-.39a10.62 10.62 0 0 1-1.66-5.65c0-5.87 4.82-10.65 10.74-10.65 5.92 0 10.73 4.78 10.73 10.65 0 5.87-4.82 10.51-10.75 10.51zm5.89-7.86c-.32-.16-1.91-.93-2.21-1.04-.3-.11-.52-.16-.74.16-.22.32-.85 1.04-1.04 1.26-.19.22-.38.24-.71.08-.32-.16-1.36-.49-2.59-1.57-.96-.84-1.6-1.88-1.79-2.2-.19-.32-.02-.49.14-.65.15-.14.32-.38.49-.57.16-.19.22-.32.32-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.77-1.01-2.42-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.15 1.12-1.15 2.74 0 1.61 1.18 3.17 1.34 3.39.16.22 2.32 3.51 5.62 4.92.79.34 1.4.54 1.88.69.79.25 1.51.21 2.08.13.63-.09 1.91-.77 2.18-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.62-.38z"/>
-  </svg>
-</a>
+</div>
 
   </div>
 
-</aside>
+</section>
+
+<section class="video-intro-line">
+  <p>WHERE IDEAS TURN INTO IMPACT</p>
+</section>
 
 
-  <!-- RIGHT CONTENT -->
-  <section class="edu-gallery" id="courses">
+<section class="edu-gallery" id="courses">
 
-  <!-- BIG -->
-  <article class="edu-card edu-feature">
-    <img src="https://picsum.photos/seed/chandini1/1200/900" alt="Manifestation Workshop">
+
+  <!-- 01 MANIFEST -->
+  <article class="edu-card edu-feature is-active">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/Da20Gg7h_iA/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img1.png" alt="Manifest Your Future">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Manifest Your Future</h2>
       <p>MANIFESTATION • WORKSHOP</p>
     </div>
+
   </article>
 
 
-  <!-- SMALL 1 -->
+  <!-- 02 CAREER -->
   <article class="edu-card">
-    <img src="https://picsum.photos/seed/chandini2/700/700" alt="Career Connect">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/DdoT5oZtcVI/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img2.png" alt="Career Connect">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Career Connect</h2>
       <p>CAREER GUIDANCE</p>
     </div>
+
   </article>
 
 
-  <!-- SMALL 2 -->
+  <!-- 03 COURSES -->
   <article class="edu-card">
-    <img src="https://picsum.photos/seed/chandini3/700/700" alt="Courses">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/DZutYfFtZhS/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img3.png" alt="Learn With Purpose">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Learn With Purpose</h2>
       <p>COURSES</p>
     </div>
+
   </article>
 
 
-  <!-- BIG -->
+  <!-- 04 HABITS -->
   <article class="edu-card">
-    <img src="https://picsum.photos/seed/chandini4/1200/800" alt="Habit Planner">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/Ddd5wqDtYUz/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img4.png" alt="Build Better Habits">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Build Better Habits</h2>
       <p>TRACKERS & PLANNERS</p>
     </div>
+
   </article>
 
 
-  <!-- SMALL 1 -->
+  <!-- 05 WORKSHOPS -->
   <article class="edu-card">
-    <img src="https://picsum.photos/seed/chandini5/700/700" alt="Workshops">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/Dap7tqJtVgZ/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img5.png" alt="Interactive Workshops">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Interactive Workshops</h2>
       <p>LEARN • GROW • ACHIEVE</p>
     </div>
+
   </article>
 
 
-  <!-- SMALL 2 -->
+  <!-- 06 GROWTH -->
   <article class="edu-card">
-    <img src="https://picsum.photos/seed/chandini6/700/700" alt="Personal Growth">
+
+    <a href="https://www.instagram.com/chandini_connects/reel/DYmjsM4tr5I/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-card">
+
+      <img src="images/img6.png" alt="Personal Growth">
+
+    </a>
 
     <div class="edu-card-overlay">
       <h2>Personal Growth</h2>
       <p>WITH CHANDINI</p>
     </div>
+
   </article>
+
 
 </section>
 
-</main>
-
-<!-- ========================================
-     ABOUT CHANDINI
-======================================== -->
-
-<section class="about-chandini" id="about">
-
-  <div class="about-heading">
-    <span>01 — ABOUT</span>
-    
-
-    <h2>
-      Helping students find clarity,<br>
-      build confidence & <em>grow with purpose.</em>
-    </h2>
-  </div>
 
 
-  <div class="about-layout">
+<section class="ch-journey" id="journey">
 
-    <!-- LEFT IMAGE -->
-    <div class="about-image">
-      <!-- later chandini photo tho replace chey -->
-      <img
-        src="chandini.jpeg"
-        alt="Chandini"
-      >
+  <div class="ch-journey-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="ch-journey-content">
+
+      <div class="ch-journey-label">
+        
+        EXPLORE WITH CHANDINI
+      </div>
+
+      <div class="ch-journey-number" id="journeyNumber">
+        01 / 04
+      </div>
+
+      <h2 class="ch-journey-title" id="journeyTitle">
+        Manifest
+        <em>Your Vision.</em>
+      </h2>
+
+      <p class="ch-journey-text" id="journeyText">
+        Turn your thoughts into clear intentions and learn how
+        manifestation can become a meaningful part of your everyday life.
+      </p>
+
+      <div class="ch-journey-tags" id="journeyTags">
+        <span>Intentions</span>
+        <span>Clarity</span>
+        <span>Action</span>
+      </div>
+
+      <div class="ch-journey-controls">
+
+        <button type="button" class="journey-arrow" id="journeyPrev">
+          ←
+        </button>
+
+        <div class="journey-dots" id="journeyDots">
+          <button class="active" data-index="0"></button>
+          <button data-index="1"></button>
+          <button data-index="2"></button>
+          <button data-index="3"></button>
+          <button data-index="4"></button>
+        </div>
+
+        <button type="button" class="journey-arrow" id="journeyNext">
+          →
+        </button>
+
+      </div>
+
     </div>
 
 
-    <!-- RIGHT CONTENT -->
-    <div class="about-content">
+    <!-- RIGHT PHONE -->
+    <div class="ch-phone-area">
 
-      <div class="about-copy">
+      <div class="ch-phone">
 
-        <p>
-          I'm Chandini — an educator and mentor passionate about helping
-          students understand their potential and move forward with confidence.
-          Through career guidance, learning programs and practical workshops,
-          I make personal and academic growth feel simple and achievable.
-        </p>
+        <!-- PHONE TOP -->
+        <div class="ch-phone-island"></div>
 
-        <p>
-          From building better habits to choosing the right career path,
-          my goal is to create a space where students can learn, explore
-          and become the best version of themselves.
-        </p>
+        <div class="ch-phone-screen" id="journeyPhone">
+
+          <div class="ch-phone-slider" id="journeySlider">
+
+
+            <!-- 01 MANIFEST -->
+            <article class="ch-phone-slide manifest-slide">
+
+              <div class="phone-slide-top">
+                <span>01</span>
+                <span>MANIFEST</span>
+              </div>
+              <div class="phone-mini-marquee">
+  <div class="phone-mini-track">
+
+    <span>VISUALIZE</span><i>✦</i>
+    <span>BELIEVE</span><i>✦</i>
+    <span>ALIGN</span><i>✦</i>
+    <span>MANIFEST</span><i>✦</i>
+
+    <span>VISUALIZE</span><i>✦</i>
+    <span>BELIEVE</span><i>✦</i>
+    <span>ALIGN</span><i>✦</i>
+    <span>MANIFEST</span><i>✦</i>
+
+  </div>
+</div>
+              
+
+              <div class="phone-symbol phone-symbol-image">
+  <img src="manifest.webp" alt="Manifest">
+</div>
+
+              <div class="phone-slide-content">
+
+                <span class="phone-small">
+                  CREATE YOUR REALITY
+                </span>
+
+                <h3>
+                  Manifest
+                  <em>Your Vision.</em>
+                </h3>
+
+                <p>
+                  Start with clarity.
+                  Believe with intention.
+                  Move with purpose.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- 02 CAREER -->
+            <article class="ch-phone-slide career-slide">
+
+              <div class="phone-slide-top">
+                <span>02</span>
+                <span>CAREER</span>
+              </div>
+              <div class="phone-mini-marquee reverse">
+ <div class="phone-mini-marquee career-marquee reverse">
+  <div class="phone-mini-track">
+
+    <span>LEARN</span><i>✦</i>
+    <span>BUILD</span><i>✦</i>
+    <span>PREPARE</span><i>✦</i>
+    <span>GROW</span><i>✦</i>
+
+    <span>LEARN</span><i>✦</i>
+    <span>BUILD</span><i>✦</i>
+    <span>PREPARE</span><i>✦</i>
+    <span>GROW</span><i>✦</i>
+
+  </div>
+</div>
+
+              <div class="phone-symbol phone-symbol-image">
+  <img src="career.webp" alt="Career">
+</div>
+
+              <div class="phone-slide-content">
+
+                <span class="phone-small">
+                  BUILD YOUR PATH
+                </span>
+
+                <h3>
+                  Shape
+                  <em>Your Career.</em>
+                </h3>
+
+                <p>
+                  Discover your strengths,
+                  build confidence and move
+                  towards meaningful work.
+                </p>
+
+              </div>
+
+            </article>
+            <!-- 03 CHANDINI VIDEO -->
+<article class="ch-phone-slide video-slide">
+
+  <video
+    class="ch-phone-video"
+    src="video1.mp4"
+    muted
+    playsinline
+    preload="metadata">
+  </video>
+
+  <div class="ch-video-overlay"></div>
+
+  <div class="phone-slide-top video-top">
+    <span>03</span>
+    <span>CHANDINI</span>
+  </div>
+
+  <div class="ch-video-text">
+    <span>WATCH • LEARN • GROW</span>
+
+    <h3>
+      A moment<br>
+      <em>with Chandini.</em>
+    </h3>
+  </div>
+
+</article>
+
+
+            <!-- 03 HABITS -->
+            <article class="ch-phone-slide habit-slide">
+
+              <div class="phone-slide-top">
+                <div class="phone-mini-marquee">
+ 
+                <span>04</span>
+                <span>HABITS</span>
+              </div>
+               <div class="phone-mini-track">
+    <span>CONSISTENCY</span><i>✦</i>
+    <span>ROUTINE</span><i>✦</i>
+    <span>DISCIPLINE</span><i>✦</i>
+    <span>PROGRESS</span><i>✦</i>
+
+    <span>CONSISTENCY</span><i>✦</i>
+    <span>ROUTINE</span><i>✦</i>
+    <span>DISCIPLINE</span><i>✦</i>
+    <span>PROGRESS</span><i>✦</i>
+  </div>
+</div>
+
+              <div class="phone-symbol phone-symbol-image">
+  <img src="habit.webp" alt="Habits">
+</div>
+
+              <div class="phone-slide-content">
+
+                <span class="phone-small">
+                  EVERYDAY PROGRESS
+                </span>
+
+                <h3>
+                  Build Better
+                  <em>Habits.</em>
+                </h3>
+
+                <p>
+                  Small consistent choices
+                  can create powerful and
+                  lasting change.
+                </p>
+
+              </div>
+
+            </article>
+
+            
+
+
+            <!-- 04 GROWTH -->
+            <article class="ch-phone-slide growth-slide">
+
+              <div class="phone-slide-top">
+                <span>05</span>
+                <span>GROWTH</span>
+              </div>
+              <div class="phone-mini-marquee reverse">
+  <div class="phone-mini-track">
+    <span>LEARN</span><i>✦</i>
+    <span>REFLECT</span><i>✦</i>
+    <span>EVOLVE</span><i>✦</i>
+    <span>BECOME</span><i>✦</i>
+
+    <span>LEARN</span><i>✦</i>
+    <span>REFLECT</span><i>✦</i>
+    <span>EVOLVE</span><i>✦</i>
+    <span>BECOME</span><i>✦</i>
+  </div>
+</div>
+
+              <div class="phone-symbol phone-symbol-image">
+  <img src="habit.webp" alt="Habits">
+</div>
+
+              <div class="phone-slide-content">
+
+                <span class="phone-small">
+                  BECOME MORE
+                </span>
+
+                <h3>
+                  Grow Into
+                  <em>Yourself.</em>
+                </h3>
+
+                <p>
+                  Learn, reflect and keep
+                  becoming a stronger version
+                  of yourself.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHONE BOTTOM BAR -->
+        <div class="ch-phone-home"></div>
 
       </div>
 
 
-  <!-- STATS -->
-<div class="about-stats">
-
-  <div class="about-stat">
-    <span>FOLLOWERS</span>
-    <strong class="about-counter"
-            data-target="50"
-            data-suffix="K+">0</strong>
-  </div>
-
-  <div class="about-stat">
-    <span>STUDENTS MENTORED</span>
-    <strong class="about-counter"
-            data-target="1"
-            data-suffix="K+">0</strong>
-  </div>
-
-  <div class="about-stat">
-    <span>WORKSHOPS</span>
-    <strong class="about-counter"
-            data-target="25"
-            data-suffix="+">0</strong>
-  </div>
-
-</div>
+      <div class="ch-swipe-note">
+        <span>←</span>
+        SWIPE TO EXPLORE
+        <span>→</span>
+      </div>
 
     </div>
 
@@ -3688,196 +5855,114 @@ html {
 
 </section>
 
-<section class="work-services" id="work">
 
-  <div class="work-label">
-    <span>02 — WORK</span>
-    
+
+<!-- =========================================
+     PREMIUM YOUTUBE SHOWCASE
+========================================= -->
+
+<section class="yt-showcase" id="youtube">
+  <div class="yt-showcase-inner">
+
+    <div class="yt-head">
+      <div>
+        <div class="yt-label"><span></span>CHANDINI ON YOUTUBE</div>
+        <h2>Watch. Learn. <em>Connect.</em></h2>
+      </div>
+
+      <div class="yt-head-right">
+        <p>Stories, ideas & conversations<br>with Chandini.</p>
+        <a href="https://www.youtube.com/@chandiniconnects" target="_blank" rel="noopener noreferrer">VIEW CHANNEL ↗</a>
+      </div>
+    </div>
+
+    <div class="yt-grid" id="ytAutoShowcase">
+
+      <div class="yt-card yt-featured yt-active" data-index="0">
+        <div class="yt-image yt-player-wrap">
+          <div id="ytPlayer1" class="yt-player"></div>
+          <div class="yt-dark yt-video-shade"></div>
+          <div class="yt-top"><span>NOW PLAYING</span><span>YOUTUBE • CHANDINI CONNECTS</span></div>
+          <div class="yt-feature-content">
+            <span>MANIFESTATION</span>
+            <h3>Create the life<br>you truly want.</h3>
+            <a href="https://www.youtube.com/watch?v=UY2ePnr8d_k" target="_blank" rel="noopener noreferrer" class="yt-watch">WATCH ON YOUTUBE <b>↗</b></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="yt-side">
+        <div class="yt-card yt-small" data-index="1">
+          <div class="yt-image yt-player-wrap">
+            <div id="ytPlayer2" class="yt-player"></div>
+            <div class="yt-dark yt-video-shade"></div>
+            <div class="yt-small-number">02</div>
+            <div class="yt-small-content">
+              <span>CAREER</span>
+              <h3>Build confidence in your career journey.</h3>
+              <a href="https://www.youtube.com/watch?v=omYgMwtaKZs" target="_blank" rel="noopener noreferrer" class="yt-watch">WATCH VIDEO ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card yt-small" data-index="2">
+          <div class="yt-image yt-player-wrap">
+            <div id="ytPlayer3" class="yt-player"></div>
+            <div class="yt-dark yt-video-shade"></div>
+            <div class="yt-small-number">03</div>
+            <div class="yt-small-content">
+              <span>PERSONAL GROWTH</span>
+              <h3>Small habits. Meaningful change.</h3>
+              <a href="https://www.youtube.com/watch?v=pU68vXAFxxY" target="_blank" rel="noopener noreferrer" class="yt-watch">WATCH VIDEO ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yt-bottom">
+      <span>MORE STORIES • MORE IDEAS • MORE GROWTH</span>
+      <span>YOUTUBE ↗</span>
+    </div>
+
   </div>
-
-  <h2 class="work-title">What I can help you with</h2>
-
-
-  <!-- MANIFEST -->
-  <a href="manifest.html" class="work-row">
-
-    <span class="work-number">01</span>
-
-    <h3>Manifest</h3>
-
-    <p>
-      Build clarity, create powerful intentions and turn your goals
-      into meaningful action.
-    </p>
-
-    <span class="work-arrow">↗</span>
-
-  </a>
-
-
-  <!-- CAREER CONNECT -->
-  <a href="#career" class="work-row">
-
-    <span class="work-number">02</span>
-
-    <h3>Career Connect</h3>
-
-    <p>
-      Guidance designed to help students understand their strengths,
-      explore career paths and make confident decisions.
-    </p>
-
-    <span class="work-arrow">↗</span>
-
-  </a>
-
-
-  <!-- HABIT TRACKERS -->
-  <a href="#planners" class="work-row">
-
-    <span class="work-number">03</span>
-
-    <h3>Habit Trackers &amp; Planners</h3>
-
-    <p>
-      Simple tools to build consistency, stay organized and turn
-      everyday habits into long-term growth.
-    </p>
-
-    <span class="work-arrow">↗</span>
-
-  </a>
-
 </section>
 
-<!-- ========================================
-     INSTAGRAM REELS SHOWCASE
-======================================== -->
 
-<section class="reels-showcase" id="reelsShowcase">
+<section class="ch-word-section">
 
-  <div class="reels-heading">
-    <span>WATCH • EXPERIENCE • CONNECT</span>
+  <div class="ch-word-stage">
 
-    <h2>
-      Stories in <em>motion.</em>
+    <span class="ch-word-mini">EXPLORE YOUR</span>
+
+    <h2 class="ch-animated-word">
+      MANIFESTATION
     </h2>
-  </div>
 
-
-  <div class="reels-stage">
-     <div class="reels-track">
-
-    <!-- REEL 1 -->
-    <div class="reel-card active">
-      <video muted playsinline preload="auto">
-        <source
-          src="video1.mp4"
-          type="video/mp4">
-      </video>
-
-      
-    </div>
-
-
-    <!-- REEL 2 -->
-    <div class="reel-card">
-      <video muted playsinline preload="auto">
-        <source
-          src="video1.mp4"
-          type="video/mp4">
-      </video>
-
-      
-    </div>
-
-
-    <!-- REEL 3 -->
-    <div class="reel-card">
-      <video muted playsinline preload="auto">
-        <source
-          src="video1.mp4"
-          type="video/mp4">
-      </video>
-
-      
-    </div>
-
-
-    <!-- REEL 4 -->
-    <div class="reel-card">
-      <video muted playsinline preload="auto">
-        <source
-          src="video1.mp4"
-          type="video/mp4">
-      </video>
-
-      
-    </div>
-
-
-    <!-- REEL 5 -->
-    <div class="reel-card">
-      <video muted playsinline preload="auto">
-        <source
-          src="video1.mp4"
-          type="video/mp4">
-      </video>
-
-     
-    </div>
-    </div>
-
-
-  
+    <div class="ch-word-line"></div>
 
   </div>
 
 </section>
 
-<!-- ========================================
-     QUOTE / TESTIMONIAL SECTION
-======================================== -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
-<section class="chandini-quote-section">
-
-  <div class="quote-top-line"></div>
-
-  <blockquote class="chandini-quote">
-
-    “I don’t believe in simply teaching what to do.
-    I believe in helping people understand
-    <em>why it matters</em> — so they can grow with confidence,
-    create with purpose, and build something of their own.”
-
-  </blockquote>
-
-  <div class="quote-author">
-    CHANDINI — FOUNDER, CHANDINI CONNECTS
-  </div>
-
-  <div class="quote-bottom-line"></div>
-
-</section>
-
-<!-- ========================================
-     CHANDINI CONNECTS FINAL FOOTER
-======================================== -->
 
 <footer class="chandini-footer">
 
-  <!-- SILHOUETTE IMAGE -->
   <div class="footer-art">
     <img src="footer.webp" alt="Chandini Connects">
   </div>
 
 
-  <!-- FOOTER CONTENT -->
   <div class="footer-main">
 
-    <!-- LEFT -->
     <div class="footer-brand">
+
       <h2>Chandini</h2>
+
       <span>CONNECTS</span>
 
       <p>
@@ -3885,41 +5970,59 @@ html {
         Grow with confidence.<br>
         Create with purpose.
       </p>
+
     </div>
 
 
-    <!-- NAVIGATION -->
     <div class="footer-links">
 
       <div class="footer-link-group">
+
         <span>EXPLORE</span>
 
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#courses">Courses</a>
-        <a href="#workshops">Workshops</a>
+        <a href="header.html">Home</a>
+
+        <a href="manifest.html">
+          Manifest
+        </a>
+
+        <a href="career-connect.html">
+          Career Connect
+        </a>
+
+        <a href="habit-tracker.html">
+          Habit Tracker
+        </a>
+
       </div>
 
 
       <div class="footer-link-group">
+
         <span>CONNECT</span>
 
-        <a href="#contact">Contact</a>
+        <a href="#contact">
+          Contact
+        </a>
 
-        <a href="https://www.instagram.com/chandini_connects/"
+       <a href="https://www.instagram.com/chandini_connects/"
            target="_blank">
           Instagram
         </a>
 
-        <a href="#">
+        <a href="https://www.youtube.com/@chandiniconnects" target="_blank">
+          YouTube
+        </a>
+
+        <a href="https://wa.me/9019053580" target="_blank">
           WhatsApp
         </a>
+
       </div>
 
     </div>
 
 
-    <!-- RIGHT -->
     <div class="footer-connect">
 
       <span>LET'S CONNECT</span>
@@ -3929,17 +6032,41 @@ html {
         grow & <em>create.</em>
       </h3>
 
-      <a href="#contact" class="footer-contact-btn">
-        START A CONVERSATION
-        <b>↗</b>
-      </a>
+
+      <div class="footer-socials">
+
+        <a href="https://www.instagram.com/chandini_connects/"
+           target="_blank"
+           aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@chandiniconnects"
+           target="_blank"
+           aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://wa.me/9019053580"
+           target="_blank"
+           aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chandiniconnects@gmail.com"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Email Chandini Connects">
+  <i class="fa-regular fa-envelope"></i>
+</a>
+
+      </div>
 
     </div>
 
   </div>
 
 
-  <!-- BOTTOM -->
   <div class="footer-bottom">
 
     <span>
@@ -3947,7 +6074,7 @@ html {
     </span>
 
     <span>
-      EDUCATOR • MENTOR • CREATOR
+      LEARN • GROW • CREATE • TOGETHER
     </span>
 
     <a href="#top">
@@ -3958,547 +6085,833 @@ html {
 
 </footer>
 
+  
+
+
+
+  <!-- =========================================
+       ACTIVE NAV SCRIPT
+  ========================================= -->
 
   <script>
 
-    /* ========================================
-   ABOUT STATS COUNTER
-======================================== */
-
-const aboutCounters =
-  document.querySelectorAll(".about-counter");
-
-const aboutCounterObserver =
-  new IntersectionObserver(function(entries, observer) {
-
-    entries.forEach(function(entry) {
-
-      if (!entry.isIntersecting) return;
-
-      const counter = entry.target;
-
-      const target =
-        Number(counter.dataset.target);
-
-      const suffix =
-        counter.dataset.suffix || "";
-
-      const duration = 1800;
-
-      const startTime =
-        performance.now();
-
-
-      function animateCounter(currentTime) {
-
-        const elapsed =
-          currentTime - startTime;
-
-        const progress =
-          Math.min(elapsed / duration, 1);
-
-        /* SMOOTH SLOW-DOWN */
-        const eased =
-          1 - Math.pow(1 - progress, 3);
-
-        const value =
-          Math.floor(target * eased);
-
-
-        counter.textContent =
-          value + suffix;
-
-
-        if (progress < 1) {
-
-          requestAnimationFrame(
-            animateCounter
-          );
-
-        } else {
-
-          /* EXACT FINAL VALUE */
-
-          counter.textContent =
-            target + suffix;
-
-        }
-
-      }
-
-
-      requestAnimationFrame(
-        animateCounter
-      );
-
-      /* RUN ONLY ONCE */
-
-      observer.unobserve(counter);
-
-    });
-
-  }, {
-    threshold: 0.4
-  });
-
-
-aboutCounters.forEach(function(counter) {
-
-  aboutCounterObserver.observe(counter);
-
-});
-
-/* ========================================
-   INSTAGRAM REELS ROTATING CAROUSEL
-======================================== */
-
-function initReelsCarousel() {
-
-  const cards = Array.from(
-    document.querySelectorAll(".reel-card")
-  );
-
-  const currentText =
-    document.getElementById("reelCurrent");
-
-  const progress =
-    document.getElementById("reelsProgress");
-
-
-  if (!cards.length) return;
-
-
-  let activeIndex = 0;
-  let timer = null;
-  let progressTimer = null;
-
-  const playTime = 300000;
-
-
-  /* ========================================
-     CARD POSITION
-  ======================================== */
-
-  function getPosition(index) {
-
-    let diff = index - activeIndex;
-
-    const total = cards.length;
-
-
-    if (diff > total / 2) {
-      diff -= total;
-    }
-
-
-    if (diff < -total / 2) {
-      diff += total;
-    }
-
-
-    return diff;
-  }
-
-
-  /* ========================================
-     PROGRESS
-  ======================================== */
-
-  function startProgress() {
-
-    clearInterval(progressTimer);
-
-    if (!progress) return;
-
-
-    progress.style.transition = "none";
-    progress.style.width = "0%";
-
-
-    requestAnimationFrame(function () {
-
-      requestAnimationFrame(function () {
-
-        progress.style.transition =
-          "width 5s linear";
-
-        progress.style.width =
-          "100%";
-
-      });
-
-    });
-
-  }
-
-
-  /* ========================================
-     UPDATE CAROUSEL
-  ======================================== */
-
-  function updateCarousel() {
-
-    clearTimeout(timer);
-
-    startProgress();
-
-
-    cards.forEach(function(card, index) {
-
-      const video =
-        card.querySelector("video");
-
-
-      card.classList.remove(
-        "left",
-        "center",
-        "right",
-        "hidden-left",
-        "hidden-right"
-      );
-
-
-      const position =
-        getPosition(index);
-
-
-      /* LEFT */
-
-      if (position === -1) {
-
-        card.classList.add("left");
-
-      }
-
-
-      /* CENTER */
-
-      else if (position === 0) {
-
-        card.classList.add("center");
-
-      }
-
-
-      /* RIGHT */
-
-      else if (position === 1) {
-
-        card.classList.add("right");
-
-      }
-
-
-      /* HIDDEN LEFT */
-
-      else if (position < -1) {
-
-        card.classList.add(
-          "hidden-left"
-        );
-
-      }
-
-
-      /* HIDDEN RIGHT */
-
-      else {
-
-        card.classList.add(
-          "hidden-right"
-        );
-
-      }
-
-
-      /* STOP NON ACTIVE VIDEOS */
-
-      video.pause();
-
-      try {
-
-        video.currentTime = 0;
-
-      } catch (e) {}
-
-    });
-
-
-
-    /* ========================================
-       PLAY MIDDLE VIDEO
-    ======================================== */
-
-    const activeCard =
-      cards[activeIndex];
-
-
-    const activeVideo =
-      activeCard.querySelector("video");
-
-
-    activeVideo.muted = true;
-
-    activeVideo.defaultMuted = true;
-
-    activeVideo.playsInline = true;
-
-
-    activeVideo
-      .play()
-      .catch(function(error) {
-
-        console.log(
-          "Video autoplay blocked:",
-          error
-        );
-
-      });
-
-
-
-    /* COUNTER */
-
-    if (currentText) {
-
-      currentText.textContent =
-        String(activeIndex + 1)
-        .padStart(2, "0");
-
-    }
-
-
-
-    /* ========================================
-       AUTO ROTATE AFTER 5 SEC
-    ======================================== */
-
-    timer = setTimeout(function () {
-
-      activeIndex =
-        (activeIndex + 1) %
-        cards.length;
-
-
-      updateCarousel();
-
-    }, playTime);
-
-  }
-
-
-
-  /* ========================================
-     CLICK LEFT / RIGHT VIDEO
-  ======================================== */
-
-  cards.forEach(function(card, index) {
-
-    card.addEventListener(
-      "click",
+    document.addEventListener(
+      "DOMContentLoaded",
       function () {
 
-        if (index === activeIndex) {
-          return;
-        }
+
+        /* CURRENT PAGE FROM BODY */
+
+        const currentPage =
+          document.body.getAttribute("data-page");
 
 
-        activeIndex = index;
+        /* ALL NAV BUTTONS */
 
-        updateCarousel();
+        const menuItems =
+          document.querySelectorAll(".menu-item");
+
+
+        /* LOOP THROUGH BUTTONS */
+
+        menuItems.forEach(function (item) {
+
+
+          /* FIRST REMOVE ACTIVE */
+
+          item.classList.remove("active");
+
+
+          /* GET BUTTON PAGE */
+
+          const navPage =
+            item.getAttribute("data-nav");
+
+
+          /* MATCH CURRENT PAGE */
+
+          if (navPage === currentPage) {
+
+            item.classList.add("active");
+
+          }
+
+        });
+
 
       }
     );
 
-  });
+  </script>
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const allCards =
+    Array.from(document.querySelectorAll(".edu-card"));
+
+  if (!allCards.length) return;
+
+  const gallery =
+    document.querySelector(".edu-gallery");
+
+  const PLAY_TIME = 8000;
+
+  let currentIndex = 0;
+  let timer = null;
 
 
+  function getCards() {
 
-  /* ========================================
-     START
-  ======================================== */
+    if (window.innerWidth <= 768) {
+      return allCards.slice(0, 3);
+    }
 
-  updateCarousel();
-
-}
-
+    return allCards;
+  }
 
 
-/* ========================================
-   SAFE START
-======================================== */
+  function activateVideo(index) {
 
-if (
-  document.readyState === "loading"
-) {
+    clearTimeout(timer);
 
-  document.addEventListener(
-    "DOMContentLoaded",
-    initReelsCarousel
-  );
+    const cards = getCards();
 
-} else {
+    if (!cards.length) return;
 
-  initReelsCarousel();
 
-}
-/* ========================================
-   WORK ITEMS - ONE BY ONE ON SCROLL
-======================================== */
+    if (index >= cards.length) {
+      index = 0;
+    }
 
-const workRows = document.querySelectorAll(".work-row");
+    if (index < 0) {
+      index = cards.length - 1;
+    }
 
-const workObserver = new IntersectionObserver(
-  function(entries) {
+    currentIndex = index;
 
-    entries.forEach(function(entry) {
 
-      if (entry.isIntersecting) {
+    /* STOP EVERYTHING */
 
-        const index =
-          Array.from(workRows).indexOf(entry.target);
+    allCards.forEach(function(card) {
 
-        setTimeout(function() {
-          entry.target.classList.add("work-show");
-        }, index * 250);
+      const video = card.querySelector("video");
 
-        workObserver.unobserve(entry.target);
+      card.classList.remove("is-active");
+
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
       }
 
     });
 
-  },
-  {
-    threshold: 0.25
+
+    /* ACTIVE */
+
+    const activeCard = cards[currentIndex];
+
+    const activeVideo =
+      activeCard.querySelector("video");
+
+    activeCard.classList.add("is-active");
+
+
+    /* MOBILE - SCROLL ONLY INSIDE GALLERY
+   PAGE POSITION SHOULD NOT CHANGE */
+
+if (window.innerWidth <= 768) {
+
+  const gallery = activeCard.closest(".edu-gallery");
+
+  if (gallery) {
+
+    const targetLeft =
+      activeCard.offsetLeft
+      - (gallery.clientWidth - activeCard.clientWidth) / 2;
+
+    gallery.scrollTo({
+      left: targetLeft,
+      behavior: "smooth"
+    });
+
   }
-);
 
-workRows.forEach(function(row) {
-  workObserver.observe(row);
+}
+
+
+    /* PLAY */
+
+    if (activeVideo) {
+
+      activeVideo.currentTime = 0;
+
+      activeVideo.play().catch(function () {});
+
+    }
+
+
+    /* NEXT AFTER 8 SEC */
+
+    timer = setTimeout(function () {
+
+      activateVideo(
+        (currentIndex + 1) % cards.length
+      );
+
+    }, PLAY_TIME);
+
+  }
+
+
+  /* TAP CARD */
+
+  allCards.forEach(function(card) {
+
+    card.addEventListener("click", function () {
+
+      const cards = getCards();
+
+      const index = cards.indexOf(card);
+
+      if (index !== -1) {
+        activateVideo(index);
+      }
+
+    });
+
+  });
+
+
+  /* START */
+
+  activateVideo(0);
+
 });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
+  const aboutSection = document.querySelector(".ch-about");
 
+  if(!aboutSection) return;
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+  let counted = false;
 
-menuToggle.addEventListener("click", function () {
-  navLinks.classList.toggle("open");
-});
+  const observer = new IntersectionObserver((entries) => {
 
+    entries.forEach((entry) => {
 
-document.querySelectorAll(".dropdown-item .nav-title")
-.forEach(function(title) {
+      if(entry.isIntersecting){
 
-  title.addEventListener("click", function(e) {
+        aboutSection.classList.add("ch-about-visible");
 
-    if (window.innerWidth <= 768) {
+        if(!counted){
 
-      const item = this.parentElement;
+          counted = true;
 
-      document.querySelectorAll(".dropdown-item")
-      .forEach(function(other) {
+          document.querySelectorAll(".ch-counter").forEach(counter => {
 
-        if (other !== item) {
-          other.classList.remove("active");
+            const target = Number(counter.dataset.target);
+
+            let current = 0;
+
+            const duration = 1300;
+            const steps = 45;
+            const increment = target / steps;
+
+            const timer = setInterval(() => {
+
+              current += increment;
+
+              if(current >= target){
+
+                counter.textContent = target;
+                clearInterval(timer);
+
+              }else{
+
+                counter.textContent = Math.floor(current);
+
+              }
+
+            }, duration / steps);
+
+          });
+
         }
 
-      });
+      }
 
-      item.classList.toggle("active");
-    }
+    });
+
+  },{
+    threshold:0.2
+  });
+
+  observer.observe(aboutSection);
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const aboutVisual = document.querySelector(".ch-about-visual");
+  const aboutImage = document.querySelector(".ch-about-image");
+
+  if(!aboutVisual || !aboutImage) return;
+
+  aboutImage.addEventListener("click", function(){
+
+    aboutVisual.classList.toggle("image-active");
 
   });
 
 });
+</script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-const searchBtn = document.getElementById("searchBtn");
-const searchBox = document.getElementById("searchBox");
-const searchInput = document.getElementById("searchInput");
-const whatsappBtn = document.getElementById("whatsappBtn");
+  const slider = document.getElementById("journeySlider");
+  const phone = document.getElementById("journeyPhone");
 
+  const title = document.getElementById("journeyTitle");
+  const text = document.getElementById("journeyText");
+  const number = document.getElementById("journeyNumber");
+  const tags = document.getElementById("journeyTags");
 
-/* =========================
-   SEARCH
-========================= */
+  const prev = document.getElementById("journeyPrev");
+  const next = document.getElementById("journeyNext");
 
-searchBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-
-  searchBox.classList.toggle("show");
-
-  if (searchBox.classList.contains("show")) {
-    setTimeout(() => {
-      searchInput.focus();
-    }, 100);
-  }
-});
-
-
-/* CLOSE SEARCH WHEN CLICKING OUTSIDE */
-
-document.addEventListener("click", function (e) {
-
-  if (
-    !searchBox.contains(e.target) &&
-    !searchBtn.contains(e.target)
-  ) {
-    searchBox.classList.remove("show");
-  }
-
-});
-
-
-/* ESC = CLOSE SEARCH */
-
-document.addEventListener("keydown", function (e) {
-
-  if (e.key === "Escape") {
-    searchBox.classList.remove("show");
-  }
-
-});
-
-
-/* SEARCH ENTER */
-
-searchInput.addEventListener("keydown", function (e) {
-
-  if (e.key === "Enter") {
-
-    const searchText = searchInput.value.trim();
-
-    if (searchText === "") return;
-
-    console.log("Searching:", searchText);
-
-    // NEXT: ikkada actual website search logic add cheyochu
-  }
-
-});
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-whatsappBtn.addEventListener("click", function (e) {
-
-  e.preventDefault();
-
-  const phoneNumber = "91XXXXXXXXXX";
-
-  const message = encodeURIComponent(
-    "Hi Chandini Connects, I would like to know more."
+  const dots = document.querySelectorAll(
+    "#journeyDots button"
   );
 
-  const whatsappURL =
-    "https://wa.me/" + phoneNumber + "?text=" + message;
+  const slides = document.querySelectorAll(
+    ".ch-phone-slide"
+  );
 
-  window.open(whatsappURL, "_blank");
+
+  const journeyData = [
+
+    {
+      title:'Manifest <em>Your Vision.</em>',
+
+      text:'Turn your thoughts into clear intentions and learn how manifestation can become a meaningful part of your everyday life.',
+
+      tags:[
+        "Intentions",
+        "Clarity",
+        "Action"
+      ]
+    },
+
+    {
+      title:'Shape <em>Your Career.</em>',
+
+      text:'Understand your strengths, build confidence and create a career path that feels meaningful and aligned with your goals.',
+
+      tags:[
+        "Skills",
+        "Confidence",
+        "Career"
+      ]
+    },
+
+    {
+      title:'Watch. Learn. <em>Connect.</em>',
+
+      text:'A little space to hear from Chandini directly — thoughts, experiences and ideas for your journey.',
+
+      tags:[
+        "Chandini",
+        "Learn",
+        "Connect"
+      ]
+    },
+
+    {
+      title:'Build Better <em>Habits.</em>',
+
+      text:'Create simple routines and consistent habits that support your goals without making growth feel overwhelming.',
+
+      tags:[
+        "Routine",
+        "Consistency",
+        "Focus"
+      ]
+    },
+
+    {
+      title:'Grow Into <em>Yourself.</em>',
+
+      text:'Learn from your experiences, understand yourself better and keep moving towards the person you want to become.',
+
+      tags:[
+        "Mindset",
+        "Growth",
+        "Purpose"
+      ]
+    }
+
+  ];
+
+
+  let current = 0;
+
+  let startX = 0;
+
+  let dragging = false;
+
+  let journeyAutoTimer;
+
+
+  /* =====================================
+     SHOW SLIDE
+  ===================================== */
+
+  function showSlide(index){
+
+    if(index < 0){
+      index = journeyData.length - 1;
+    }
+
+    if(index >= journeyData.length){
+      index = 0;
+    }
+
+    current = index;
+
+
+    /* MOVE PHONE */
+
+    slider.style.transform =
+      `translateX(-${current * 100}%)`;
+
+
+    /* NUMBER */
+
+    number.textContent =
+      String(current + 1).padStart(2,"0")
+      + " / "
+      + String(journeyData.length).padStart(2,"0");
+
+
+    /* LEFT CONTENT */
+
+    title.innerHTML =
+      journeyData[current].title;
+
+    text.textContent =
+      journeyData[current].text;
+
+
+    tags.innerHTML =
+      journeyData[current].tags
+        .map(tag => `<span>${tag}</span>`)
+        .join("");
+
+
+    /* DOTS */
+
+    dots.forEach((dot,i) => {
+
+      dot.classList.toggle(
+        "active",
+        i === current
+      );
+
+    });
+
+
+    /* =====================================
+       VIDEO CONTROL
+    ===================================== */
+
+    document
+      .querySelectorAll(".ch-phone-video")
+      .forEach(video => {
+
+        video.pause();
+
+        video.currentTime = 0;
+
+      });
+
+
+    const activeVideo =
+      slides[current]
+        ?.querySelector(".ch-phone-video");
+
+
+    if(activeVideo){
+
+      activeVideo.currentTime = 0;
+
+      activeVideo
+        .play()
+        .catch(() => {});
+
+    }
+
+  }
+
+
+  /* =====================================
+     AUTO SCROLL
+  ===================================== */
+
+  function startJourneyAuto(){
+
+    clearInterval(journeyAutoTimer);
+
+    journeyAutoTimer = setInterval(() => {
+
+      showSlide(current + 1);
+
+    }, 4000);
+
+  }
+
+
+  function restartJourneyAuto(){
+
+    clearInterval(journeyAutoTimer);
+
+    startJourneyAuto();
+
+  }
+
+
+  /* =====================================
+     ARROWS
+  ===================================== */
+
+  next.addEventListener("click", function(){
+
+    showSlide(current + 1);
+
+    restartJourneyAuto();
+
+  });
+
+
+  prev.addEventListener("click", function(){
+
+    showSlide(current - 1);
+
+    restartJourneyAuto();
+
+  });
+
+
+  /* =====================================
+     DOTS
+  ===================================== */
+
+  dots.forEach(dot => {
+
+    dot.addEventListener("click", function(){
+
+      showSlide(
+        Number(this.dataset.index)
+      );
+
+      restartJourneyAuto();
+
+    });
+
+  });
+
+
+  /* =====================================
+     MOBILE SWIPE
+  ===================================== */
+
+  phone.addEventListener(
+    "touchstart",
+    function(e){
+
+      startX =
+        e.touches[0].clientX;
+
+    },
+    {passive:true}
+  );
+
+
+  phone.addEventListener(
+    "touchend",
+    function(e){
+
+      const endX =
+        e.changedTouches[0].clientX;
+
+      const distance =
+        startX - endX;
+
+
+      if(Math.abs(distance) < 40){
+        return;
+      }
+
+
+      if(distance > 0){
+
+        showSlide(current + 1);
+
+      }else{
+
+        showSlide(current - 1);
+
+      }
+
+
+      restartJourneyAuto();
+
+    },
+    {passive:true}
+  );
+
+
+  /* =====================================
+     PC DRAG
+  ===================================== */
+
+  phone.addEventListener(
+    "mousedown",
+    function(e){
+
+      dragging = true;
+
+      startX = e.clientX;
+
+    }
+  );
+
+
+  window.addEventListener(
+    "mouseup",
+    function(e){
+
+      if(!dragging){
+        return;
+      }
+
+      dragging = false;
+
+
+      const distance =
+        startX - e.clientX;
+
+
+      if(Math.abs(distance) < 45){
+        return;
+      }
+
+
+      if(distance > 0){
+
+        showSlide(current + 1);
+
+      }else{
+
+        showSlide(current - 1);
+
+      }
+
+
+      restartJourneyAuto();
+
+    }
+  );
+
+
+  /* =====================================
+     START
+  ===================================== */
+
+  showSlide(0);
+
+  startJourneyAuto();
 
 });
 </script>
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+(function(){
+  const ids=["UY2ePnr8d_k","omYgMwtaKZs","pU68vXAFxxY"];
+  const players=new Array(ids.length);
+  let ready=0,current=0,timer=null,started=false,switching=false;
+
+  function cards(){ return document.querySelectorAll('#ytAutoShowcase .yt-card'); }
+
+  function markActive(index){
+    cards().forEach((card,i)=>card.classList.toggle('yt-active',i===index));
+  }
+
+  function pauseOthers(activeIndex){
+    players.forEach((p,i)=>{
+      if(!p || i===activeIndex || typeof p.pauseVideo!=='function') return;
+      try{ p.pauseVideo(); }catch(e){}
+    });
+  }
+
+  function playOnly(index){
+    if(ready!==ids.length) return;
+    clearTimeout(timer);
+    switching=true;
+    current=((index%ids.length)+ids.length)%ids.length;
+    markActive(current);
+    pauseOthers(current);
+
+    const p=players[current];
+    if(p){
+      try{
+        p.mute();
+        p.seekTo(0,true);
+        p.playVideo();
+      }catch(e){}
+    }
+    switching=false;
+
+    timer=setTimeout(function(){
+      try{ players[current].pauseVideo(); }catch(e){}
+      playOnly((current+1)%ids.length);
+    },10000);
+  }
+
+  window.onYouTubeIframeAPIReady=function(){
+    ids.forEach((id,index)=>{
+      players[index]=new YT.Player('ytPlayer'+(index+1),{
+        videoId:id,
+        playerVars:{autoplay:0,controls:1,mute:1,playsinline:1,rel:0,modestbranding:1},
+        events:{
+          onReady:function(e){
+            try{ e.target.mute(); e.target.pauseVideo(); }catch(err){}
+            ready++;
+            if(ready===ids.length && !started){
+              started=true;
+              markActive(0);
+              setTimeout(()=>playOnly(0),350);
+            }
+          },
+          onStateChange:function(e){
+            if(!window.YT || e.data!==YT.PlayerState.PLAYING) return;
+            const i=players.indexOf(e.target);
+            if(i!==current){
+              try{ e.target.pauseVideo(); }catch(err){}
+            }else if(!switching){
+              pauseOthers(current);
+            }
+          }
+        }
+      });
+    });
+  };
+
+  document.addEventListener('click',function(e){
+    if(e.target.closest('#ytAutoShowcase .yt-watch')) return;
+    const card=e.target.closest('#ytAutoShowcase .yt-card');
+    if(!card) return;
+    const index=Number(card.dataset.index);
+    if(Number.isInteger(index)) playOnly(index);
+  });
+})();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const wordElement =
+    document.querySelector(".ch-animated-word");
+
+  const stage =
+    document.querySelector(".ch-word-stage");
+
+
+  if(!wordElement || !stage) return;
+
+
+  const words = [
+    "MANIFESTATION",
+    "CAREER",
+    "GROWTH",
+    "MINDSET",
+    "PURPOSE"
+  ];
+
+
+  let currentWord = 0;
+
+
+  function showNextWord(){
+
+    /* EXIT CURRENT */
+
+    wordElement.classList.remove("word-show");
+
+    wordElement.classList.add("word-hide");
+
+    stage.classList.remove("active");
+
+
+    setTimeout(function(){
+
+      /* CHANGE WORD */
+
+      currentWord =
+        (currentWord + 1) % words.length;
+
+      wordElement.textContent =
+        words[currentWord];
+
+
+      /* RESET POSITION */
+
+      wordElement.classList.remove("word-hide");
+
+
+      /* FORCE REFLOW */
+
+      void wordElement.offsetWidth;
+
+
+      /* ENTER NEW WORD */
+
+      wordElement.classList.add("word-show");
+
+      stage.classList.add("active");
+
+    }, 650);
+
+  }
+
+
+  /* FIRST WORD */
+
+  setTimeout(function(){
+
+    wordElement.classList.add("word-show");
+
+    stage.classList.add("active");
+
+  }, 300);
+
+
+  /* CHANGE EVERY 3 SECONDS */
+
+  setInterval(
+    showNextWord,
+    3000
+  );
+
+});
+</script>
+
 </body>
+
 </html>
